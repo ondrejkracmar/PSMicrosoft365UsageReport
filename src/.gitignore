@@ -1,0 +1,22 @@
+﻿
+# ignore the settings folder and files for VSCode and PSS
+.vscode/*
+*.psproj
+*TempPoint*
+
+# Ignore staging info from Visual Studio
+library/PSOffice365Reports/.vs/*
+library/PSOffice365Reports/PSOffice365Reports/bin/*
+library/PSOffice365Reports/PSOffice365Reports/obj/*
+
+# ignore PowerShell Studio MetaData
+PSOffice365Reports/PSOffice365Reports.psproj
+PSOffice365Reports/PSOffice365Reports.psproj.bak
+PSOffice365Reports/PSOffice365Reports.psprojs
+PSOffice365Reports/PSOffice365Reports.psproj
+
+# ignore the TestResults
+TestResults/*
+
+# ignore the publishing Directory
+publish/*
