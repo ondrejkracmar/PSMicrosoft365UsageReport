@@ -9,13 +9,13 @@
 	GUID = '2e6e0ced-59d5-4168-b7b8-677ee3dd22cc'
 	
 	# Author of this module
-	Author = 'KracmarOndrej'
+	Author = 'Ondrej Kracmar'
 	
 	# Company or vendor of this module
-	CompanyName = 'MyCompany'
+	CompanyName = 'Ondrej Kracmar'
 	
 	# Copyright statement for this module
-	Copyright = 'Copyright (c) 2021 KracmarOndrej'
+	Copyright = 'Copyright (c) 2021 Ondrej Kracmar'
 	
 	# Description of the functionality provided by this module
 	Description = 'Office 365 Reports via Graph API'
@@ -39,7 +39,11 @@
 	# FormatsToProcess = @('xml\PSOffice365Reports.Format.ps1xml')
 	
 	# Functions to export from this module
-	FunctionsToExport = ''
+	FunctionsToExport = @(
+		"Get-PSORRequestStatus",
+		'Receive-PSORAuthorizationToken',
+		'Write-PSORAuthorizationToken'
+	)
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = ''
