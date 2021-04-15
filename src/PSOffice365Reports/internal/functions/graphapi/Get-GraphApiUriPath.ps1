@@ -14,6 +14,6 @@
     }
     else 
     {
-        return Join-UriPath -Uri (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.GraphApiUrl) -ChildPath (Get-PSFConfigValue -FullName PSMicrosoftTeams.Settings.GraphApiVersion)
+        return Join-UriPath -Uri (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.GraphApiUrl) -ChildPath (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.GraphApiVersion)
     }
 }

@@ -1,0 +1,118 @@
+﻿{
+    "SkypeForBusinessActivityUserDetail": {
+        "Name": "SkypeForBusinessActivityUserDetail",
+        "Description": "Get details about Skype for Business activity by user.",
+        "Function": "getSkypeForBusinessActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "totalPeerToPeerSessionCount",
+            "totalOrganizedConferenceCount",
+            "totalParticipatedConferenceCount",
+            "peerToPeerLastActivityDate",
+            "organizedConferenceLastActivityDate",
+            "participatedConferenceLastActivityDate",
+            "peerToPeerIMCount",
+            "peerToPeerAudioCount",
+            "peerToPeerAudioMinutes",
+            "peerToPeerVideoCount",
+            "peerToPeerVideoMinutes",
+            "peerToPeerAppSharingCount",
+            "peerToPeerFileTransferCount",
+            "organizedConferenceIMCount",
+            "organizedConferenceAudioVideoCount",
+            "organizedConferenceAudioVideoMinutes",
+            "organizedConferenceAppSharingCount",
+            "organizedConferenceWebCount",
+            "organizedConferenceDialInOut3rdPartyCount",
+            "organizedConferenceCloudDialInOutMicrosoftCount",
+            "organizedConferenceCloudDialInMicrosoftMinutes",
+            "organizedConferenceCloudDialOutMicrosoftMinutes",
+            "participatedConferenceIMCount",
+            "participatedConferenceAudioVideoCount",
+            "participatedConferenceAudioVideoMinutes",
+            "participatedConferenceAppSharingCount",
+            "participatedConferenceWebCount",
+            "participatedConferenceDialInOut3rdPartyCount",
+            "reportRefreshDate",
+            "userPrincipalName",
+            "isDeleted",
+            "deletedDate",
+            "lastActivityDate",
+            "reportPeriod"
+        ]
+    },
+    "TeamsUserActivityUserDetail": {
+        "Name": "TeamsUserActivityUserDetail",
+        "Description": "Get details about Microsoft Teams user activity by user.",
+        "Function": "getTeamsUserActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "lastActivityDate",
+            "isDeleted",
+            "deletedDate",
+            "assignedProducts",
+            "teamChatMessageCount",
+            "privateChatMessageCount",
+            "callCount",
+            "meetingCount",
+            "meetingsOrganizedCount",
+            "meetingsAttendedCount",
+            "adHocMeetingsOrganizedCount",
+            "adHocMeetingsAttendedCount",
+            "scheduledOneTimeMeetingsOrganizedCount",
+            "scheduledOneTimeMeetingsAttendedCount",
+            "scheduledRecurringMeetingsOrganizedCount",
+            "scheduledRecurringMeetingsAttendedCount",
+            "audioDuration",
+            "videoDuration",
+            "screenShareDuration",
+            "hasOtherAction",
+            "isLicensed",
+            "reportPeriod"
+        ]
+    },
+    "EmailActivityUserDetail": {
+        "Name": "EmailActivityUserDetail",
+        "Description": "Get details about email activity users have performed.",
+        "Function": "getEmailActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "isDeleted",
+            "deletedDate",
+            "lastActivityDate",
+            "sendCount",
+            "receiveCount",
+            "readCount",
+            "reportPeriod"
+        ]
+    }
+}

@@ -1,4 +1,4 @@
-function Write-PSORAuthorizationToken
+﻿function Write-PSORAuthorizationToken
 {
     [CmdletBinding(DefaultParametersetName="Token")]    
     param(

@@ -1,4 +1,4 @@
-function Get-PSORRequestStatus
+﻿function Get-PSORRequestStatus
 {
     [CmdletBinding(DefaultParametersetName="Token")]    
     param(

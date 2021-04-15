@@ -42,7 +42,8 @@
 	FunctionsToExport = @(
 		"Get-PSORRequestStatus",
 		'Receive-PSORAuthorizationToken',
-		'Write-PSORAuthorizationToken'
+		'Write-PSORAuthorizationToken',
+		'Get-PSORUsageReport'
 	)
 	
 	# Cmdlets to export from this module

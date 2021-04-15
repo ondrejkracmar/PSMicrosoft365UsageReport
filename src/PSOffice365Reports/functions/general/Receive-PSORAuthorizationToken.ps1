@@ -1,4 +1,4 @@
-function Receive-PSORAuthorizationToken
+﻿function Receive-PSORAuthorizationToken
 {
     [CmdletBinding(DefaultParametersetName="Token")]    
     param(

@@ -7,4 +7,5 @@
 	'TokenExpired' 				= 'Access token has expired.'
 	'FailedInvokeRest' 			= "Failed to invoke rest method '{0}' from '{1}'."
 	'StringAssemblyError' 		= "Failed to assemble url '{0}'."
+	'FailedGetUsageReport' 		= "Failed to get Office 365 Usage Report '{0}'."
 }
