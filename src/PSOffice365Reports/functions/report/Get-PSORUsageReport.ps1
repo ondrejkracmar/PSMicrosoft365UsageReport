@@ -64,7 +64,7 @@
                 $usageReport = get-content -Path $usageReportFile | ConvertFrom-Json -AsHashtable
             }
             else {
-                $usageReport = get-content -Path $usageReportFile
+                $usageReport = get-content -Path $usageReportFile | ConvertFrom-Json | ConvertTo-HashTable
             }
         } 
 		catch {
