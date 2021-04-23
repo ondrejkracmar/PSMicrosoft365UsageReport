@@ -34,8 +34,8 @@
             'Content-Type'= $ContentType
             'Authorization'= $AuthorizationToken
         }
-        $numberOFRetries = (Get-PSFConfigValue -FullName PSMicrosoftTeams.Settings.InvokeRestMethodRetryCount)
-        $retryTimeSec = (Get-PSFConfigValue -FullName PSMicrosoftTeams.Settings.InvokeRestMethodRetryTimeSec)
+        $numberOFRetries = (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.InvokeRestMethodRetryCount)
+        $retryTimeSec = (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.InvokeRestMethodRetryTimeSec)
     }
 
     process

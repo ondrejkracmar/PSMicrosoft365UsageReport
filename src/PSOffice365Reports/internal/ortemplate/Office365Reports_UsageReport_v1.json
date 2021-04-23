@@ -89,18 +89,26 @@
             "reportPeriod"
         ]
     },
-    "EmailActivityUserDetail": {
-        "Name": "EmailActivityUserDetail",
-        "Description": "Get details about email activity users have performed.",
-        "Function": "getEmailActivityUserDetail",
+    "Office365ActivationsUserDetail": {
+        "Name": "Office365ActivationsUserDetail",
+        "Description": "Get details about users who have activated Microsoft 365.",
+        "Function": "getOffice365ActivationsUserDetail",
         "Parameters": {
-            "Period": [
-                "D7",
-                "D30",
-                "D90",
-                "D180"
-            ],
-            "Date": "YYYY-MM-DD"
+            
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "userActivationCounts"
+        ]
+    },
+    "Office365ActiveUserDetail": {
+        "Name": "Office365ActiveUserDetail",
+        "Description": "Get details about Microsoft 365 active users.",
+        "Function": "GetOffice365ActiveUserDetail",
+        "Parameters": {
+            
         },
         "ResponseProperty": [
             "reportRefreshDate",
@@ -108,11 +116,24 @@
             "displayName",
             "isDeleted",
             "deletedDate",
-            "lastActivityDate",
-            "sendCount",
-            "receiveCount",
-            "readCount",
-            "reportPeriod"
+            "hasExchangeLicense", 
+            "hasOneDriveLicense" ,
+            "hasSharePointLicense", 
+            "hasSkypeForBusinessLicense", 
+            "hasYammerLicense", 
+            "hasTeamsLicense", 
+            "exchangeLastActivityDate", 
+            "oneDriveLastActivityDate", 
+            "sharePointLastActivityDate", 
+            "skypeForBusinessLastActivityDate", 
+            "yammerLastActivityDate", 
+            "teamsLastActivityDate", 
+            "exchangeLicenseAssignDate", 
+            "oneDriveLicenseAssignDate", 
+            "sharePointLicenseAssignDate", 
+            "skypeForBusinessLicenseAssignDate", 
+            "yammerLicenseAssignDate", 
+            "teamsLicenseAssignDate"
         ]
     }
 }

@@ -12,10 +12,10 @@
 			ParameterSetName = 'Filters')]
 		[Parameter(ParameterSetName = 'ReportName')]
 		[ValidateNotNullOrEmpty()]
-        [ValidateSet("SkypeForBusinessActivityUserDetail", "TeamsUserActivityUserDetail","EmailActivityUserDetail")]
+        [ValidateSet("SkypeForBusinessActivityUserDetail", "TeamsUserActivityUserDetail","EmailActivityUserDetail","Office365ActiveUserDetail","Office365ActivationsUserDetail")]
 	    [string]
 	    $Name,
-	    [Parameter(Mandatory = $true,
+	    [Parameter(Mandatory = $false,
             ValueFromPipeline = $true,
             ValueFromPipelineByPropertyName = $true,
             ValueFromRemainingArguments = $false,
@@ -32,7 +32,7 @@
         [ValidateNotNullOrEmpty()]
 	    [string]
 		$ParameterValue,
-		[Parameter(Mandatory = $true,
+		[Parameter(Mandatory = $false,
             ValueFromPipeline = $false,
             ValueFromPipelineByPropertyName = $false,
             ValueFromRemainingArguments = $false,
@@ -66,6 +66,7 @@
             else {
                 $usageReport = get-content -Path $usageReportFile | ConvertFrom-Json | ConvertTo-HashTable
             }
+            $typeName = '{0}.{1}.{2}' -f $Env:ModuleName,'UsageReport',$Name
         } 
 		catch {
             Stop-PSFFunction -String 'StringAssemblyError' -StringValues $url -ErrorRecord $_
@@ -84,13 +85,18 @@
                 Method = 'Get'
 				AuthorizationToken = "Bearer $authorizationToken"
         	}
-        
-            if($ParameterType -eq 'Period')
+            if(Test-PSFParameterBinding -Parameter ParameterType ,ParameterValue)
             {
-                $graphApiParameters['Uri'] =  Join-UriPath -Uri $url -ChildPath ("{0}(period='{1}'){2}" -f $function,$ParameterValue,'?$format=application/json')
+                if($ParameterType -eq 'Period')
+                {
+                    $graphApiParameters['Uri'] =  Join-UriPath -Uri $url -ChildPath ("{0}(period='{1}'){2}" -f $function,$ParameterValue,'?$format=application/json')
+                }
+                else{
+                    $graphApiParameters['Uri'] =  Join-UriPath -Uri $url -ChildPath ("{0}(date={1}){2}" -f $function,$ParameterValue,'?$format=application/json')
+                }
             }
-            else{
-                $graphApiParameters['Uri'] =  Join-UriPath -Uri $url -ChildPath ("{0}(date={1}){2}" -f $function,$ParameterValue,'?$format=application/json')                
+            else {
+                $graphApiParameters['Uri'] =  Join-UriPath -Uri $url -ChildPath ("{0}{1}" -f $function,'?$format=application/json')
             }
 			
             if(Test-PSFParameterBinding -Parameter Filter)
@@ -109,7 +115,7 @@
             }
 
 			$reportResult = Invoke-GraphApiQuery @graphApiParameters
-            $reportResult |  Select-PSFObject -Property $property -ExcludeProperty '@odata*' -TypeName 'PSOffice365Reports.UsageReport'
+            $reportResult |  Select-PSFObject -Property $property -ExcludeProperty '@odata*' -TypeName $typeName
 
         }
         catch {
