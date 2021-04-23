@@ -12,7 +12,13 @@
 			ParameterSetName = 'Filters')]
 		[Parameter(ParameterSetName = 'ReportName')]
 		[ValidateNotNullOrEmpty()]
-        [ValidateSet("SkypeForBusinessActivityUserDetail", "TeamsUserActivityUserDetail","EmailActivityUserDetail","Office365ActiveUserDetail","Office365ActivationsUserDetail")]
+        [ValidateSet("SkypeForBusinessActivityUserDetail"
+             ,"TeamsUserActivityUserDetail"
+             ,"EmailActivityUserDetail"
+             ,"Office365ActiveUserDetail"
+             ,"Office365ActivationsUserDetail"
+             ,"EmailAppUsageUserDetail"
+             ,"MailboxUsageDetail")]
 	    [string]
 	    $Name,
 	    [Parameter(Mandatory = $false,
