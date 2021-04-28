@@ -139,7 +139,8 @@
             "sharePointLicenseAssignDate", 
             "skypeForBusinessLicenseAssignDate", 
             "yammerLicenseAssignDate", 
-            "teamsLicenseAssignDate"
+            "teamsLicenseAssignDate",
+            "reportPeriod"
         ]
     },
     "EmailActivityUserDetail": {
@@ -164,7 +165,8 @@
             "lastActivityDate",
             "sendCount",
             "receiveCount",
-            "readCount"
+            "readCount",
+            "reportPeriod"
         ]
     },
     "EmailAppUsageUserDetail": {
