@@ -10,7 +10,7 @@ feel totally free to split them into multiple files.
 # Example Configuration
 Set-PSFConfig -Module 'PSOffice365Reports' -Name 'Example.Setting' -Value 10 -Initialize -Validation 'integer' -Handler { } -Description "Example configuration setting. Your module can then use the setting using 'Get-PSFConfigValue'"
 #>
-$Env:ModuleName = 'PSOffice365Reports'
+$Env:ModuleName = 'PSOffice365Report'
 Set-PSFConfig -Module $Env:ModuleName -Name 'Settings.GraphApiVersion' -Value "beta" -Initialize -Validation 'string' -Description "What version of Graph API module is useing."
 Set-PSFConfig -Module $Env:ModuleName -Name 'Settings.GraphApiUrl' -Value "https://graph.microsoft.com" -Initialize -Validation 'string' -Description "What url of Graph API module is useing."
 Set-PSFConfig -Module $Env:ModuleName -Name 'Settings.AuthUrl' -Value "https://login.microsoftonline.com" -Initialize -Validation 'string' -Description "What url authentication of Graph API module is useing."
