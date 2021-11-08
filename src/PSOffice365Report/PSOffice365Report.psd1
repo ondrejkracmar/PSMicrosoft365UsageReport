@@ -1,6 +1,6 @@
 ﻿@{
 	# Script module or binary module file associated with this manifest
-	RootModule = 'PSOffice365Reports.psm1'
+	RootModule = 'PSOffice365Report.psm1'
 	
 	# Version number of this module.
 	ModuleVersion = '1.0.5'
@@ -40,10 +40,11 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-		"Get-PSORRequestStatus",
-		'Receive-PSORAuthorizationToken',
-		'Write-PSORAuthorizationToken',
-		'Get-PSORUsageReport'
+		'Connect-PSOffice365Report',
+		'Disconnect-PSOffice365Report',
+		'Get-PSORUsageReport',
+		'Get-PSORTeamsDirectRoutingCall',
+		'Get-PSORTeamsPstnCall'
 	)
 	
 	# Cmdlets to export from this module

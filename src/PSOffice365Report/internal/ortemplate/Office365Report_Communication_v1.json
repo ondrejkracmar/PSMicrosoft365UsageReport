@@ -1,0 +1,235 @@
+{
+    "SkypeForBusinessActivityUserDetail": {
+        "Name": "SkypeForBusinessActivityUserDetail",
+        "Description": "Get details about Skype for Business activity by user.",
+        "Function": "getSkypeForBusinessActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "totalPeerToPeerSessionCount",
+            "totalOrganizedConferenceCount",
+            "totalParticipatedConferenceCount",
+            "peerToPeerLastActivityDate",
+            "organizedConferenceLastActivityDate",
+            "participatedConferenceLastActivityDate",
+            "peerToPeerIMCount",
+            "peerToPeerAudioCount",
+            "peerToPeerAudioMinutes",
+            "peerToPeerVideoCount",
+            "peerToPeerVideoMinutes",
+            "peerToPeerAppSharingCount",
+            "peerToPeerFileTransferCount",
+            "organizedConferenceIMCount",
+            "organizedConferenceAudioVideoCount",
+            "organizedConferenceAudioVideoMinutes",
+            "organizedConferenceAppSharingCount",
+            "organizedConferenceWebCount",
+            "organizedConferenceDialInOut3rdPartyCount",
+            "organizedConferenceCloudDialInOutMicrosoftCount",
+            "organizedConferenceCloudDialInMicrosoftMinutes",
+            "organizedConferenceCloudDialOutMicrosoftMinutes",
+            "participatedConferenceIMCount",
+            "participatedConferenceAudioVideoCount",
+            "participatedConferenceAudioVideoMinutes",
+            "participatedConferenceAppSharingCount",
+            "participatedConferenceWebCount",
+            "participatedConferenceDialInOut3rdPartyCount",
+            "reportRefreshDate",
+            "userPrincipalName",
+            "isDeleted",
+            "deletedDate",
+            "lastActivityDate",
+            "reportPeriod"
+        ]
+    },
+    "TeamsUserActivityUserDetail": {
+        "Name": "TeamsUserActivityUserDetail",
+        "Description": "Get details about Microsoft Teams user activity by user.",
+        "Function": "getTeamsUserActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "lastActivityDate",
+            "isDeleted",
+            "deletedDate",
+            "assignedProducts",
+            "teamChatMessageCount",
+            "privateChatMessageCount",
+            "callCount",
+            "meetingCount",
+            "meetingsOrganizedCount",
+            "meetingsAttendedCount",
+            "adHocMeetingsOrganizedCount",
+            "adHocMeetingsAttendedCount",
+            "scheduledOneTimeMeetingsOrganizedCount",
+            "scheduledOneTimeMeetingsAttendedCount",
+            "scheduledRecurringMeetingsOrganizedCount",
+            "scheduledRecurringMeetingsAttendedCount",
+            "audioDuration",
+            "videoDuration",
+            "screenShareDuration",
+            "hasOtherAction",
+            "isLicensed",
+            "reportPeriod"
+        ]
+    },
+    "Office365ActivationsUserDetail": {
+        "Name": "Office365ActivationsUserDetail",
+        "Description": "Get details about users who have activated Microsoft 365.",
+        "Function": "getOffice365ActivationsUserDetail",
+        "Parameters": {
+            
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "userActivationCounts"
+        ]
+    },
+    "Office365ActiveUserDetail": {
+        "Name": "Office365ActiveUserDetail",
+        "Description": "Get details about Microsoft 365 active users.",
+        "Function": "GetOffice365ActiveUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "isDeleted",
+            "deletedDate",
+            "hasExchangeLicense", 
+            "hasOneDriveLicense" ,
+            "hasSharePointLicense", 
+            "hasSkypeForBusinessLicense", 
+            "hasYammerLicense", 
+            "hasTeamsLicense", 
+            "exchangeLastActivityDate", 
+            "oneDriveLastActivityDate", 
+            "sharePointLastActivityDate", 
+            "skypeForBusinessLastActivityDate", 
+            "yammerLastActivityDate", 
+            "teamsLastActivityDate", 
+            "exchangeLicenseAssignDate", 
+            "oneDriveLicenseAssignDate", 
+            "sharePointLicenseAssignDate", 
+            "skypeForBusinessLicenseAssignDate", 
+            "yammerLicenseAssignDate", 
+            "teamsLicenseAssignDate",
+            "reportPeriod"
+        ]
+    },
+    "EmailActivityUserDetail": {
+        "Name": "EmailActivityUserDetail",
+        "Description": "Get details about Microsoft 365 active users.",
+        "Function": "GetEmailActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "isDeleted",
+            "deletedDate",
+            "lastActivityDate",
+            "sendCount",
+            "receiveCount",
+            "readCount",
+            "reportPeriod"
+        ]
+    },
+    "EmailAppUsageUserDetail": {
+        "Name": "EmailAppUsageUserDetail",
+        "Description": "Get details about which activities users performed on the various email apps.",
+        "Function": "GetEmailAppUsageUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate", 
+            "userPrincipalName", 
+            "displayName", 
+            "isDeleted", 
+            "deletedDate", 
+            "lastActivityDate", 
+            "mailForMac", 
+            "outlookForMac", 
+            "outlookForWindows", 
+            "outlookForMobile", 
+            "otherForMobile", 
+            "outlookForWeb", 
+            "pop3App", 
+            "imap4App", 
+            "smtpApp", 
+            "reportPeriod"
+        ]
+    },
+    "MailboxUsageDetail": {
+        "Name": "MailboxUsageDetail",
+        "Description": "Get details about mailbox usage.",
+        "Function": "GetMailboxUsageDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ]
+        },
+        "ResponseProperty": [
+            "reportRefreshDate", 
+            "userPrincipalName", 
+            "displayName", 
+            "isDeleted", 
+            "deletedDate", 
+            "createdDate", 
+            "lastActivityDate", 
+            "itemCount", 
+            "storageUsedInBytes", 
+            "deletedItemCount",
+            "deletedItemSizeInBytes", 
+            "issueWarningQuotaInBytes", 
+            "prohibitSendQuotaInBytes",
+            "prohibitSendReceiveQuotaInBytes",
+            "reportPeriod"
+        ]
+        
+    }
+}
