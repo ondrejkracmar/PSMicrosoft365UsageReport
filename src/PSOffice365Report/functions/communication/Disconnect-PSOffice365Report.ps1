@@ -1,4 +1,4 @@
-function Disconnect-PSOffice365Report {
+﻿function Disconnect-PSOffice365Report {
     [CmdletBinding(DefaultParametersetName = "Token")]    
     param()
     

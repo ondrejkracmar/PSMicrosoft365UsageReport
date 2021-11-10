@@ -1,4 +1,4 @@
-function Get-PSORTeamsPstnCall {
+﻿function Get-PSORTeamsPstnCall {
     <#
         .SYNOPSIS
         Retrieves PSTN calls between a specified start and end date.

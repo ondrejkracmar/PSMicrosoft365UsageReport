@@ -1,4 +1,4 @@
-function Get-PSORTeamsDirectRoutingCall {
+﻿function Get-PSORTeamsDirectRoutingCall {
     <#
         .SYNOPSIS
         Retrieves direct routing calls between a specified start and end date.

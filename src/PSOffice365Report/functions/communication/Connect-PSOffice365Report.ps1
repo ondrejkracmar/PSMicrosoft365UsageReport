@@ -1,4 +1,4 @@
-function Connect-PSOffice365Report {
+﻿function Connect-PSOffice365Report {
     [CmdletBinding(DefaultParametersetName = "Token")]    
     param(
         [Parameter(ParameterSetName = "AuthorizationToken", Mandatory = $true)]
