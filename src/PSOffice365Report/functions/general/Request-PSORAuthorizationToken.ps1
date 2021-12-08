@@ -1,4 +1,4 @@
-function Request-PSORAuthorizationToken { 
+﻿function Request-PSORAuthorizationToken { 
     <# 
     .SYNOPSIS 
         Create new team using JSON template.
@@ -60,7 +60,7 @@ function Request-PSORAuthorizationToken {
 
     ) 
     begin { 
-        $loginURL = (Get-PSFConfigValue -Name ('{0}.{1}' -f $Env:ModuleName, 'Settings.AuthUrl'))
+        $loginURL = (Get-PSFConfigValue -Name ('{0}.{1}' -f $ENV:ModuleName,'Settings.AuthUrl'))
         $scope = "https://graph.microsoft.com/.default"
         $tenantdomain = '{0}.{1}' -f $TenantName, 'onmicrosoft.com' 
     } 

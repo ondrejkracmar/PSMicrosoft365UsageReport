@@ -34,8 +34,8 @@
             'Content-Type'  = $ContentType
             'Authorization' = $AuthorizationToken
         }
-        $numberOFRetries = (Get-PSFConfigValue -FullName PSMicrosoftTeams.Settings.InvokeRestMethodRetryCount)
-        $retryTimeSec = (Get-PSFConfigValue -FullName PSMicrosoftTeams.Settings.InvokeRestMethodRetryTimeSec)
+        $numberOFRetries = (Get-PSFConfigValue -FullName ('{0}.{1}' -f $Env:ModuleName,'Settings.InvokeRestMethodRetryCount'))
+        $retryTimeSec = (Get-PSFConfigValue -FullName ('{0}.{1}' -f $Env:ModuleName,'Settings.InvokeRestMethodRetryTimeSec'))
     }
 
     process {

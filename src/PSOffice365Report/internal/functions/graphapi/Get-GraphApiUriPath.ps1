@@ -1,5 +1,4 @@
 ﻿function Get-GraphApiUriPath
-<# Joins uri to a child path#>
 {
     [CmdletBinding(DefaultParametersetName="Uri")]    
     param(
@@ -10,10 +9,10 @@
     
     if(Test-PSFParameterBinding -ParameterName  GraphApiVersion)
     {
-        return Join-UriPath -Uri (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.GraphApiUrl) -ChildPath $GraphApiVersion
+        return Join-UriPath -Uri (Get-PSFConfigValue -FullName PSOffice365Report.Settings.GraphApiUrl) -ChildPath $GraphApiVersion
     }
     else 
     {
-        return Join-UriPath -Uri (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.GraphApiUrl) -ChildPath (Get-PSFConfigValue -FullName PSOffice365Reports.Settings.GraphApiVersion)
+        return Join-UriPath -Uri (Get-PSFConfigValue -FullName PSOffice365Report.Settings.GraphApiUrl) -ChildPath (Get-PSFConfigValue -FullName PSOffice365Report.Settings.GraphApiVersion)
     }
 }

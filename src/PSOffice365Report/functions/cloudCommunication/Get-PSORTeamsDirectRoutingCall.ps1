@@ -66,13 +66,8 @@
         )]
         [ValidateRange(1, 90)]
         [int]
-        $Days,
-
-        [Parameter(Mandatory, HelpMessage = "Access token string for authorization to make Graph API calls")]
-        [string]
-        $AccessToken
-    }
-
+        $Days
+    )
     begin {
         
         try {

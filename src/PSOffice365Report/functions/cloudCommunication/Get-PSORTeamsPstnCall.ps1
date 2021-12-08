@@ -45,67 +45,100 @@
     param (
         [Parameter(
             Mandatory,
-            ParameterSetName="DateRange",
-            HelpMessage="Start date to search for call records in YYYY-MM-DD format"
+            ParameterSetName = "DateRange",
+            HelpMessage = "Start date to search for call records in YYYY-MM-DD format"
         )]
         [string]
         $StartDate,
-
         [Parameter(
             Mandatory,
-            ParameterSetName="DateRange",
-            HelpMessage="End date to search for call records in YYYY-MM-DD format"
+            ParameterSetName = "DateRange",
+            HelpMessage = "End date to search for call records in YYYY-MM-DD format"
         )]
         [string]
         $EndDate,
 
         [Parameter(
             Mandatory,
-            ParameterSetName="NumberDays",
-            HelpMessage="The number of days previous to today to search for call records"
+            ParameterSetName = "NumberDays",
+            HelpMessage = "The number of days previous to today to search for call records"
         )]
-        [ValidateRange(1,90)]
+        [ValidateRange(1, 90)]
         [int]
         $Days,
-
-        [Parameter(Mandatory, HelpMessage="Access token string for authorization to make Graph API calls")]
-        [string]
-        $AccessToken
+        [Parameter(Mandatory = $false,
+            ValueFromPipeline = $false,
+            ValueFromPipelineByPropertyName = $false,
+            ValueFromRemainingArguments = $false,
+            ParameterSetName = 'Filter')]
+        [ValidateNotNullOrEmpty()]
+        [string]$Filter,
+        [Parameter(Mandatory = $false,
+            ValueFromPipeline = $false,
+            ValueFromPipelineByPropertyName = $false,
+            ValueFromRemainingArguments = $false)]
+        [switch]$All,
+        [Parameter(Mandatory = $false,
+            ValueFromPipeline = $false,
+            ValueFromPipelineByPropertyName = $false,
+            ValueFromRemainingArguments = $false)]
+        [ValidateRange(5, 1000)]
+        [int]$PageSize
     )
-
-    $headers = @{
-        "Authorization" = $AccessToken
-    }
-
-    if ($PSCmdlet.ParameterSetName -eq "DateRange") {
-        $requestUri = "https://graph.microsoft.com/beta/communications/callRecords/getPstnCalls(fromDateTime=$StartDate,toDateTime=$EndDate)"
-    }
-    elseif ($PSCmdlet.ParameterSetName -eq "NumberDays") {
-        $today = [datetime]::Today
-        $toDateTime = $today.AddDays(1)
-        $toDateTimeString = Get-Date -Date $toDateTime -Format yyyy-MM-dd
-        $fromDateTime = $today.AddDays(-($Days - 1))
-        $fromDateTimeString = Get-Date -Date $fromDateTime -Format yyyy-MM-dd
-
-        $requestUri = "https://graph.microsoft.com/beta/communications/callRecords/getPstnCalls(fromDateTime=$fromDateTimeString,toDateTime=$toDateTimeString)"
-    }
-    
-    
-    while (-not ([string]::IsNullOrEmpty($requestUri))) {
+    begin {
         try {
-            $requestResponse = Invoke-RestMethod -Method GET -Uri $requestUri -Headers $headers -ErrorAction STOP
+            $url = Join-UriPath -Uri (Get-GraphApiUriPath) -ChildPath 'communications/callRecords'            
+            $authorizationToken = Get-PSORAuthorizationToken
+            
+            #$usageReportFolder = Join-Path -Path (Join-Path -Path $ModuleRoot -ChildPath "internal") -ChildPath 'ortemplate'
+            #$usageReportFile = Join-Path -Path $usageReportFolder -ChildPath 'Office365Report_UsageReport_v1.json'
+            if (Test-PSFPowerShell -PSMinVersion '7.0.0') {
+                #$usageReport = Get-Content -Path $usageReportFile | ConvertFrom-Json -AsHashtable
+            }
+            else {
+                #$usageReport = Get-Content -Path $usageReportFile | ConvertFrom-Json | ConvertTo-HashTable
+            }
+            #$typeName = '{0}.{1}.{2}' -f $Env:ModuleName, 'callRecords', $Name
         }
         catch {
-            $_
-        }
-
-        $requestResponse.value
-
-        if ($requestResponse.'@odata.NextLink') {
-            $requestUri = $requestResponse.'@odata.NextLink'
-        }
-        else {
-            $requestUri = $null
+            Stop-PSFFunction -String 'StringAssemblyError' -StringValues $url -ErrorRecord $_
         }
     }
+    process {
+        if (Test-PSFFunctionInterrupt) { return }
+        #$property = $usageReport[$Name].ResponseProperty
+        #$function = $usageReport[$Name].Function
+        $function = 'getPstnCalls'    
+        $graphApiParameters = @{
+            Method             = 'Get'
+            AuthorizationToken = 'Bearer {0}' -f $authorizationToken
+        }
+        
+        if ($PSCmdlet.ParameterSetName -eq "DateRange") {            
+            $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ('{0}(fromDateTime={1},toDateTime={2})' -f $function, $StartDate, $EndDate)
+        }
+        elseif ($PSCmdlet.ParameterSetName -eq "NumberDays") {
+            $today = [datetime]::Today
+            $toDateTime = $today.AddDays(1)
+            $toDateTimeString = Get-Date -Date $toDateTime -Format yyyy-MM-dd
+            $fromDateTime = $today.AddDays( - ($Days - 1))
+            $fromDateTimeString = Get-Date -Date $fromDateTime -Format yyyy-MM-dd
+            $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ('{0}(fromDateTime={1},toDateTime={2})' -f $function, $fromDateTimeString, $toDateTimeString)
+        }
+        
+        if (Test-PSFParameterBinding -Parameter Filter) {
+            $graphApiParameters['Filter'] = $Filter
+        }
+
+        if (Test-PSFParameterBinding -Parameter All) {
+            $graphApiParameters['All'] = $true
+        }
+
+        if (Test-PSFParameterBinding -Parameter PageSize) {
+            $graphApiParameters['Top'] = $PageSize
+        }
+        $reportResult = Invoke-GraphApiQuery @graphApiParameters
+        $reportResult | Select-PSFObject -Property $property -ExcludeProperty '@odata*'# -TypeName $typeName
+    }
+    end {}
 }

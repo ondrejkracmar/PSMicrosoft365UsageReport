@@ -3,6 +3,6 @@
     param()
     
     process {
-        Set-PSFConfig -Module 'PSOffice365Report' -Name 'Settings.AuthorizationToken' -Value 'None' -Hidden
+        Set-PSFConfig -Module $ENV:ModuleName -Name 'Settings.AuthorizationToken' -Value 'None' -Hidden
     }
 }       

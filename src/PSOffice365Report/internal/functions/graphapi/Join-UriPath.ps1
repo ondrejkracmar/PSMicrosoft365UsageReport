@@ -1,5 +1,4 @@
-﻿
-function Join-UriPath {
+﻿function Join-UriPath {
     <#
     .DESCRIPTION
     Join-Path but for URL strings instead
