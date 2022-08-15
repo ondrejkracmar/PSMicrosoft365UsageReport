@@ -1,0 +1,35 @@
+﻿{
+    "Name": "EmailAppUsageUserDetail",
+    "Description": "Get details about which activities users performed on the various email apps.",
+    "Version": "1.0",
+    "Definition": {
+        "Function": "GetEmailAppUsageUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "isDeleted",
+            "deletedDate",
+            "lastActivityDate",
+            "mailForMac",
+            "outlookForMac",
+            "outlookForWindows",
+            "outlookForMobile",
+            "otherForMobile",
+            "outlookForWeb",
+            "pop3App",
+            "imap4App",
+            "smtpApp",
+            "reportPeriod"
+        ]
+    }
+}

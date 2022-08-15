@@ -1,0 +1,15 @@
+﻿{
+    "Name": "Office365ActivationsUserDetail",
+    "Description": "Get details about users who have activated Microsoft 365.",
+    "Version": "1.0",
+    "Definition": {
+        "Function": "getOffice365ActivationsUserDetail",
+        "Parameters": {},
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "userActivationCounts"
+        ]
+    }
+}

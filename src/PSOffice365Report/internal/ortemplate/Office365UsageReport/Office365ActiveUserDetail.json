@@ -1,0 +1,103 @@
+﻿{
+    "Name": "Office365ActiveUserDetail",
+    "Description": "Get details about Microsoft 365 active users.",
+    "Version": "1.0",
+    "Definition": {
+        "Function": "GetOffice365ActiveUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "ï»¿Report Refresh Date"
+            },
+            {
+                "Name": "DisplayName",
+                "Expression": "Display Name"
+            },
+            {
+                "Name": "UserPrincipalName",
+                "Expression": "User Principal Name"
+            },
+            {
+                "Name": "HasExchangeLicense",
+                "Expression": "Has Exchange License"
+            },
+            {
+                "Name": "HasOneDriveLicense",
+                "Expression": "Has OneDrive License"
+            },
+            {
+                "Name": "HasSharePointLicense",
+                "Expression": "Has SharePoint License"
+            },
+            {
+                "Name": "HasSkypeForBusinessLicense",
+                "Expression": "Has Skype For Business License"
+            },
+            {
+                "Name": "HasYammerLicense",
+                "Expression": "Has Yammer License"
+            },
+            {
+                "Name": "HasTeamsLicense",
+                "Expression": "Has Teams License"
+            },
+            {
+                "Name": "ExchangeLastActivityDate",
+                "Expression": "Exchange Last Activity Date"
+            },
+            {
+                "Name": "OneDriveLastActivityDate",
+                "Expression": "OneDrive Last Activity Date"
+            },
+            {
+                "Name": "SharePointLastActivityDate",
+                "Expression": "SharePoint Last Activity Date"
+            },
+            {
+                "Name": "SkypeForBusinessLastActivityDate",
+                "Expression": "Skype For Business Last Activity Date"
+            },
+            {
+                "Name": "YammerLastActivityDate",
+                "Expression": "Yammer Last Activity Date"
+            },
+            {
+                "Name": "TeamsLastActivityDate",
+                "Expression": "Teams Last Activity Date"
+            },
+            {
+                "Name": "ExchangeLicenseAssignDate",
+                "Expression": "Exchange License Assign Date"
+            },
+            {
+                "Name": "OneDriveLicenseAssignDate",
+                "Expression": "OneDrive License Assign Date"
+            },
+            {
+                "Name": "SharePointLicenseAssignDate",
+                "Expression": "SharePoin tLicense Assign Date"
+            },
+            {
+                "Name": "SkypeForBusinessLicenseAssignDate",
+                "Expression": "Skype For Business License Assign Date"
+            },
+            {
+                "Name": "YammerLicenseAssignDate",
+                "Expression": "Yammer License Assign Date"
+            },
+            {
+                "Name": "TeamsLicenseAssignDate",
+                "Expression": "Teams License Assign Date"
+            }
+        ]
+    }
+}

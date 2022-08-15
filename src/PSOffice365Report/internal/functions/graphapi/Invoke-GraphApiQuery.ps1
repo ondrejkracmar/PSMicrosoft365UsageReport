@@ -45,15 +45,15 @@
         }
 
         if (Test-PSFParameterBinding -Parameter Select) {
-            $querySelect = "{0}select={1}" -f '$',[System.Net.WebUtility]::UrlEncode($Select)
+            $querySelect = '{0}select={1}' -f '$',[System.Net.WebUtility]::UrlEncode($Select)
         }
 
         if (Test-PSFParameterBinding -Parameter Expand) {
-            $queryExpand = "{0}expand={1}" -f '$',[System.Net.WebUtility]::UrlEncode($Expand)
+            $queryExpand = '{0}expand={1}' -f '$',[System.Net.WebUtility]::UrlEncode($Expand)
         }
 
         if (Test-PSFParameterBinding -Parameter Format) {
-            $queryFormat = "{0}format={1}" -f '$',[System.Net.WebUtility]::UrlEncode($Format)
+            $queryFormat = '{0}format={1}' -f '$',[System.Net.WebUtility]::UrlEncode($Format)
         }
             
         if (Test-PSFParameterBinding -Parameter Top) {
@@ -66,7 +66,7 @@
             $queryUri = $Uri
         }
         else {
-            $queryUriString = "{0}?{1}"
+            $queryUriString = '{0}?{1}'
             $queryUri = $queryUriString -f $Uri, $queryString                
         }
         $queryParameters = @{

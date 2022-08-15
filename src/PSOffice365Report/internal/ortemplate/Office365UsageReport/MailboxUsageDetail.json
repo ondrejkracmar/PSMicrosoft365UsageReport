@@ -1,0 +1,33 @@
+﻿{
+    "Name": "MailboxUsageDetail",
+    "Description": "Get details about mailbox usage.",
+    "Version": "1.0",
+    "Definition": {
+        "Function": "GetMailboxUsageDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ]
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "displayName",
+            "isDeleted",
+            "deletedDate",
+            "createdDate",
+            "lastActivityDate",
+            "itemCount",
+            "storageUsedInBytes",
+            "deletedItemCount",
+            "deletedItemSizeInBytes",
+            "issueWarningQuotaInBytes",
+            "prohibitSendQuotaInBytes",
+            "prohibitSendReceiveQuotaInBytes",
+            "reportPeriod"
+        ]
+    }
+}

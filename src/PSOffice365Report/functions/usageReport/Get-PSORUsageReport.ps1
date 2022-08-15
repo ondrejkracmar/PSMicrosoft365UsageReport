@@ -60,16 +60,9 @@
     begin {
         try {
             $url = Join-UriPath -Uri (Get-GraphApiUriPath) -ChildPath "reports"
-            $authorizationToken  = Get-PSORAuthorizationToken
-            $usageReportFolder = Join-Path -Path (Join-Path -Path $ModuleRoot -ChildPath "internal") -ChildPath 'ortemplate'
-            $usageReportFile = Join-Path -Path $usageReportFolder -ChildPath 'Office365Report_UsageReport_v1.json'
-            if (Test-PSFPowerShell -PSMinVersion '7.0.0') {
-                $usageReport = Get-Content -Path $usageReportFile | ConvertFrom-Json -AsHashtable
-            }
-            else {
-                $usageReport = Get-Content -Path $usageReportFile | ConvertFrom-Json | ConvertTo-HashTable
-            }
-            $typeName = '{0}.{1}.{2}' -f $Env:ModuleName, 'UsageReport', $Name
+            $authorizationToken = Get-PSORAuthorizationToken            
+            $templateReportList = Initialize-PSORTemplateReport | Where-Object -Property Source -EQ -Value (Get-PSFConfigValue -FullName ('{0}.Template.Office365.UsageReport' -f $Env:ModuleName))
+            $typeName = '{0}.{1}.{2}' -f $Env:ModuleName, (Get-PSFConfigValue -FullName ('{0}.Template.Office365.UsageReport' -f $Env:ModuleName)), $Name
         } 
         catch {
             Stop-PSFFunction -String 'StringAssemblyError' -StringValues $url -ErrorRecord $_
@@ -78,25 +71,25 @@
 	
     process {
         if (Test-PSFFunctionInterrupt) { return }
-        $property = $usageReport[$Name].ResponseProperty
-        $function = $usageReport[$Name].Function
-
+        $usageReport = $templateReportList | Where-Object -Property Name -EQ -Value $Name
+        $responseProperty = $usageReport['Definition']['ResponseProperty']
+        $function = $usageReport['Definition']['Function']
         $graphApiParameters = @{
             Method             = 'Get'
-            AuthorizationToken = 'Bearer {0]' -f $authorizationToken
+            AuthorizationToken = ('Bearer {0}' -f $authorizationToken)
+            # Format =  (Get-PSFConfigValue -FullName ('{0}.{1}' -f $Env:ModuleName, 'Settings.ContentType'))
         }
-        if (Test-PSFParameterBinding -Parameter ParameterType, ParameterValue) {
+        
+        if (Test-PSFParameterBinding -Parameter @('ParameterType', 'ParameterValue')) {
+            
             if ($ParameterType -eq 'Period') {
-                $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ("{0}(period='{1}'){2}" -f $function, $ParameterValue, '?$format=application/json')
+                $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ("{0}(period='{1}')" -f $function, $ParameterValue)
             }
-            else {
-                $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ("{0}(date={1}){2}" -f $function, $ParameterValue, '?$format=application/json')
+            if ($ParameterType -eq 'Date') {
+                $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ("{0}(date={1})" -f $function, $ParameterValue)
             }
         }
-        else {
-            $graphApiParameters['Uri'] = Join-UriPath -Uri $url -ChildPath ("{0}{1}" -f $function, '?$format=application/json')
-        }
-			
+		
         if (Test-PSFParameterBinding -Parameter Filter) {
             $graphApiParameters['Filter'] = $Filter
         }
@@ -109,9 +102,8 @@
             $graphApiParameters['Top'] = $PageSize
         }
 
-        $reportResult = Invoke-GraphApiQuery @graphApiParameters
-        $reportResult | Select-PSFObject -Property $property -ExcludeProperty '@odata*' -TypeName $typeName
-
+        $reportResult = Invoke-GraphApiQuery @graphApiParameters | ConvertFrom-Csv
+        $reportResult | Select-PSFObject -Property $responseProperty -ExcludeProperty '@odata*' -TypeName $typeName
     }
 
     end {

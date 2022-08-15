@@ -60,7 +60,7 @@
 
     ) 
     begin { 
-        $loginURL = (Get-PSFConfigValue -Name ('{0}.{1}' -f $ENV:ModuleName,'Settings.AuthUrl'))
+        $loginURL = (Get-PSFConfigValue -Name ('{0}.{1}' -f $ENV:ModuleName,'Settings.AuthUri'))
         $scope = "https://graph.microsoft.com/.default"
         $tenantdomain = '{0}.{1}' -f $TenantName, 'onmicrosoft.com' 
     } 

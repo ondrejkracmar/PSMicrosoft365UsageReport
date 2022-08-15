@@ -1,0 +1,43 @@
+{
+    "Name": "TeamsUserActivityUserDetail",
+    "Description": "Get details about Microsoft Teams user activity by user.",
+    "Version": "1.0",
+    "Definition": {
+        "Function": "getTeamsUserActivityUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            "reportRefreshDate",
+            "userPrincipalName",
+            "lastActivityDate",
+            "isDeleted",
+            "deletedDate",
+            "assignedProducts",
+            "teamChatMessageCount",
+            "privateChatMessageCount",
+            "callCount",
+            "meetingCount",
+            "meetingsOrganizedCount",
+            "meetingsAttendedCount",
+            "adHocMeetingsOrganizedCount",
+            "adHocMeetingsAttendedCount",
+            "scheduledOneTimeMeetingsOrganizedCount",
+            "scheduledOneTimeMeetingsAttendedCount",
+            "scheduledRecurringMeetingsOrganizedCount",
+            "scheduledRecurringMeetingsAttendedCount",
+            "audioDuration",
+            "videoDuration",
+            "screenShareDuration",
+            "hasOtherAction",
+            "isLicensed",
+            "reportPeriod"
+        ]
+    }
+}
