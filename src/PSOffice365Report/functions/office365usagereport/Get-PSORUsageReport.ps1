@@ -58,15 +58,13 @@
     )
 
     begin {
-        try {
-            $url = Join-UriPath -Uri (Get-GraphApiUriPath) -ChildPath "reports"
-            $authorizationToken = Get-PSORAuthorizationToken            
-            $templateReportList = Initialize-PSORTemplateReport | Where-Object -Property Source -EQ -Value (Get-PSFConfigValue -FullName ('{0}.Template.Office365.UsageReport' -f $Env:ModuleName))
-            $typeName = '{0}.{1}.{2}' -f $Env:ModuleName, (Get-PSFConfigValue -FullName ('{0}.Template.Office365.UsageReport' -f $Env:ModuleName)), $Name
-        } 
-        catch {
-            Stop-PSFFunction -String 'StringAssemblyError' -StringValues $url -ErrorRecord $_
+        Assert-RestConnection -Service 'graph' -Cmdlet $PSCmdlet
+        $query = @{
+            '$select' = ((Get-PSFConfig -Module $script:ModuleName -Name Settings.GraphApiQuery.Select.PstnCalls).Value -join ',')
+            '$count'  = 'true'
+            '$top'    = $PageSize
         }
+        $templateReportList = Initialize-PSORTemplateReport | Where-Object -Property Source -EQ -Value (Get-PSFConfigValue -FullName ('{0}.Template.Office365.UsageReport' -f $Env:ModuleName))
     }
 	
     process {
