@@ -43,7 +43,7 @@
                 "Expression": "ReceiveCount"
             },
             {
-                "Name": "Read Count",
+                "Name": "ReadCount",
                 "Expression": "ReadCount"
             }
         ]
