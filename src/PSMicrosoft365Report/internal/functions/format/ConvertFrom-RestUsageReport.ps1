@@ -1,4 +1,4 @@
-function ConvertFrom-ResUsageReport {
+﻿function ConvertFrom-RestUsageReport {
 	<#
 	.SYNOPSIS
 		Converts Microsoft 365 Usage report objects to look nice.
@@ -17,20 +17,19 @@ function ConvertFrom-ResUsageReport {
 	param (
 		[Parameter(ValueFromPipeline = $true)]
 		$InputObject,
-		[hashtabe]$ResponseProperty
+		[string]$Name,
+		[psobject[]]$ResponseProperty
 	)
 
 	process {
-		if ((-not $InputObject) -or ([string]::IsNullOrEmpty($InputObject.id)) ) { return }
-		[PSCustomObject]@{
-			PSTypeName    = 'PSMicrosoft365Report.UsageReport'
-			Id            = $InputObject.id
-			SkuId         = $InputObject.skuId
-			SkuPartNumber = $InputObject.skuPartNumber
-			AppliesTo     = $InputObject.appliesTo
-			ConsumedUnits = $InputObject.consumedUnits
-			PrepaidUnits  = $InputObject.prepaidUnits
-			ServicePlans  = $InputObject.servicePlans
+		if (-not $InputObject) { return }
+		
+		$outputObject = @{}
+		foreach ($itemResponseProperty in $ResponseProperty) {
+			
+			$outputObject[$itemResponseProperty.Name] = $InputObject.($itemResponseProperty.Expression)
 		}
+		$outputObject['PSTypeName'] = ('PSMicrosoft365Report.UsageReport.{0}' -f $Name)
+		[PSCustomObject]$outputObject
 	}
 }

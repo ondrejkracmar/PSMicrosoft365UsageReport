@@ -1,11 +1,10 @@
-﻿function Get-PSMicrosoftUsageReport {
+﻿function Get-PSMicrosof365tUsageReport {
     [CmdletBinding(DefaultParameterSetName = 'UsageReport',
         SupportsShouldProcess = $false,
         PositionalBinding = $true,
         ConfirmImpact = 'Medium')]
     param(
         [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $false, ParameterSetName = 'UsageReport')]
-        [Parameter(ParameterSetName = 'ReportName')]
         [ValidateNotNullOrEmpty()]
         [string[]]
         $Name,
@@ -28,7 +27,7 @@
         Assert-RestConnection -Service 'graph' -Cmdlet $PSCmdlet
         $query = @{
             '$count' = 'true'
-        #    '$top'   = $PageSize
+            #    '$top'   = $PageSize
         }
         $templateUsageReportList = Initialize-PSMicrosoft365ReportTemplate
     }
@@ -46,7 +45,8 @@
                     $url = Join-UriPath -Uri reports -ChildPath ("{0}(date='{1}')" -f $usageReportDefinition.Function, $ParameterValue)
                 }
             }
-            Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get | ConvertFrom-Csv | ConvertFrom-RestUsageReport -ResponseProperty $usageReportDefinition.ResponseProperty
+            Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
+            
         }
     }
 

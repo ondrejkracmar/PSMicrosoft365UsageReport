@@ -1,0 +1,1 @@
+Register-PSFTeppScriptblock -Name 'microsoft365usagereport.name' -ScriptBlock { ((Initialize-PSMicrosoft365ReportTemplate).GetEnumerator() | Select-Object -Property Name).Name  }

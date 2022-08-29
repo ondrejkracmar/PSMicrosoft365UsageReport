@@ -23,4 +23,7 @@ Set-PSFConfig -Module $script:ModuleName -Name 'Settings.AcceptType' -Value 'app
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.AuthorizationToken' -Value '' -Initialize -Validation 'string' -Description "Specifies the last authorization token of Graph Api to Microsoft 365."
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Format' -Value 'json' -Initialize -Validation 'string' -Description "Specifies the media format of the items returned from Microsoft Graph Api."
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.Level' -Value 'Default' -Initialize -Validation 'string' -Description "Query capabilities level (Default/Advanced). Default value is Default."
-Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.AdvancedQueryCapabilities.ConsistencyLevel ' -Value 'eventual' -Initialize -Validation 'string' -Description "Advanced query capabilities ConsistencyLevel settings."
+Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.AdvancedQueryCapabilities.ConsistencyLevel' -Value 'eventual' -Initialize -Validation 'string' -Description "Advanced query capabilities ConsistencyLevel settings."
+
+Set-PSFConfig -Module $script:ModuleName -Name 'Template.Microsoft365.Location' -Value ('{0}\{1}' -f $script:ModuleRoot,'internal\mrtemplate') -Initialize -Validation 'string' -Description "Location of json template of Microsoft 355 Repoort."
+
