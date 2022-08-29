@@ -1,4 +1,4 @@
-﻿function Connect-PSOMicrosoft365Report {
+﻿function Connect-PSMicrosoft365Report {
 	<#
 	.SYNOPSIS
 		Connect to the Azure AD object via Microsoft Graph API

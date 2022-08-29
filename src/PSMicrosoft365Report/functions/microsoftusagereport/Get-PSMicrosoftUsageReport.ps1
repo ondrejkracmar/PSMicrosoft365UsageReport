@@ -1,4 +1,4 @@
-﻿function Get-PSMRUsageReport {
+﻿function Get-PSMicrosoftUsageReport {
     [CmdletBinding(DefaultParameterSetName = 'UsageReport',
         SupportsShouldProcess = $false,
         PositionalBinding = $true,
@@ -30,7 +30,7 @@
             '$count' = 'true'
         #    '$top'   = $PageSize
         }
-        $templateUsageReportList = Initialize-PSORTemplateReport
+        $templateUsageReportList = Initialize-PSMicrosoft365ReportTemplate
     }
 	
     process {

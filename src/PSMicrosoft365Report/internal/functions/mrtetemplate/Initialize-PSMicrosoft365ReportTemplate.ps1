@@ -1,4 +1,4 @@
-﻿function Initialize-PSORTemplateReport {
+﻿function Initialize-PSMicrosoft365ReportTemplate {
     [CmdletBinding()]    
     param()
  

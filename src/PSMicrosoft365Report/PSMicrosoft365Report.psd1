@@ -1,6 +1,6 @@
 ﻿@{
 	# Script module or binary module file associated with this manifest
-	RootModule = 'PSOffice365Report.psm1'
+	RootModule = 'PSMicrosoft365Report.psm1'
 	
 	# Version number of this module.
 	ModuleVersion = '1.0.5'
@@ -18,15 +18,16 @@
 	Copyright = 'Copyright (c) 2021 Ondrej Kracmar'
 	
 	# Description of the functionality provided by this module
-	Description = 'Office 365 Reports via Graph API'
+	Description = 'Microsoft 365 Reports via Graph API'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
 	PowerShellVersion = '5.0'
 	
 	# Modules that must be imported into the global environment prior to importing
 	# this module
-	RequiredModules = @(
-		@{ ModuleName='PSFramework'; ModuleVersion='1.6.198' }
+	RequiredModules   = @(
+		@{ ModuleName = 'PSFramework'; ModuleVersion = '1.7.237' }
+		@{ ModuleName = 'RestConnect'; ModuleVersion = '1.0.10' }
 	)
 	
 	# Assemblies that must be loaded prior to importing this module
@@ -40,11 +41,8 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-		'Connect-PSOffice365Report',
-		'Disconnect-PSOffice365Report',
-		'Get-PSORUsageReport',
-		'Get-PSORTeamsDirectRoutingCall',
-		'Get-PSORTeamsPstnCall'
+		'Connect-PSMicrosoft365Report',
+		'Get-PSMicrosoftUsageReport'
 	)
 	
 	# Cmdlets to export from this module

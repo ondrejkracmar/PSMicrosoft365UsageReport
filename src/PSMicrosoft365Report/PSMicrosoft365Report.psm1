@@ -1,5 +1,5 @@
 ﻿$script:ModuleRoot = $PSScriptRoot
-$script:ModuleVersion = (Import-PowerShellDataFile -Path "$($script:ModuleRoot)\PSOffice365Report.psd1").ModuleVersion
+$script:ModuleVersion = (Import-PowerShellDataFile -Path "$($script:ModuleRoot)\PSMicrosoft365Report.psd1").ModuleVersion
 
 # Detect whether at some level dotsourcing was enforced
 $script:doDotSource = Get-PSFConfigValue -FullName PSOffice365Reports.Import.DoDotSource -Fallback $false
