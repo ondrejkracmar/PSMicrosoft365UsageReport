@@ -19,12 +19,12 @@
                 "Expression": "ï»¿Report Refresh Date"
             },
             {
-                "Name": "DisplayName",
-                "Expression": "Display Name"
-            },
-            {
                 "Name": "UserPrincipalName",
                 "Expression": "User Principal Name"
+            },
+            {
+                "Name": "DisplayName",
+                "Expression": "Display Name"
             },
             {
                 "Name": "HasExchangeLicense",
@@ -97,6 +97,10 @@
             {
                 "Name": "TeamsLicenseAssignDate",
                 "Expression": "Teams License Assign Date"
+            },
+            {
+                "Name": "AssignedProducts",
+                "Expression": "Assigned Products"
             }
         ]
     }

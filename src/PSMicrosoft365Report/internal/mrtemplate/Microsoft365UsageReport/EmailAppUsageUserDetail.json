@@ -14,22 +14,70 @@
             "Date": "YYYY-MM-DD"
         },
         "ResponseProperty": [
-            "reportRefreshDate",
-            "userPrincipalName",
-            "displayName",
-            "isDeleted",
-            "deletedDate",
-            "lastActivityDate",
-            "mailForMac",
-            "outlookForMac",
-            "outlookForWindows",
-            "outlookForMobile",
-            "otherForMobile",
-            "outlookForWeb",
-            "pop3App",
-            "imap4App",
-            "smtpApp",
-            "reportPeriod"
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "ï»¿Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "UserPrincipalName",
+                "Expression": "User Principal Name"
+            },
+            {
+                "Name": "DisplayName",
+                "Expression": "Display Name"
+            },
+            {
+                "Name": "isDeleted",
+                "Expression": "Is Deleted"
+            },
+            {
+                "Name": "DeletedDate",
+                "Expression": "Deleted Date"
+            },
+            {
+                "Name": "LastActivityDate",
+                "Expression": "Last Activity Date"
+            },
+            {
+                "Name": "MailForMac",
+                "Expression": "Mail For Mac"
+            },
+            {
+                "Name": "OutlookForMac",
+                "Expression": "Outlook For Mac"
+            },
+            {
+                "Name": "OutlookForWindows",
+                "Expression": "Outlook For Windows"
+            },
+            {
+                "Name": "OutlookForMobile",
+                "Expression": "Outlook For Mobile"
+            },
+            {
+                "Name": "OtherForMobile",
+                "Expression": "Other For Mobile"
+            },
+            {
+                "Name": "OutlookForWeb",
+                "Expression": "Outlook For Web"
+            },
+            {
+                "Name": "POP3App",
+                "Expression": "POP3 App"
+            },
+            {
+                "Name": "IMAP4App",
+                "Expression": "IMAP4 App"
+            },
+            {
+                "Name": "SMTPApp",
+                "Expression": "SMTP App"
+            }
         ]
     }
 }

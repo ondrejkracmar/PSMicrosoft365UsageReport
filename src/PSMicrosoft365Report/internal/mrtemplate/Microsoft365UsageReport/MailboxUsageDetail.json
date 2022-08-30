@@ -10,24 +10,82 @@
                 "D30",
                 "D90",
                 "D180"
-            ]
+            ],
+            "Date": "YYYY-MM-DD"
         },
         "ResponseProperty": [
-            "reportRefreshDate",
-            "userPrincipalName",
-            "displayName",
-            "isDeleted",
-            "deletedDate",
-            "createdDate",
-            "lastActivityDate",
-            "itemCount",
-            "storageUsedInBytes",
-            "deletedItemCount",
-            "deletedItemSizeInBytes",
-            "issueWarningQuotaInBytes",
-            "prohibitSendQuotaInBytes",
-            "prohibitSendReceiveQuotaInBytes",
-            "reportPeriod"
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "ï»¿Report Refresh Date"
+            },
+            {
+                "Name": "Report Period",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "UserPrincipalName",
+                "Expression": "User Principal Name"
+            },
+            {
+                "Name": "DisplayName",
+                "Expression": "Display Name"
+            },
+            {
+                "Name": "IsDeleted",
+                "Expression": "Is Deleted"
+            },
+            {
+                "Name": "DeletedDate",
+                "Expression": "Deleted Date"
+            },
+            {
+                "Name": "CreatedDate",
+                "Expression": "Created Date"
+            },
+            {
+                "Name": "LastActivityDate",
+                "Expression": "Last Activity Date"
+            },
+            {
+                "Name": "Item Count",
+                "Expression": "Item Count"
+            },
+            {
+                "Name": "StorageUsedByte",
+                "Expression": "Storage Used (Byte)"
+            },
+            {
+                "Name": "StorageUsedByte",
+                "Expression": "Storage Used (Byte)"
+            },
+            {
+                "Name": "IssueWarningQuotaByte",
+                "Expression": "Issue Warning Quota (Byte)"
+            },
+            {
+                "Name": "ProhibitSendQuotaByte",
+                "Expression": "Prohibit Send Quota (Byte)"
+            },
+            {
+                "Name": "ProhibitSendReceiveQuotaByte",
+                "Expression": "Prohibit Send/Receive Quota (Byte)"
+            },
+            {
+                "Name": "DeletedItemCount",
+                "Expression": "Deleted Item Count"
+            },
+            {
+                "Name": "DeletedItemSizeByte",
+                "Expression": "Deleted Item Size (Byte)"
+            },
+            {
+                "Name": "DeletedItemQuotaByte",
+                "Expression": "Deleted Item Quota (Byte)"
+            },
+            {
+                "Name": "HasArchive",
+                "Expression": "Has Archive"
+            }
         ]
     }
 }

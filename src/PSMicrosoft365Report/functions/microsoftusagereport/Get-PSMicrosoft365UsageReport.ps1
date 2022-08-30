@@ -35,8 +35,8 @@
     process {
         $templateReportList
         foreach ($report in $Name) {
-            $usageReport = $templateUsageReportList.GetEnumerator() | Where-Object -Property Name -EQ -Value $report
-            $usageReportDefinition = $usageReport['Definition']
+            $usageReport = $templateUsageReportList | Where-Object -Property Name -EQ -Value $report
+            $usageReportDefinition = $usageReport.Definition
             switch ($ParameterType) {
                 'Days' {
                     $url = Join-UriPath -Uri reports -ChildPath ("{0}(period='D{1}')" -f $usageReportDefinition.Function, $ParameterValue)
@@ -46,7 +46,6 @@
                 }
             }
             Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
-            
         }
     }
 

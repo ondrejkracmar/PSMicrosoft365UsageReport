@@ -23,12 +23,12 @@
                 "Expression": "Report Period"
             },
             {
-                "Name": "DisplayName",
-                "Expression": "Display Name"
-            },
-            {
                 "Name": "UserPrincipalName",
                 "Expression": "User Principal Name"
+            },
+            {
+                "Name": "DisplayName",
+                "Expression": "Display Name"
             },
             {
                 "Name": "LastActivityDate",
@@ -41,10 +41,6 @@
             {
                 "Name": "ReceiveCount",
                 "Expression": "ReceiveCount"
-            },
-            {
-                "Name": "ReadCount",
-                "Expression": "ReadCount"
             }
         ]
     }
