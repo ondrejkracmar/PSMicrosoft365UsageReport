@@ -14,30 +14,134 @@
             "Date": "YYYY-MM-DD"
         },
         "ResponseProperty": [
-            "reportRefreshDate",
-            "userPrincipalName",
-            "lastActivityDate",
-            "isDeleted",
-            "deletedDate",
-            "assignedProducts",
-            "teamChatMessageCount",
-            "privateChatMessageCount",
-            "callCount",
-            "meetingCount",
-            "meetingsOrganizedCount",
-            "meetingsAttendedCount",
-            "adHocMeetingsOrganizedCount",
-            "adHocMeetingsAttendedCount",
-            "scheduledOneTimeMeetingsOrganizedCount",
-            "scheduledOneTimeMeetingsAttendedCount",
-            "scheduledRecurringMeetingsOrganizedCount",
-            "scheduledRecurringMeetingsAttendedCount",
-            "audioDuration",
-            "videoDuration",
-            "screenShareDuration",
-            "hasOtherAction",
-            "isLicensed",
-            "reportPeriod"
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "ï»¿Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "UserId",
+                "Expression": "User Id"
+            },
+            {
+                "Name": "UserPrincipalName",
+                "Expression": "User Principal Name"
+            },
+            {
+                "Name": "IsDeleted",
+                "Expression": "Is Deleted"
+            },
+            {
+                "Name": "Deleted Date",
+                "Expression": "Deleted Date"
+            },
+            {
+                "Name": "LastActivityDate",
+                "Expression": "Last Activity Date"
+            },
+            {
+                "Name": "SharedChannelTenantDisplayNames",
+                "Expression": "Shared Channel Tenant Display Names"
+            },
+            {
+                "Name": "TeamChatMessageCount",
+                "Expression": "Team Chat Message Count"
+            },
+            {
+                "Name": "PrivateChatMessageCount",
+                "Expression": "Private Chat Message Count"
+            },
+            {
+                "Name": "CallCount",
+                "Expression": "Call Count"
+            },
+            {
+                "Name": "MeetingCount",
+                "Expression": "Meeting Count"
+            },
+            {
+                "Name": "PostMessages",
+                "Expression": "Post Messages"
+            },
+            {
+                "Name": "ReplyMessages",
+                "Expression": "Reply Messages"
+            },
+            {
+                "Name": "UrgentMessages",
+                "Expression": "Urgent Messages"
+            },
+            {
+                "Name": "MeetingsOrganizedCount",
+                "Expression": "Meetings Organized Count"
+            },
+            {
+                "Name": "MeetingsAttendedCount",
+                "Expression": "Meetings Attended Count"
+            },
+            {
+                "Name": "AdHocMeetingsOrganizedCount",
+                "Expression": "Ad Hoc Meetings Organized Count"
+            },
+            {
+                "Name": "AdHocMeetingsAttendedCount",
+                "Expression": "Ad Hoc Meetings Attended Count"
+            },
+            {
+                "Name": "AdHocMeetingsAttendedCount",
+                "Expression": "Ad Hoc Meetings Attended Count"
+            },
+            {
+                "Name": "ScheduledOne-timeMeetingsOrganizedCount",
+                "Expression": "Scheduled One-time Meetings Organized Count"
+            },
+            {
+                "Name": "ScheduledOne-timeMeetingsAttendedCount",
+                "Expression": "Scheduled One-time Meetings Attended Count"
+            },
+            {
+                "Name": "ScheduledRecurringMeetingsOrganizedCount",
+                "Expression": "Scheduled Recurring Meetings Organized Count"
+            },
+            {
+                "Name": "ScheduledRecurringMeetingsAttendedCount",
+                "Expression": "Scheduled Recurring Meetings Attended Count"
+            },
+            {
+                "Name": "AudioDuration",
+                "Expression": "Audio Duration"
+            },
+            {
+                "Name": "VideoDuration",
+                "Expression": "VideoDuration"
+            },
+            {
+                "Name": "ScreenShareDuration",
+                "Expression": "ScreenShareDuration"
+            },
+            {
+                "Name": "AudioDurationInSeconds",
+                "Expression": "Audio Duration In Seconds"
+            },
+            {
+                "Name": "VideoDurationInSeconds",
+                "Expression": "Video Duration In Seconds"
+            },
+            {
+                "Name": "ScreenShareDurationInSeconds",
+                "Expression": "Screen Share Duration In Seconds"
+            },
+            {
+                "Name": "HasOtherAction",
+                "Expression": "Has Other Action"
+            },
+            {
+                "Name": "IsLicensed",
+                "Expression": "Is Licensed"
+            }
         ]
     }
 }

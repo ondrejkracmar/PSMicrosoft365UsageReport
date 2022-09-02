@@ -1,0 +1,83 @@
+{
+    "Name": "TeamsDeviceUsageUserDetail",
+    "Description": "Get details about Microsoft Teams device usage by user.",
+    "Version": "1.0",
+    "Definition": {
+        "Function": "getTeamsDeviceUsageUserDetail",
+        "Parameters": {
+            "Period": [
+                "D7",
+                "D30",
+                "D90",
+                "D180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "ï»¿Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "UserId",
+                "Expression": "User Id"
+            },
+            {
+                "Name": "UserPrincipalName",
+                "Expression": "User Principal Name"
+            },
+            {
+                "Name": "IsDeleted",
+                "Expression": "Is Deleted"
+            },
+            {
+                "Name": "Deleted Date",
+                "Expression": "Deleted Date"
+            },
+            {
+                "Name": "LastActivityDate",
+                "Expression": "Last Activity Date"
+            },
+            {
+                "Name": "UsedWeb",
+                "Expression": "Used Web"
+            },
+            {
+                "Name": "UsedWindowsPhone",
+                "Expression": "Used Windows Phone"
+            },
+            {
+                "Name": "UsediOS",
+                "Expression": "Used iOS"
+            },
+            {
+                "Name": "UsedMac",
+                "Expression": "Used Mac"
+            },
+            {
+                "Name": "UsedAndroidPhone",
+                "Expression": "Used Android Phone"
+            },
+            {
+                "Name": "UsedWindows",
+                "Expression": "Used Windows"
+            },
+            {
+                "Name": "UsedChromeOS",
+                "Expression": "Used Chrome OS"
+            },
+            {
+                "Name": "UsedLinux",
+                "Expression": "Used Linux"
+            },
+            {
+                "Name": "IsLicensed",
+                "Expression": "Is Licensed"
+            }
+        ]
+    }
+}

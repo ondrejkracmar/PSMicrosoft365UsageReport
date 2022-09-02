@@ -1,1 +1,4 @@
 Register-PSFTeppScriptblock -Name 'microsoft365usagereport.name' -ScriptBlock { (Initialize-PSMicrosoft365ReportTemplate | Select-Object -Property Name).Name }
+
+Register-PSFTeppScriptblock -Name 'microsoft365usagereport.name.parametertype' -ScriptBlock { (Initialize-PSMicrosoft365ReportTemplate | Where-Object -Property Name -EQ -Value $fakeBoundParameter.Name  Select-Object -Property Name -ExpandProperty Definition).Parameters }
+Register-PSFTeppScriptblock -Name 'microsoft365usagereport.name.parametertype' -ScriptBlock { (Initialize-PSMicrosoft365ReportTemplate | Where-Object -Property Name -EQ -Value $fakeBoundParameter.Name  Select-Object -Property Name -ExpandProperty Definition).Parameters }

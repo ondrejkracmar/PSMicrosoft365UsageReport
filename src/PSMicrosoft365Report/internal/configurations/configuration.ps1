@@ -25,5 +25,6 @@ Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Format' -
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.Level' -Value 'Default' -Initialize -Validation 'string' -Description "Query capabilities level (Default/Advanced). Default value is Default."
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.AdvancedQueryCapabilities.ConsistencyLevel' -Value 'eventual' -Initialize -Validation 'string' -Description "Advanced query capabilities ConsistencyLevel settings."
 
-Set-PSFConfig -Module $script:ModuleName -Name 'Template.Microsoft365.Location' -Value ('{0}\{1}' -f $script:ModuleRoot,'internal\mrtemplate') -Initialize -Validation 'string' -Description "Location of json template of Microsoft 355 Repoort."
+$m365Report = Join-Path -Path (Join-Path -Path (Join-Path -Path $script:ModuleRoot -ChildPath 'internal') -ChildPath 'mrtemplate') -ChildPath 'Microsoft365UsageReport'
+Set-PSFConfig -Module $script:ModuleName -Name 'Template.Microsoft365.Location' -Value $m365Report -Initialize -Validation 'string' -Description "Location of json template of Microsoft 355 Repoort."
 

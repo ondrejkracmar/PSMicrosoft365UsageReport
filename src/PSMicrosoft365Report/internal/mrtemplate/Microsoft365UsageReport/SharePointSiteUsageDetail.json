@@ -1,9 +1,9 @@
 {
-    "Name": "OneDriveUsageAccountDetail",
-    "Description": "Get details about OneDrive usage by account.",
+    "Name": "SharePointSiteUsageDetail",
+    "Description": "Get details about SharePoint site usage.",
     "Version": "1.0",
     "Definition": {
-        "Function": "getOneDriveUsageAccountDetail",
+        "Function": "getSharePointSiteUsageDetail",
         "Parameters": {
             "Period": [
                 "D7",
@@ -14,7 +14,6 @@
             "Date": "YYYY-MM-DD"
         },
         "ResponseProperty": [
-            
             {
                 "Name": "ReportRefreshDate",
                 "Expression": "ï»¿Report Refresh Date"
@@ -22,10 +21,6 @@
             {
                 "Name": "ReportPeriod",
                 "Expression": "Report Period"
-            },
-            {
-                "Name": "SiteURL",
-                "Expression": "Site URL"
             },
             {
                 "Name": "OwnerPrincipalName",
@@ -44,12 +39,28 @@
                 "Expression": "Last Activity Date"
             },
             {
+                "Name": "SiteId",
+                "Expression": "Site Id"
+            },
+            {
+                "Name": "SiteURL",
+                "Expression": "Site URL"
+            },
+            {
+                "Name": "FileCount",
+                "Expression": "File Count"
+            },
+            {
                 "Name": "ActiveFileCount",
                 "Expression": "Active File Count"
             },
             {
-                "Name": "StorageUsedByte",
-                "Expression": "Storage Used (Byte)"
+                "Name": "PageViewCount",
+                "Expression": "Page View Count"
+            },
+            {
+                "Name": "Visited Page Count",
+                "Expression": "Visited Page Count"
             },
             {
                 "Name": "StorageUsedByte",
@@ -58,7 +69,13 @@
             {
                 "Name": "StorageAllocatedByte",
                 "Expression": "Storage Allocated (Byte)"
+            },
+            {
+                "Name": "RootWebTemplate",
+                "Expression": "Root Web Template"
             }
         ]
     }
 }
+
+
