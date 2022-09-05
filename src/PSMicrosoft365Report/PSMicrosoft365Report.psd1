@@ -3,7 +3,7 @@
 	RootModule = 'PSMicrosoft365Report.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.5'
+	ModuleVersion = '1.0.6'
 	
 	# ID used to uniquely identify this module
 	GUID = '2e6e0ced-59d5-4168-b7b8-677ee3dd22cc'
@@ -42,6 +42,7 @@
 	# Functions to export from this module
 	FunctionsToExport = @(
 		'Connect-PSMicrosoft365Report',
+		'Get-PSMicrosoft365ReportTemplate',
 		'Get-PSMicrosof365tUsageReport'
 	)
 	

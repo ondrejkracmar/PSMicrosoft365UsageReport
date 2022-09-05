@@ -5,11 +5,11 @@
     "Definition": {
         "Function": "GetOffice365ActiveUserDetail",
         "Parameters": {
-            "Period": [
-                "D7",
-                "D30",
-                "D90",
-                "D180"
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
             ],
             "Date": "YYYY-MM-DD"
         },
