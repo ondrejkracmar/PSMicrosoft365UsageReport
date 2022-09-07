@@ -29,7 +29,7 @@
 			$outputObject[$itemResponseProperty.Name] = $InputObject.($itemResponseProperty.Expression)
 		}
 		$outputObject['PSTypeName'] = ('PSMicrosoft365Report.UsageReport.{0}' -f $Name)
-		[PSCustomObject]$outputObject 
+		[PSCustomObject]$outputObject
  }
 		
 }

@@ -27,7 +27,7 @@
         Assert-RestConnection -Service 'graph' -Cmdlet $PSCmdlet
         $query = @{
             '$count' = 'true'
-            #    '$top'   = $PageSize
+            '$top'   = $PageSize
         }
         $templateUsageReportList = Get-PSMicrosoft365ReportTemplate
 

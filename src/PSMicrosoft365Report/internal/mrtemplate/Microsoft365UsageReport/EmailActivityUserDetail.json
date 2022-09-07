@@ -40,7 +40,7 @@
             },
             {
                 "Name": "ReceiveCount",
-                "Expression": "ReceiveCount"
+                "Expression": "Receive Count"
             }
         ]
     }
