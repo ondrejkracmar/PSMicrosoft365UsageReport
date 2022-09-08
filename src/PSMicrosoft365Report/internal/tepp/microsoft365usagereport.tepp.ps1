@@ -7,7 +7,7 @@ Register-PSFTeppScriptblock -Name 'microsoft365usagereport.name.parametervalue' 
             (Get-PSMicrosoft365ReportTemplate | Where-Object -Property Name -EQ $fakeBoundParameter.Name | Select-Object -ExpandProperty Definition | Select-Object -ExpandProperty Parameters).Days
         }
         'Date' {
-            For ($i = 1; $i -le 27; $i++) { ((Get-Date).AddDays(-$i) | Get-Date -Format 'yyyy-MM-dd').ToString() } 
+            For ($i = 3; $i -le 27; $i++) { ((Get-Date).AddDays(-$i) | Get-Date -Format 'yyyy-MM-dd').ToString() } 
         }
     }
 }
