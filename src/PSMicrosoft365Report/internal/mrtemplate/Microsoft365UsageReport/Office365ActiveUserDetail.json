@@ -19,6 +19,10 @@
                 "Expression": "ï»¿Report Refresh Date"
             },
             {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
                 "Name": "UserPrincipalName",
                 "Expression": "User Principal Name"
             },
@@ -84,7 +88,7 @@
             },
             {
                 "Name": "SharePointLicenseAssignDate",
-                "Expression": "SharePoin tLicense Assign Date"
+                "Expression": "SharePoint License Assign Date"
             },
             {
                 "Name": "SkypeForBusinessLicenseAssignDate",

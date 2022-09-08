@@ -95,7 +95,7 @@
                 "Expression": "Ad Hoc Meetings Attended Count"
             },
             {
-                "Name": "ScheduledOne-timeMeetingsOrganizedCount",
+                "Name": "ScheduledOneTimeMeetingsOrganizedCount",
                 "Expression": "Scheduled One-time Meetings Organized Count"
             },
             {
@@ -116,11 +116,11 @@
             },
             {
                 "Name": "VideoDuration",
-                "Expression": "VideoDuration"
+                "Expression": "Video Duration"
             },
             {
                 "Name": "ScreenShareDuration",
-                "Expression": "ScreenShareDuration"
+                "Expression": "Screen Share Duration"
             },
             {
                 "Name": "AudioDurationInSeconds",
