@@ -3,7 +3,7 @@
 	RootModule = 'PSMicrosoft365Report.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.7'
+	ModuleVersion = '1.0.8'
 	
 	# ID used to uniquely identify this module
 	GUID = '2e6e0ced-59d5-4168-b7b8-677ee3dd22cc'
@@ -25,10 +25,7 @@
 	
 	# Modules that must be imported into the global environment prior to importing
 	# this module
-	RequiredModules   = @(
-		@{ ModuleName = 'PSFramework'; ModuleVersion = '1.7.237' }
-		@{ ModuleName = 'RestConnect'; ModuleVersion = '1.0.10' }
-	)
+	RequiredModules   = @('PSFramework','RestConnect')
 	
 	# Assemblies that must be loaded prior to importing this module
 	# RequiredAssemblies = @('bin\PSOffice365Reports.dll')
