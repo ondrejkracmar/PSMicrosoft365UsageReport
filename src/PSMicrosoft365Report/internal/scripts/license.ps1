@@ -1,4 +1,4 @@
-﻿New-PSFLicense -Product 'PSOffice365Report' -Manufacturer 'i-sustem' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2021-04-15") -Text @"
+﻿New-PSFLicense -Product 'PSMicrosoft365Report' -Manufacturer 'i-system' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2021-04-15") -Text @"
 Copyright (c) 2021 KracmarOndrej
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
