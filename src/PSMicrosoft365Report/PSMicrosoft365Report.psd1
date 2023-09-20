@@ -38,8 +38,8 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-		'Connect-PSMicrosoft365Report',
-		'Get-PSMicrosoft365ReportTemplate',
+		'Connect-PSMicrosoft365Report'
+		'Get-PSMicrosoft365ReportTemplate'
 		'Get-PSMicrosof365tUsageReport'
 	)
 	
