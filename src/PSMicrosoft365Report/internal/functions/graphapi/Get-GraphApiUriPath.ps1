@@ -1,6 +1,20 @@
-﻿function Get-GraphApiUriPath
-<# Joins uri to a child path#>
-{
+﻿function Get-GraphApiUriPath {
+	<#
+	.SYNOPSIS
+        Return using Microsoft Graph API version.
+
+	.DESCRIPTION
+		Return using Microsoft Graph API version.
+
+	.PARAMETER GraphApiVersion
+		Microsoft Graph API version
+
+	.EXAMPLE
+		PS C:\> Get-GraphApiUriPath -GraphApiVersion v1.0
+
+		Return url path https://graph.microsoft.com/v1.0
+
+	#>
     [CmdletBinding(DefaultParametersetName="Uri")]
     param(
         [Parameter(ParameterSetName="ApiVersion", Mandatory=$false, Position=0)]
