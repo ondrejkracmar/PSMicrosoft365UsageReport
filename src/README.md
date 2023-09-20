@@ -1,6 +1,6 @@
 ﻿# Description
 
-Insert a useful description for the PSOffice365Reports project here.
+Insert a useful description for the PSMicrosoft365Report project here.
 
 Remember, it's the first thing a visitor will see.
 

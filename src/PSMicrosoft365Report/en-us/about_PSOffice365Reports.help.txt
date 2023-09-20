@@ -1,11 +1,11 @@
 ﻿TOPIC
-	about_PSOffice365Reports
+	about_PSMicrosoft365Report
 	
 SHORT DESCRIPTION
-	Explains how to use the PSOffice365Reports powershell module
+	Explains how to use the PSMicrosoft365Report powershell module
 	
 LONG DESCRIPTION
 	<Insert Content here>
 
 KEYWORDS
-	PSOffice365Reports
+	PSMicrosoft365Report

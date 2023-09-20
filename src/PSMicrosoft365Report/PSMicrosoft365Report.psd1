@@ -28,13 +28,13 @@
 	RequiredModules   = @('PSFramework','RestConnect')
 	
 	# Assemblies that must be loaded prior to importing this module
-	# RequiredAssemblies = @('bin\PSOffice365Reports.dll')
+	# RequiredAssemblies = @('bin\PSMicrosoft365Report.dll')
 	
 	# Type files (.ps1xml) to be loaded when importing this module
-	# TypesToProcess = @('xml\PSOffice365Reports.Types.ps1xml')
+	# TypesToProcess = @('xml\PSMicrosoft365Report.Types.ps1xml')
 	
 	# Format files (.ps1xml) to be loaded when importing this module
-	# FormatsToProcess = @('xml\PSOffice365Reports.Format.ps1xml')
+	# FormatsToProcess = @('xml\PSMicrosoft365Report.Format.ps1xml')
 	
 	# Functions to export from this module
 	FunctionsToExport = @(

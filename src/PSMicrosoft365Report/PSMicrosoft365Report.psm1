@@ -2,8 +2,8 @@
 $script:ModuleVersion = (Import-PowerShellDataFile -Path "$($script:ModuleRoot)\PSMicrosoft365Report.psd1").ModuleVersion
 
 # Detect whether at some level dotsourcing was enforced
-$script:doDotSource = Get-PSFConfigValue -FullName PSOffice365Reports.Import.DoDotSource -Fallback $false
-if ($PSOffice365Reports_dotsourcemodule) { $script:doDotSource = $true }
+$script:doDotSource = Get-PSFConfigValue -FullName PSMicrosoft365Report.Import.DoDotSource -Fallback $false
+if ($PSMicrosoft365Report_dotsourcemodule) { $script:doDotSource = $true }
 
 <#
 Note on Resolve-Path:
@@ -14,8 +14,8 @@ This is important when testing for paths.
 #>
 
 # Detect whether at some level loading individual module files, rather than the compiled module was enforced
-$importIndividualFiles = Get-PSFConfigValue -FullName PSOffice365Reports.Import.IndividualFiles -Fallback $false
-if ($PSOffice365Reports_importIndividualFiles) { $importIndividualFiles = $true }
+$importIndividualFiles = Get-PSFConfigValue -FullName PSMicrosoft365Report.Import.IndividualFiles -Fallback $false
+if ($PSMicrosoft365Report_importIndividualFiles) { $importIndividualFiles = $true }
 if (Test-Path (Resolve-PSFPath -Path "$($script:ModuleRoot)\..\.git" -SingleItem -NewChild)) { $importIndividualFiles = $true }
 if ("<was not compiled>" -eq '<was not compiled>') { $importIndividualFiles = $true }
 	

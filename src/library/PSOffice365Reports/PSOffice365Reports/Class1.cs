@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PSOffice365Reports
+namespace PSMicrosoft365Report
 {
     public class Class1
     {

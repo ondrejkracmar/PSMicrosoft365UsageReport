@@ -5,13 +5,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\..\PSOffice365Reports\bin</OutputPath>
-    <DocumentationFile>..\..\..\PSOffice365Reports\bin\PSOffice365Reports.xml</DocumentationFile>
+    <OutputPath>..\..\..\PSMicrosoft365Report\bin</OutputPath>
+    <DocumentationFile>..\..\..\PSMicrosoft365Report\bin\PSMicrosoft365Report.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Release)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\..\PSOffice365Reports\bin</OutputPath>
-    <DocumentationFile>..\..\..\PSOffice365Reports\bin\PSOffice365Reports.xml</DocumentationFile>
+    <OutputPath>..\..\..\PSMicrosoft365Report\bin</OutputPath>
+    <DocumentationFile>..\..\..\PSMicrosoft365Report\bin\PSMicrosoft365Report.xml</DocumentationFile>
   </PropertyGroup>
   
   <PropertyGroup>

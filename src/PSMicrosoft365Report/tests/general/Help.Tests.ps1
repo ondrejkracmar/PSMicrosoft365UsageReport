@@ -39,7 +39,7 @@ Param (
 	$CommandPath = @("$global:testroot\..\functions", "$global:testroot\..\internal\functions"),
 	
 	[string]
-	$ModuleName = "PSOffice365Reports",
+	$ModuleName = "PSMicrosoft365Report",
 	
 	[string]
 	$ExceptionsFile = "$global:testroot\general\Help.Exceptions.ps1"

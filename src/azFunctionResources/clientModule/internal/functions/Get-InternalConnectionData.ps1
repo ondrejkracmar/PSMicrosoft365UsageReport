@@ -31,13 +31,13 @@
 	
 	process
 	{
-		try { $uri = '{0}{1}' -f (Get-PSFConfigValue -FullName 'PSOffice365Reports.Client.Uri' -NotNull), $FunctionName }
+		try { $uri = '{0}{1}' -f (Get-PSFConfigValue -FullName 'PSMicrosoft365Report.Client.Uri' -NotNull), $FunctionName }
 		catch { $PSCmdlet.ThrowTerminatingError($_) }
 		$header = @{ }
 		
 		#region Authentication
-		$unprotectedToken = Get-PSFConfigValue -FullName 'PSOffice365Reports.Client.UnprotectedToken'
-		$protectedToken = Get-PSFConfigValue -FullName 'PSOffice365Reports.Client.ProtectedToken'
+		$unprotectedToken = Get-PSFConfigValue -FullName 'PSMicrosoft365Report.Client.UnprotectedToken'
+		$protectedToken = Get-PSFConfigValue -FullName 'PSMicrosoft365Report.Client.ProtectedToken'
 		
 		$authenticationDone = $false
 		if ($protectedToken -and -not $authenticationDone)

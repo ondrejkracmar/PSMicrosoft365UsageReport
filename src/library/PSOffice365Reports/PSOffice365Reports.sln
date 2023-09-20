@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{740BFAF6-C363-4B62-BD9C-FA27236D34A8}") = "PSOffice365Reports", "PSOffice365Reports\PSOffice365Reports.csproj", "{BC036D6B-9E3E-4ED8-91F5-9DD6B4454B3E}"
+Project("{740BFAF6-C363-4B62-BD9C-FA27236D34A8}") = "PSMicrosoft365Report", "PSMicrosoft365Report\PSMicrosoft365Report.csproj", "{BC036D6B-9E3E-4ED8-91F5-9DD6B4454B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

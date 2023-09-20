@@ -5,15 +5,15 @@
 *TempPoint*
 
 # Ignore staging info from Visual Studio
-library/PSOffice365Reports/.vs/*
-library/PSOffice365Reports/PSOffice365Reports/bin/*
-library/PSOffice365Reports/PSOffice365Reports/obj/*
+library/PSMicrosoft365Report/.vs/*
+library/PSMicrosoft365Report/PSMicrosoft365Report/bin/*
+library/PSMicrosoft365Report/PSMicrosoft365Report/obj/*
 
 # ignore PowerShell Studio MetaData
-PSOffice365Reports/PSOffice365Reports.psproj
-PSOffice365Reports/PSOffice365Reports.psproj.bak
-PSOffice365Reports/PSOffice365Reports.psprojs
-PSOffice365Reports/PSOffice365Reports.psproj
+PSMicrosoft365Report/PSMicrosoft365Report.psproj
+PSMicrosoft365Report/PSMicrosoft365Report.psproj.bak
+PSMicrosoft365Report/PSMicrosoft365Report.psprojs
+PSMicrosoft365Report/PSMicrosoft365Report.psproj
 
 # ignore the TestResults
 TestResults/*

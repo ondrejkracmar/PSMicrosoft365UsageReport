@@ -19,9 +19,9 @@ Write-PSFMessage -Level Important -Message "Importing Module"
 $global:testroot = $PSScriptRoot
 $global:__pester_data = @{ }
 
-Remove-Module PSOffice365Reports -ErrorAction Ignore
-Import-Module "$PSScriptRoot\..\PSOffice365Reports.psd1"
-Import-Module "$PSScriptRoot\..\PSOffice365Reports.psm1" -Force
+Remove-Module PSMicrosoft365Report -ErrorAction Ignore
+Import-Module "$PSScriptRoot\..\PSMicrosoft365Report.psd1"
+Import-Module "$PSScriptRoot\..\PSMicrosoft365Report.psm1" -Force
 
 # Need to import explicitly so we can use the configuration class
 Import-Module Pester
