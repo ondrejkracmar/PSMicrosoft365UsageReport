@@ -3,7 +3,7 @@
 	RootModule = 'PSMicrosoft365Report.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.8'
+	ModuleVersion = '1.0.0.1'
 	
 	# ID used to uniquely identify this module
 	GUID = '2e6e0ced-59d5-4168-b7b8-677ee3dd22cc'
@@ -78,6 +78,7 @@
 			
 			# ReleaseNotes of this module
 			# ReleaseNotes = ''
+			ExternalModuleDependencies = @("PSFramework",  "RestConnect")
 			
 		} # End of PSData hashtable
 		

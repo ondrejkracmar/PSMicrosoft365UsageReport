@@ -16,18 +16,14 @@
         [Parameter(Mandatory = $False, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $false, ParameterSetName = 'UsageReport')]
         [ValidateNotNullOrEmpty()]
         [string]
-        $ParameterValue,
-        [ValidateNotNullOrEmpty()]
-        [ValidateRange(1, 999)]
-        [int]
-        $PageSize = 100
+        $ParameterValue
     )
 
     begin {
         Assert-RestConnection -Service 'graph' -Cmdlet $PSCmdlet
         $query = @{
             '$count' = 'true'
-            '$top'   = $PageSize
+            '$top'   = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.PageSize' -f $script:ModuleName)
         }
         $templateUsageReportList = Get-PSMicrosoft365ReportTemplate
 

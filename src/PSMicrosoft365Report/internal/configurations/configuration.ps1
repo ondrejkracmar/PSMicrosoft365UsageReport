@@ -24,6 +24,7 @@ Set-PSFConfig -Module $script:ModuleName -Name 'Settings.AuthorizationToken' -Va
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Format' -Value 'json' -Initialize -Validation 'string' -Description "Specifies the media format of the items returned from Microsoft Graph Api."
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.Level' -Value 'Default' -Initialize -Validation 'string' -Description "Query capabilities level (Default/Advanced). Default value is Default."
 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.Query.AdvancedQueryCapabilities.ConsistencyLevel' -Value 'eventual' -Initialize -Validation 'string' -Description "Advanced query capabilities ConsistencyLevel settings."
+Set-PSFConfig -Module $script:ModuleName -Name 'Settings.GraphApiQuery.PageSize' -Value 100 -Initialize -Validation 'integer' -Description "Value of parameter PageSize invoke rest query."
 
 $m365Report = Join-Path -Path (Join-Path -Path (Join-Path -Path $script:ModuleRoot -ChildPath 'internal') -ChildPath 'mrtemplate') -ChildPath 'Microsoft365UsageReport'
 Set-PSFConfig -Module $script:ModuleName -Name 'Template.Microsoft365.Location' -Value $m365Report -Initialize -Validation 'string' -Description "Location of json template of Microsoft 355 Repoort."
