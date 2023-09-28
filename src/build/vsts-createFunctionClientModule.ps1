@@ -67,11 +67,11 @@ if (-not $WorkingDirectory)
 #endregion Handle Working Directory Defaults
 
 Write-PSFMessage -Level Host -Message 'Starting Build: Client Module'
-$parentModule = 'PSMicrosoft365Report'
-if (-not $ModuleName) { $ModuleName = 'PSMicrosoft365Report.Client' }
+$parentModule = 'PSMicrosoft365UsageReport'
+if (-not $ModuleName) { $ModuleName = 'PSMicrosoft365UsageReport.Client' }
 Write-PSFMessage -Level Host -Message 'Creating Folder Structure'
 $workingRoot = New-Item -Path $WorkingDirectory -Name $ModuleName -ItemType Directory
-$publishRoot = Join-Path -Path $WorkingDirectory -ChildPath 'publish\PSMicrosoft365Report'
+$publishRoot = Join-Path -Path $WorkingDirectory -ChildPath 'publish\PSMicrosoft365UsageReport'
 Copy-Item -Path "$($WorkingDirectory)\azFunctionResources\clientModule\functions" -Destination "$($workingRoot.FullName)\" -Recurse
 Copy-Item -Path "$($WorkingDirectory)\azFunctionResources\clientModule\internal" -Destination "$($workingRoot.FullName)\" -Recurse
 Copy-Item -Path "$($publishRoot)\en-us" -Destination "$($workingRoot.FullName)\" -Recurse
@@ -139,7 +139,7 @@ $functionsToExport = (Get-ChildItem -Path $functionFolder.FullName -Recurse -Fil
 
 #region Create Core Module Files
 # Get Manifest of published version, in order to catch build-phase changes such as module version.
-$originalManifestData = Import-PowerShellDataFile -Path "$publishRoot\PSMicrosoft365Report.psd1"
+$originalManifestData = Import-PowerShellDataFile -Path "$publishRoot\PSMicrosoft365UsageReport.psd1"
 $prereqHash = @{
 	ModuleName    = 'PSFramework'
 	ModuleVersion = (Get-Module PSFramework).Version
@@ -189,13 +189,13 @@ if ($LocalRepo)
 	# Dependencies must go first
 	Write-PSFMessage -Level Important -Message "Creating Nuget Package for module: PSFramework"
 	New-PSMDModuleNugetPackage -ModulePath (Get-Module -Name PSFramework).ModuleBase -PackagePath . -WarningAction SilentlyContinue
-	Write-PSFMessage -Level Important -Message "Creating Nuget Package for module: PSMicrosoft365Report"
+	Write-PSFMessage -Level Important -Message "Creating Nuget Package for module: PSMicrosoft365UsageReport"
 	New-PSMDModuleNugetPackage -ModulePath $workingRoot.FullName -PackagePath . -EnableException
 }
 else
 {
 	# Publish to Gallery
-	Write-PSFMessage -Level Important -Message "Publishing the PSMicrosoft365Report module to $($Repository)"
+	Write-PSFMessage -Level Important -Message "Publishing the PSMicrosoft365UsageReport module to $($Repository)"
 	Publish-Module -Path $workingRoot.FullName -NuGetApiKey $ApiKey -Force -Repository $Repository
 }
 #endregion Publish

@@ -16,7 +16,7 @@
 		The name of the repository to use for gathering dependencies from.
 #>
 param (
-	$WorkingDirectory = "$($env:SYSTEM_DEFAULTWORKINGDIRECTORY)\_PSMicrosoft365Report",
+	$WorkingDirectory = "$($env:SYSTEM_DEFAULTWORKINGDIRECTORY)\_PSMicrosoft365UsageReport",
 	
 	$Repository = 'PSGallery',
 
@@ -24,7 +24,7 @@ param (
 	$IncludeAZ
 )
 
-$moduleName = 'PSMicrosoft365Report'
+$moduleName = 'PSMicrosoft365UsageReport'
 
 # Prepare Paths
 Write-PSFMessage -Level Host -Message "Creating working folders"
