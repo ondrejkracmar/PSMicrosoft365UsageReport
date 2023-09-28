@@ -40,7 +40,7 @@
 	FunctionsToExport = @(
 		'Connect-PSMicrosotft365UsageReport'
 		'Get-PSMicrosoft365UsageReport'
-		'Invoke-PSMicrosof365tUsageReport'
+		'Invoke-PSMicrosof365UsageReport'
 	)
 	
 	# Cmdlets to export from this module
