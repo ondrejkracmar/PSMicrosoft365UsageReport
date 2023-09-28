@@ -1,4 +1,4 @@
-﻿function Connect-PSMicrosotft365UsageReport {
+﻿function Connect-PSMicrosoft365UsageReport {
 	<#
 	.SYNOPSIS
 		Connect to the Azure AD object via Microsoft Graph API

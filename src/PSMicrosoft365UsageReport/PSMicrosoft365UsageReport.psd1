@@ -38,7 +38,7 @@
 
 	# Functions to export from this module
 	FunctionsToExport = @(
-		'Connect-PSMicrosotft365UsageReport'
+		'Connect-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReport'
 		'Invoke-PSMicrosoft365tUsageReport'
 	)
