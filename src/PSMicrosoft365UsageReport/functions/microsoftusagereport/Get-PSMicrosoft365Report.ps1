@@ -13,7 +13,7 @@
 
 
     #>
-    [OutputType('PSMicrosoft365UsageReport.UsageReport.List')]
+    [OutputType([System.Collections.ArrayList])]
     [CmdletBinding()]
     param()
 
