@@ -1,4 +1,4 @@
-﻿function Invoke-PSMicrosof365tUsageReport {
+﻿function Invoke-PSMicrosoft365tUsageReport {
     <#
         .SYNOPSIS
             Return data of Microsoft365 Usage report.
