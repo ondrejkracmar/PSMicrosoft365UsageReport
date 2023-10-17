@@ -2,7 +2,7 @@
 # Example:
 Register-PSFTeppArgumentCompleter -Command Get-Alcohol -Parameter Type -Name PSMicrosoft365UsageReport.alcohol
 #>
-Register-PSFTeppArgumentCompleter -Command Invoke-PSMicrosof365tUsageReport -Parameter Name -Name 'microsoft365usagereport.name'
+Register-PSFTeppArgumentCompleter -Command Invoke-PSMicrosoft365UsageReport -Parameter Name -Name 'psmicrosoft365usagereport.name'
 
-Register-PSFTeppArgumentCompleter -Command Invoke-PSMicrosof365tUsageReport -Parameter Type -Name 'microsoft365usagereport.name.type'
-Register-PSFTeppArgumentCompleter -Command Invoke-PSMicrosof365tUsageReport -Parameter Value -Name 'microsoft365usagereport.name.value'
+Register-PSFTeppArgumentCompleter -Command Invoke-PSMicrosoft365UsageReport -Parameter Type -Name 'psmicrosoft365usagereport.name.type'
+Register-PSFTeppArgumentCompleter -Command Invoke-PSMicrosoft365UsageReport -Parameter Value -Name 'psmicrosoft365usagereport.name.value'

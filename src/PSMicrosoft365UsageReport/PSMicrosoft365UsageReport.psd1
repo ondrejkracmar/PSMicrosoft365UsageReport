@@ -3,7 +3,7 @@
 	RootModule = 'PSMicrosoft365UsageReport.psm1'
 
 	# Version number of this module.
-	ModuleVersion = '1.0.0.1'
+	ModuleVersion = '1.0.0.2'
 
 	# ID used to uniquely identify this module
 	GUID = '2e6e0ced-59d5-4168-b7b8-677ee3dd22cc'

@@ -24,7 +24,6 @@
 
             Get details about email activity users have performed from 23.9.203.
 
-
     #>
     [OutputType('PSMicrosoft365UsageReport.Report')]
     [CmdletBinding(DefaultParameterSetName = 'UsageReport',
@@ -53,30 +52,59 @@
             '$top'   = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.PageSize' -f $script:ModuleName)
         }
         $templateUsageReportList = Get-PSMicrosoft365UsageReport
+        $commandRetryCount = Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryCount' -f $script:ModuleName)
+        $commandRetryWait = New-TimeSpan -Seconds (Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryWaitIsSeconds' -f $script:ModuleName))
     }
 
     process {
         foreach ($report in $Name) {
             $usageReport = $templateUsageReportList | Where-Object -Property Name -EQ -Value $report
-            $query['$format'] = $usageReport.Definition.Format
-            switch ($Type) {
-                'Days' {
-                    $url = Join-UriPath -Uri reports -ChildPath ("{0}(period='D{1}')" -f $usageReport.Definition.Function, $Value)
+            if (-not ([object]::Equals($usageReport, $null))) {
+                $query['$format'] = $usageReport.Definition.Format
+                switch ($Type) {
+                    'Days' {
+                        if ($Value -in $usageReport.Definition.Parameters.Days) {
+                            $url = Join-UriPath -Uri reports -ChildPath ("{0}(period='D{1}')" -f $usageReport.Definition.Function, $Value)
+                        }
+                        else {
+                            if (Test-PSFPowerShell -PSMinVersion 7.0) {
+                                $dayList = ($usageReport.Definition.Parameters.Days | Join-String -SingleQuote -Separator ',')
+                            }
+                            else {
+                                $dayList = ($usageReport.Definition.Parameters.Days | ForEach-Object { "'{0}'" -f $_ }) -join ','
+                            }
+                            Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.DayFormat.Failed) -f $Value, $dayList)
+                        }
+                    }
+                    'Date' {
+                        if (($Value -match "^(20|21|22)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$") -and (-not([object]::Equals(($Value | Get-Date -ErrorAction SilentlyContinue), $null)))) {
+                            $url = Join-UriPath -Uri reports -ChildPath ("{0}(date={1})" -f $usageReport.Definition.Function, $Value)    
+                        }
+                        else {
+                            Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.DateFormat.Failed) -f $Value)
+                        }
+                    }
+                    default {
+                        $url = Join-UriPath -Uri reports -ChildPath ("{0}?{1}" -f $usageReport.Definition.Function, $Value)
+                    }
                 }
-                'Date' {
-                    $url = Join-UriPath -Uri reports -ChildPath ("{0}(date={1})" -f $usageReport.Definition.Function, $Value)
-                }
-                default {
-                    $url = Join-UriPath -Uri reports -ChildPath ("{0}?{1}" -f $usageReport.Definition.Function, $Value)
+                switch ($usageReport.Definition.Format) {
+                    'text/csv' {
+                        Invoke-PSFProtectedCommand -ActionString 'Report.Get' -ActionStringValues $report -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
+                            Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReport.Definition.ResponseProperty
+                        } -EnableException $EnableException -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+
+                    }
+                    'application/json' {
+                        Invoke-PSFProtectedCommand -ActionString 'Report.Get' -ActionStringValues $report -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
+                            Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get #| ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
+                        } -EnableException $EnableException -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+
+                    }
                 }
             }
-            switch ($usageReport.Definition.Format) {
-                'text/csv' {
-                    Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReport.Definition.ResponseProperty
-                }
-                'application/json' {
-                    Invoke-RestRequest -Service 'graph' -Path $url -Query $query -Method Get #| ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
-                }
+            else {
+                Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Get.Failed) -f $report)
             }
         }
     }
