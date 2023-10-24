@@ -1,9 +1,9 @@
 ﻿<#
 	.SYNOPSIS
-		Installs the PSOffice365Reports Module from github
+		Installs the PSMicrosoft365UsageReport Module from github
 		
 	.DESCRIPTION
-		This script installs the PSOffice365Reports Module from github.
+		This script installs the PSMicrosoft365UsageReport Module from github.
 		
 		It does so by ...
 		- downloading the specified branch as zip to $env:TEMP
@@ -42,13 +42,13 @@ Param (
 
 #region Configuration for cloning script
 # Name of the module that is being cloned
-$ModuleName = "PSOffice365Reports"
+$ModuleName = "PSMicrosoft365UsageReport"
 
 # Base path to the github repository
-$BaseUrl = "https://github.com/<InsertUsernameHere>/PSOffice365Reports"
+$BaseUrl = "https://github.com/<InsertUsernameHere>/PSMicrosoft365UsageReport"
 
 # If the module is in a subfolder of the cloned repository, specify relative path here. Empty string to skip.
-$SubFolder = "PSOffice365Reports"
+$SubFolder = "PSMicrosoft365UsageReport"
 #endregion Configuration for cloning script
 
 #region Parameter Calculation
