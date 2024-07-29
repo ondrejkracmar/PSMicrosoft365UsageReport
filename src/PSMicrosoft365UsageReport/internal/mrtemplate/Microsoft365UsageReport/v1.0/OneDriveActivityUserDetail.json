@@ -1,0 +1,66 @@
+{
+    "Name": "OneDriveActivityUserDetail",
+    "Description": "Get details about OneDrive activity by user.",
+    "Definition": [
+        {
+            "Version": "v1.0",
+            "Format": "text/csv",
+            "Function": "getOneDriveActivityUserDetail",
+            "Parameters": {
+                "Days": [
+                    "7",
+                    "30",
+                    "90",
+                    "180"
+                ],
+                "Date": "YYYY-MM-DD"
+            },
+            "ResponseProperty": [
+                {
+                    "Name": "ReportRefreshDate",
+                    "Expression": "ï»¿Report Refresh Date"
+                },
+                {
+                    "Name": "ReportPeriod",
+                    "Expression": "Report Period"
+                },
+                {
+                    "Name": "UserPrincipalName",
+                    "Expression": "User Principal Name"
+                },
+                {
+                    "Name": "IsDeleted",
+                    "Expression": "Is Deleted"
+                },
+                {
+                    "Name": "Deleted Date",
+                    "Expression": "Deleted Date"
+                },
+                {
+                    "Name": "LastActivityDate",
+                    "Expression": "Last Activity Date"
+                },
+                {
+                    "Name": "SharedInternallyFileCount",
+                    "Expression": "Shared Internally File Count"
+                },
+                {
+                    "Name": "SyncedFileCount",
+                    "Expression": "Synced File Count"
+                },
+                {
+                    "Name": "ViewedOrEditedFileCount",
+                    "Expression": "Viewed Or Edited File Count"
+                },
+                {
+                    "Name": "SharedExternallyFileCount",
+                    "Expression": "Shared Externally File Count"
+                },
+                {
+                    "Name": "AssignedProducts",
+                    "Expression": "Assigned Products"
+                }
+            ]
+        }
+    ]
+}

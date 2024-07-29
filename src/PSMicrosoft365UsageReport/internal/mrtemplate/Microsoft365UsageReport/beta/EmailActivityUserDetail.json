@@ -1,0 +1,50 @@
+﻿[
+    {
+        "Name": "EmailActivityUserDetail",
+        "Description": "Get details about Microsoft 365 active users.",
+        "Definition": {
+            "Version": "beta",
+            "Format": "application/json",
+            "Function": "GetEmailActivityUserDetail",
+            "Parameters": {
+                "Days": [
+                    "7",
+                    "30",
+                    "90",
+                    "180"
+                ],
+                "Date": "YYYY-MM-DD"
+            },
+            "ResponseProperty": [
+                {
+                    "Name": "ReportRefreshDate",
+                    "Expression": "ï»¿Report Refresh Date"
+                },
+                {
+                    "Name": "ReportPeriod",
+                    "Expression": "Report Period"
+                },
+                {
+                    "Name": "UserPrincipalName",
+                    "Expression": "User Principal Name"
+                },
+                {
+                    "Name": "DisplayName",
+                    "Expression": "Display Name"
+                },
+                {
+                    "Name": "LastActivityDate",
+                    "Expression": "Last Activity Date"
+                },
+                {
+                    "Name": "SendCount",
+                    "Expression": "Send Count"
+                },
+                {
+                    "Name": "ReceiveCount",
+                    "Expression": "Receive Count"
+                }
+            ]
+        }
+    }
+]

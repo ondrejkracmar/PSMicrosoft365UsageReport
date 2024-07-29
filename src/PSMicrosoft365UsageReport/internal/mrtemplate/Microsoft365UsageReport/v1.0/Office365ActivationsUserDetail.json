@@ -1,0 +1,58 @@
+﻿{
+    "Name": "Office365ActivationsUserDetail",
+    "Description": "Get details about users who have activated Microsoft 365.",
+    "Definition": [
+        {
+            "Version": "v1.0",
+            "Format": "text/csv",
+            "Function": "getOffice365ActivationsUserDetail",
+            "Parameters": {},
+            "ResponseProperty": [
+                {
+                    "Name": "ReportRefreshDate",
+                    "Expression": "ï»¿Report Refresh Date"
+                },
+                {
+                    "Name": "UserPrincipalName",
+                    "Expression": "User Principal Name"
+                },
+                {
+                    "Name": "DisplayName",
+                    "Expression": "Display Name"
+                },
+                {
+                    "Name": "ProductType",
+                    "Expression": "Product Type"
+                },
+                {
+                    "Name": "LastActivatedDate",
+                    "Expression": "Last Activated Date"
+                },
+                {
+                    "Name": "Windows",
+                    "Expression": "Windows"
+                },
+                {
+                    "Name": "Mac",
+                    "Expression": "Mac"
+                },
+                {
+                    "Name": "iOS",
+                    "Expression": "iOS"
+                },
+                {
+                    "Name": "Windows10Mobile",
+                    "Expression": "Windows 10 Mobile"
+                },
+                {
+                    "Name": "Android",
+                    "Expression": "Android"
+                },
+                {
+                    "Name": "ActivatedOnSharedComputer",
+                    "Expression": "Activated On Shared Computer"
+                }
+            ]
+        }
+    ]
+}

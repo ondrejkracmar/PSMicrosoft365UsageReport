@@ -1,0 +1,114 @@
+﻿{
+    "Name": "Office365ActiveUserDetail",
+    "Description": "Get details about Microsoft 365 active users.",
+    "Definition": [
+        {
+            "Version": "v1.0",
+            "Format": "text/csv",
+            "Function": "GetOffice365ActiveUserDetail",
+            "Parameters": {
+                "Days": [
+                    "7",
+                    "30",
+                    "90",
+                    "180"
+                ],
+                "Date": "YYYY-MM-DD"
+            },
+            "ResponseProperty": [
+                {
+                    "Name": "ReportRefreshDate",
+                    "Expression": "ï»¿Report Refresh Date"
+                },
+                {
+                    "Name": "ReportPeriod",
+                    "Expression": "Report Period"
+                },
+                {
+                    "Name": "UserPrincipalName",
+                    "Expression": "User Principal Name"
+                },
+                {
+                    "Name": "DisplayName",
+                    "Expression": "Display Name"
+                },
+                {
+                    "Name": "HasExchangeLicense",
+                    "Expression": "Has Exchange License"
+                },
+                {
+                    "Name": "HasOneDriveLicense",
+                    "Expression": "Has OneDrive License"
+                },
+                {
+                    "Name": "HasSharePointLicense",
+                    "Expression": "Has SharePoint License"
+                },
+                {
+                    "Name": "HasSkypeForBusinessLicense",
+                    "Expression": "Has Skype For Business License"
+                },
+                {
+                    "Name": "HasYammerLicense",
+                    "Expression": "Has Yammer License"
+                },
+                {
+                    "Name": "HasTeamsLicense",
+                    "Expression": "Has Teams License"
+                },
+                {
+                    "Name": "ExchangeLastActivityDate",
+                    "Expression": "Exchange Last Activity Date"
+                },
+                {
+                    "Name": "OneDriveLastActivityDate",
+                    "Expression": "OneDrive Last Activity Date"
+                },
+                {
+                    "Name": "SharePointLastActivityDate",
+                    "Expression": "SharePoint Last Activity Date"
+                },
+                {
+                    "Name": "SkypeForBusinessLastActivityDate",
+                    "Expression": "Skype For Business Last Activity Date"
+                },
+                {
+                    "Name": "YammerLastActivityDate",
+                    "Expression": "Yammer Last Activity Date"
+                },
+                {
+                    "Name": "TeamsLastActivityDate",
+                    "Expression": "Teams Last Activity Date"
+                },
+                {
+                    "Name": "ExchangeLicenseAssignDate",
+                    "Expression": "Exchange License Assign Date"
+                },
+                {
+                    "Name": "OneDriveLicenseAssignDate",
+                    "Expression": "OneDrive License Assign Date"
+                },
+                {
+                    "Name": "SharePointLicenseAssignDate",
+                    "Expression": "SharePoint License Assign Date"
+                },
+                {
+                    "Name": "SkypeForBusinessLicenseAssignDate",
+                    "Expression": "Skype For Business License Assign Date"
+                },
+                {
+                    "Name": "YammerLicenseAssignDate",
+                    "Expression": "Yammer License Assign Date"
+                },
+                {
+                    "Name": "TeamsLicenseAssignDate",
+                    "Expression": "Teams License Assign Date"
+                },
+                {
+                    "Name": "AssignedProducts",
+                    "Expression": "Assigned Products"
+                }
+            ]
+        }
+    ]
+}
