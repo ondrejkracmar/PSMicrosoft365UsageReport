@@ -3,7 +3,7 @@
 	RootModule = 'PSMicrosoft365UsageReport.psm1'
 
 	# Version number of this module.
-	ModuleVersion = '1.1.0.3'
+	ModuleVersion = '0.0.0'
 
 	# ID used to uniquely identify this module
 	GUID = '2e6e0ced-59d5-4168-b7b8-677ee3dd22cc'
@@ -21,7 +21,7 @@
 	Description = 'Microsoft 365 Reports via Graph API'
 
 	# Minimum version of the Windows PowerShell engine required by this module
-	PowerShellVersion = '5.0'
+	PowerShellVersion = '7.0'
 
 	# Modules that must be imported into the global environment prior to importing
 	# this module
