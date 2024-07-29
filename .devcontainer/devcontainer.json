@@ -33,6 +33,8 @@
 			"extensions": [
 				"ms-vscode.powershell",
 				"github.vscode-pull-request-github",
+				"GitHub.vscode-github-actions",
+				"EditorConfig.EditorConfig",
 				"LouisWT.regexp-preview"
 			]
 		}
