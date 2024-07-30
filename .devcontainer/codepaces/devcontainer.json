@@ -14,7 +14,8 @@
 		"ghcr.io/devcontainers/features/powershell:1": {
 			"modules": [
 				"PSFramework",
-				"Profiler"
+				"Profiler",
+				"Pester"
 			],
 			"powershellProfileURL": "https://gist.githubusercontent.com/ondrejkracmar/5beceaccb6bd72a7a8ce60993fb9beed/raw/828988ad6a88e0432cc928650bea3b957bba8e43/Profile.ps1"
 		}
@@ -32,6 +33,8 @@
 			"extensions": [
 				"ms-vscode.powershell",
 				"github.vscode-pull-request-github",
+				"GitHub.vscode-github-actions",
+				"EditorConfig.EditorConfig",
 				"LouisWT.regexp-preview"
 			]
 		}
