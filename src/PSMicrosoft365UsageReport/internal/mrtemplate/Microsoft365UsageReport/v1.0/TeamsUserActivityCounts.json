@@ -1,0 +1,55 @@
+{
+    "Name": "TeamsUserActivityUserCounts",
+    "Description": "Get the number of Microsoft Teams users by activity type.",
+    "Service" : "Teams",
+    "Type" : "Tenant",
+    "Definition": [
+        {
+            "Version": "v1.0",
+            "Format": "text/csv",
+            "Function": "getTeamsUserActivityUserCounts",
+            "Parameters": {
+                "Days": [
+                    "7",
+                    "30",
+                    "90",
+                    "180"
+                ]
+            },
+            "ResponseProperty": [
+                {
+                    "Name": "ReportRefreshDate",
+                    "Expression": "Report Refresh Date"
+                },
+                {
+                    "Name": "ReportDate",
+                    "Expression": "Report Date"
+                },
+                {
+                    "Name": "ReportPeriod",
+                    "Expression": "Report Period"
+                },
+                {
+                    "Name": "TeamChatMessages",
+                    "Expression": "Team Chat Messages"
+                },
+                {
+                    "Name": "PrivateChatMessages",
+                    "Expression": "Private Chat Messages"
+                },
+                {
+                    "Name": "Calls",
+                    "Expression": "Calls"
+                },
+                {
+                    "Name": "Meetings",
+                    "Expression": "Meetings"
+                },
+                {
+                    "Name": "OtherActionst",
+                    "Expression": "Other Actions"
+                }
+            ]
+        }
+    ]
+}

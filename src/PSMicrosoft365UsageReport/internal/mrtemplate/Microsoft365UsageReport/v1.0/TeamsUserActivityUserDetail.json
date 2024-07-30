@@ -1,6 +1,8 @@
 {
     "Name": "TeamsUserActivityUserDetail",
     "Description": "Get details about Microsoft Teams user activity by user.",
+    "Service" : "Teams",
+    "Type" : "User",
     "Definition": [
         {
             "Version": "v1.0",
@@ -18,7 +20,7 @@
             "ResponseProperty": [
                 {
                     "Name": "ReportRefreshDate",
-                    "Expression": "ï»¿Report Refresh Date"
+                    "Expression": "Report Refresh Date"
                 },
                 {
                     "Name": "ReportPeriod",
