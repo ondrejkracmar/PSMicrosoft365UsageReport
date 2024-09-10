@@ -77,14 +77,14 @@ Establish a connection to the graph API, prompting the user for login on their d
 
 ### EXAMPLE 2
 ```
-Connect-PSMicrosoft365UsageReporteReport -ClientID $clientID -TenantID $tenantID -Certificate $cert
+Connect-PSMicrosoft365UsageReport -ClientID $clientID -TenantID $tenantID -Certificate $cert
 ```
 
 Establish a connection to the graph API using the provided certificate.
 
 ### EXAMPLE 3
 ```
-Connect-PSMicrosoft365UsageReporteReport -ClientID $clientID -TenantID $tenantID -CertificatePath C:\secrets\certs\mde.pfx -CertificatePassword (Read-Host -AsSecureString)
+Connect-PSMicrosoft365UsageReport -ClientID $clientID -TenantID $tenantID -CertificatePath C:\secrets\certs\mde.pfx -CertificatePassword (Read-Host -AsSecureString)
 ```
 
 Establish a connection to the graph API using the provided certificate file.

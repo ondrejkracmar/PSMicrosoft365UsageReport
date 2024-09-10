@@ -17,9 +17,15 @@ Locale: en-US
 ### [Get-PSMicrosoft365UsageReport](Get-PSMicrosoft365UsageReport.md)
 {{ Fill in the Description }}
 
+### [Get-PSMicrosoft365UsageReportVersion](Get-PSMicrosoft365UsageReportVersion.md)
+{{ Fill in the Description }}
+
 ### [Get-ServiceCompletion](Get-ServiceCompletion.md)
 {{ Fill in the Description }}
 
 ### [Invoke-PSMicrosoft365UsageReport](Invoke-PSMicrosoft365UsageReport.md)
+{{ Fill in the Description }}
+
+### [Set-PSMicrosoft365UsageReportVersion](Set-PSMicrosoft365UsageReportVersion.md)
 {{ Fill in the Description }}
 
