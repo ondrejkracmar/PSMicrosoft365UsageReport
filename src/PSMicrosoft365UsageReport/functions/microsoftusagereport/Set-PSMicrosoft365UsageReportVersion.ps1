@@ -5,10 +5,10 @@
 
         .DESCRIPTION
             Set version of Microsoft 365 Usage Reports.
-        
+
         .PARAMETER Version
             Version of Microsoft365 Usage Report.
-        
+
         .PARAMETER EnableException
             This parameters disables user-friendly warnings and enables the throwing of exceptions. This is less user
             friendly, but allows catching exceptions in calling scripts.
@@ -32,7 +32,7 @@
 
     #>
     [OutputType()]
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess = $true)]
     param(
         [ValidateSet('v1.0', 'beta')]
         [string]$Version,

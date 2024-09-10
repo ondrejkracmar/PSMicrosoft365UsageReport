@@ -24,7 +24,7 @@ function Get-PSMicrosoft365UsageReport {
         .EXAMPLE
             PS C:\> Get-PSMicrosoft365UsageReport -Service Teams -Type User
 
-            Get list of Microsoft 365 Usage Teams Reports with user's details 
+            Get list of Microsoft 365 Usage Teams Reports with user's details
 
     #>
     [OutputType([UsageReport.Microsoft365UsageReport])]

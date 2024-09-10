@@ -1,4 +1,4 @@
-$UsageReportCode = @'
+﻿$UsageReportCode = @'
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace UsageReport
     }
 
     public class ResponseProperty
-    {   
+    {
         public ResponseProperty()
         {
 
@@ -29,9 +29,9 @@ namespace UsageReport
         public string Name;
         public string Expression;
     }
-    
+
     public class Definition
-    {   
+    {
         public Definition()
         {
 
@@ -43,7 +43,7 @@ namespace UsageReport
     }
 
     public class Microsoft365UsageReport
-    {   
+    {
         public Microsoft365UsageReport()
         {
 

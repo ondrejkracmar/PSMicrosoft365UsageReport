@@ -40,7 +40,6 @@
     [OutputType('UsageReport.PSMicrosoft365UsageReport.Report')]
     [CmdletBinding(DefaultParameterSetName = 'NoParameter',
         SupportsShouldProcess = $true,
-        PositionalBinding = $true,
         ConfirmImpact = 'Medium')]
     param(
         [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'SingleDate')]
