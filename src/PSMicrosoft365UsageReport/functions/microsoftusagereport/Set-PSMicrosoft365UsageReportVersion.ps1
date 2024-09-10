@@ -23,6 +23,12 @@
             This functionality is useful when you apply changes to many objects and want precise control over the operation of the Shell.
             A confirmation prompt is displayed for each object before the Shell modifies the object.
 
+        .PARAMETER Cofirm
+            The Force switch instructs the command to which it is applied to stop processing before any changes are made.
+            The command then prompts you to acknowledge each action before it continues.
+            When you use the Force switch, you can step through changes to objects to make sure that changes are made only to the specific objects that you want to change.
+            This functionality is useful when you apply changes to many objects and want precise control over the operation of the Shell.
+            A confirmation prompt is displayed for each object before the Shell modifies the object.
 
         .EXAMPLE
             PS C:\> Set-PSMicrosoft365UsageReportVersion -Version 'beta'
@@ -45,6 +51,12 @@
         }
         else {
             $confirm = $true
+        }
+        if ($Confirm.IsPresent) {
+            [bool]$confirm = $false
+        }
+        else {
+            [bool]$confirm = $true
         }
     }
     process {
