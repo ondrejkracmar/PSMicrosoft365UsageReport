@@ -1,0 +1,73 @@
+{
+    "Name": "EmailAppUsageUserCounts",
+    "Description": "Get the count of unique users that connected to Exchange Online using any email app.",
+    "Utility": "Microsoft365",
+    "Service": "ExchangeOnline",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getEmailAppUsageUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "MailForMac",
+                "Expression": "Mail For Mac"
+            },
+            {
+                "Name": "OutlookForMac",
+                "Expression": "Outlook For Mac"
+            },
+            {
+                "Name": "OutlookForWindows",
+                "Expression": "Outlook For Windows"
+            },
+            {
+                "Name": "OutlookForMobile",
+                "Expression": "Outlook For Mobile"
+            },
+            {
+                "Name": "OtherForMobile",
+                "Expression": "Other For Mobile"
+            },
+            {
+                "Name": "OutlookForWeb",
+                "Expression": "Outlook For Web"
+            },
+            {
+                "Name": "POP3App",
+                "Expression": "POP3 App"
+            },
+            {
+                "Name": "IMAP4App",
+                "Expression": "IMAP4 App"
+            },
+            {
+                "Name": "SMTPApp",
+                "Expression": "SMTP App"
+            }
+        ]
+    }
+}

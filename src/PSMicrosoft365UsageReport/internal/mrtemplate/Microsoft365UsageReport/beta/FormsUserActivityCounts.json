@@ -1,0 +1,49 @@
+{
+    "Name": "FormsUserActivityCounts",
+    "Description": "Get a report that provides the trend of activity count by activity type, over a selected period.",
+    "Utility": "Microsoft365",
+    "Service": "Forms",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getFormsUserActivityCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Forms",
+                "Expression": "Forms"
+            },
+            {
+                "Name": " AuthenticatedResponses",
+                "Expression": " Authenticated responses"
+            },
+            {
+                "Name": " AnonymousResponses",
+                "Expression": "Anonymous responses"
+            },
+            {
+                "Name": " LastActivityDate",
+                "Expression": " Last Activity Date"
+            }
+        ]
+    }
+}

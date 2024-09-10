@@ -1,0 +1,88 @@
+{
+    "Name": "Office365ServicesUserCounts",
+    "Description": "Get the count of users by activity type and service.",
+    "Utility": "Microsoft365",
+    "Service": "Office365",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getOffice365ServicesUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "ExchangeActive",
+                "Expression": "Exchange Active"
+            },
+            {
+                "Name": "ExchangeInactive",
+                "Expression": "Exchange Inactive"
+            },
+            {
+                "Name": "OneDrive Active",
+                "Expression": "OneDrive Active"
+            },
+            {
+                "Name": "OneDriveInactivet",
+                "Expression": "OneDrive Inactive"
+            },
+            {
+                "Name": "SharePointActive",
+                "Expression": "SharePoint Active"
+            },
+            {
+                "Name": "SharePointInactive",
+                "Expression": "SharePoint Inactive"
+            },
+            {
+                "Name": "SkypeForBusinessActive",
+                "Expression": "Skype For Business Active"
+            },
+            {
+                "Name": "SkypeForBusinessInactive",
+                "Expression": "Skype For Business Inactive"
+            },
+            {
+                "Name": "YammerActive",
+                "Expression": "Yammer Active"
+            },
+            {
+                "Name": "YammerInactive",
+                "Expression": "Yammer Inactive"
+            },
+            {
+                "Name": "TeamsActive",
+                "Expression": "Teams Active"
+            },
+            {
+                "Name": "TeamsInactive",
+                "Expression": "Teams Inactive"
+            },
+            {
+                "Name": "Office365Active",
+                "Expression": "Office 365 Active"
+            },
+            {
+                "Name": "Office365Inactive",
+                "Expression": "Office 365 Inactive"
+            }
+        ]
+    }
+}

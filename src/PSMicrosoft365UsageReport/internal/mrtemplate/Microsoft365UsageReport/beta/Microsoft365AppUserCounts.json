@@ -1,0 +1,61 @@
+{
+    "Name": "Microsoft365AppUserCounts",
+    "Description": "Get a report that provides the trend in the number of active users for each app (Outlook, Word, Excel, PowerPoint, OneNote, and Teams) in your organization.",
+    "Utility": "Microsoft365",
+    "Service": "Office365ProPlus",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getM365AppUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Outlook",
+                "Expression": "Outlook"
+            },
+            {
+                "Name": "Word",
+                "Expression": "Word"
+            },
+            {
+                "Name": "Excel",
+                "Expression": "Excel"
+            },
+            {
+                "Name": "PowerPoint",
+                "Expression": "PowerPoint"
+            },
+            {
+                "Name": "OneNote",
+                "Expression": "OneNote"
+            },
+            {
+                "Name": "Teams",
+                "Expression": "Teams"
+            }
+        ]
+    }
+}

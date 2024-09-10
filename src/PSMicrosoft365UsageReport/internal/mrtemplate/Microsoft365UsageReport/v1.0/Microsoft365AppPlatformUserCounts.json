@@ -1,0 +1,52 @@
+{
+    "Name": "Microsoft365AppPlatformUserCounts",
+    "Description": "Get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in organization.",
+    "Utility": "Microsoft365",
+    "Service": "Office365ProPlus",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getM365AppPlatformUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Windows",
+                "Expression": "Windows"
+            },
+            {
+                "Name": "Mac",
+                "Expression": "Mac"
+            },
+            {
+                "Name": "Mobile",
+                "Expression": "Mobile"
+            },
+            {
+                "Name": "Web",
+                "Expression": "Web"
+            }
+        ]
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "Name": "TeamsTeamActivityCounts",
+    "Description": "Get the number of team activities across Microsoft Teams.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getTeamsTeamActivityCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "ActiveUsers",
+                "Expression": "Active Users"
+            },
+            {
+                "Name": "ActiveChannels",
+                "Expression": "Active Channels"
+            },
+            {
+                "Name": "Guests",
+                "Expression": "Guests"
+            },
+            {
+                "Name": "Reactions",
+                "Expression": "Reactions"
+            },
+            {
+                "Name": "MeetingsOrganized",
+                "Expression": "Meetings Organized"
+            },
+            {
+                "Name": "PostMessages",
+                "Expression": "Post Messages"
+            },
+            {
+                "Name": "ChannelMessages",
+                "Expression": "Channel Messages"
+            },
+            {
+                "Name": "ActiveSharedChannels",
+                "Expression": "Active Shared Channels"
+            },
+            {
+                "Name": "ActiveExternalUsers",
+                "Expression": "Active External Users"
+            },
+            {
+                "Name": "ReplyMessages",
+                "Expression": "Reply Messages"
+            },
+            {
+                "Name": "UrgentMessages",
+                "Expression": "Urgent Messages"
+            },
+            {
+                "Name": "Mentions",
+                "Expression": "Mentions"
+            }
+        ]
+    }
+}

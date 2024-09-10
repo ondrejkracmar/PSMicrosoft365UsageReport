@@ -1,0 +1,37 @@
+{
+    "Name": "Office365ActivationsUserCounts",
+    "Description": "Get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computer.",
+    "Utility": "Microsoft365",
+    "Service": "Office365ProPlus",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getOffice365ActivationsUserCounts",
+        "Parameters": {},
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ProductType",
+                "Expression": "Product Type"
+            },
+            {
+                "Name": "Assigned",
+                "Expression": "Assigned"
+            },
+            {
+                "Name": "Activated",
+                "Expression": "Activated"
+            },
+            {
+                "Name": "SharedComputerActivation",
+                "Expression": "Shared Computer Activation"
+            }
+        ]
+    }
+}

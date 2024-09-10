@@ -1,0 +1,49 @@
+{
+    "Name": "OneDriveUsageAccountCounts",
+    "Description": "Get the trend in the number of active OneDrive for Business sites. Any site on which users viewed, modified, uploaded, downloaded, shared, or synced files is considered an active site.",
+    "Utility": "Microsoft365",
+    "Service": "OneDrive",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getOneDriveUsageAccountCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "SiteType",
+                "Expression": "Site Type"
+            },
+            {
+                "Name": "Total",
+                "Expression": "Total"
+            },
+            {
+                "Name": "Active",
+                "Expression": "Active"
+            }
+        ]
+    }
+}

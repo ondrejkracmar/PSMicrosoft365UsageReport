@@ -1,0 +1,48 @@
+{
+    "Name": "TeamsTeamCounts",
+    "Description": "Get the number of teams of a particular type in an instance of Microsoft Teams.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getTeamsTeamCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "PublicTeams",
+                "Expression": "Public Teams"
+            },
+            {
+                "Name": "ActivePublicTeams",
+                "Expression": "Active Public Teams"
+            },
+            {
+                "Name": "PrivateTeams",
+                "Expression": "Private Teams"
+            },
+            {
+                "Name": "ActivePrivateTeams",
+                "Expression": "Active Private Teams"
+            }
+        ]
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "Name": "EmailActivityCounts",
+    "Description": "Get email activity in organization.",
+    "Utility": "Microsoft365",
+    "Service": "ExchangeOnline",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": ["text/csv"],
+    "Definition": {
+        "Function": "getEmailActivityCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Send",
+                "Expression": "Send"
+            },
+            {
+                "Name": "Receive",
+                "Expression": "Receive"
+            },
+            {
+                "Name": "Read",
+                "Expression": "Read"
+            },
+            {
+                "Name": "MeetingCreated",
+                "Expression": "Meeting Created"
+            },
+            {
+                "Name": "MeetingInteracted",
+                "Expression": "Meeting Interacted"
+            }
+        ]
+    }
+}

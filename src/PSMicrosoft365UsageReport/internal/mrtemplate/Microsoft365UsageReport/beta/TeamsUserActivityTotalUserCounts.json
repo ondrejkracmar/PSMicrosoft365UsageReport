@@ -1,0 +1,57 @@
+{
+    "Name": "TeamsUserActivityTotalUserCounts",
+    "Description": "Get the number of Microsoft Teams licensed users by activity type. The activity types are number of teams chat messages, private chat messages, calls, and meetings.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getTeamsUserActivityTotalUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "TeamChatMessages",
+                "Expression": "Team Chat Messages"
+            },
+            {
+                "Name": "PrivateChatMessages",
+                "Expression": "Private Chat Messages"
+            },
+            {
+                "Name": "Calls",
+                "Expression": "Calls"
+            },
+            {
+                "Name": "Meetings",
+                "Expression": "Meetings"
+            },
+            {
+                "Name": "OtherActions",
+                "Expression": "Other Actions"
+            }
+        ]
+    }
+}

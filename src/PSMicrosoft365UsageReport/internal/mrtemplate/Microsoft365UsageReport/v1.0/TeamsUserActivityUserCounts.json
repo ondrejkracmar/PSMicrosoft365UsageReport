@@ -1,83 +1,56 @@
 {
-    "Name": "TeamsUserActivityCounts",
-    "Description": "Get the number of Microsoft Teams activities by activity type.",
-    "Service" : "Teams",
-    "Type" : "Tenant",
-    "Definition": [
-        {
-            "Version": "v1.0",
-            "Format": "text/csv",
-            "Function": "getTeamsUserActivityCounts",
-            "Parameters": {
-                "Days": [
-                    "7",
-                    "30",
-                    "90",
-                    "180"
-                ]
-            },
-            "ResponseProperty": [
-                {
-                    "Name": "ReportRefreshDate",
-                    "Expression": "Report Refresh Date"
-                },
-                {
-                    "Name": "ReportDate",
-                    "Expression": "Report Date"
-                },
-                {
-                    "Name": "ReportPeriod",
-                    "Expression": "Report Period"
-                },
-                {
-                    "Name": "TeamChatMessages",
-                    "Expression": "Team Chat Messages"
-                },
-                {
-                    "Name": "PostMessages",
-                    "Expression": "Post Messages"
-                },
-                {
-                    "Name": "ReplyMessages",
-                    "Expression": "Reply Messages"
-                },
-                {
-                    "Name": "PrivateChatMessages",
-                    "Expression": "Private Chat Messages"
-                },
-                {
-                    "Name": "Calls",
-                    "Expression": "Calls"
-                },
-                {
-                    "Name": "Meetings",
-                    "Expression": "Meetings"
-                },
-                {
-                    "Name": "TeamChatMessageCount",
-                    "Expression": "Team Chat Message Count"
-                },
-                {
-                    "Name": "AudioDuration",
-                    "Expression": "Audio Duration"
-                },
-                {
-                    "Name": "VideoDuration",
-                    "Expression": "Video Duration"
-                },
-                {
-                    "Name": "ScreenShareDuration",
-                    "Expression": "Screen Share Duration"
-                },
-                {
-                    "Name": "MeetingsOrganized",
-                    "Expression": "Meetings Organized"
-                },
-                {
-                    "Name": "MeetingsAttended",
-                    "Expression": "Meetings Attended"
-                }
+    "Name": "TeamsUserActivityUserCounts",
+    "Description": "Get the number of Microsoft Teams users by activity type. The activity types are number of teams chat messages, private chat messages, calls, or meetings.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getTeamsUserActivityUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
             ]
-        }
-    ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "TeamChatMessages",
+                "Expression": "Team Chat Messages"
+            },
+            {
+                "Name": "PrivateChatMessages",
+                "Expression": "Private Chat Messages"
+            },
+            {
+                "Name": "Calls",
+                "Expression": "Calls"
+            },
+            {
+                "Name": "Meetings",
+                "Expression": "Meetings"
+            },
+            {
+                "Name": "OtherActions",
+                "Expression": "Other Actions"
+            }
+        ]
+    }
 }

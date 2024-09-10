@@ -1,10 +1,13 @@
-﻿{
+{
     "Name": "EmailActivityUserDetail",
     "Description": "Get details about email activity users have performed.",
+    "Utility": "Microsoft365",
+    "Service": "ExchangeOnline",
+    "Type": "User",
+    "Version": "v1.0",
+    "Format": ["text/csv"],
     "Definition": {
-        "Version": "v1.0",
-        "Format": "text/csv",
-        "Function": "GetEmailActivityUserDetail",
+        "Function": "getEmailActivityUserDetail",
         "Parameters": {
             "Days": [
                 "7",
@@ -17,7 +20,7 @@
         "ResponseProperty": [
             {
                 "Name": "ReportRefreshDate",
-                "Expression": "ï»¿Report Refresh Date"
+                "Expression": "Report Refresh Date"
             },
             {
                 "Name": "ReportPeriod",
