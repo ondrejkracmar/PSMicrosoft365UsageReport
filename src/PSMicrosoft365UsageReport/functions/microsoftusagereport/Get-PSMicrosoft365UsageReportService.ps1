@@ -1,4 +1,4 @@
-﻿function Get-PSMicrosoft365UsageReportVersion {
+﻿function Get-PSMicrosoft365UsageReportService {
     <#
         .SYNOPSIS
             Get version of Microsoft 365 Usage Reports.
@@ -7,7 +7,7 @@
             Get version of Microsoft 365 Usage Reports.
 
         .EXAMPLE
-            PS C:\> Get-PSMicrosoft365UsageReportVersion
+            PS C:\> Get-PSMicrosoft365UsageReportService
 
             Get version (string) of Microsoft 365 Usage Reports
 

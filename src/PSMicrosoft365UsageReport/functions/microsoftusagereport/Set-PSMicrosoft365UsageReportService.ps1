@@ -1,4 +1,4 @@
-﻿function Set-PSMicrosoft365UsageReportVersion {
+﻿function Set-PSMicrosoft365UsageReportService {
     <#
         .SYNOPSIS
             Set version of Microsoft 365 Usage Reports.
@@ -31,7 +31,7 @@
             A confirmation prompt is displayed for each object before the Shell modifies the object.
 
         .EXAMPLE
-            PS C:\> Set-PSMicrosoft365UsageReportVersion -Version 'beta'
+            PS C:\> Set-PSMicrosoft365UsageReportService -Version 'beta'
 
             Set beta version of Microsoft 365 Usage Reports
 
@@ -46,17 +46,11 @@
         [switch]$Force
     )
     begin {
-        if ($Force.IsPresent) {
-            $confirm = $false
+        if ($Force.IsPresent -and (-not $Confirm.IsPresent)) {
+            [bool]$cmdLetConfirm = $false
         }
         else {
-            $confirm = $true
-        }
-        if ($Confirm.IsPresent) {
-            [bool]$confirm = $false
-        }
-        else {
-            [bool]$confirm = $true
+            [bool]$cmdLetConfirm = $true
         }
     }
     process {
@@ -67,7 +61,7 @@
             elseif ($Version -eq 'beta') {
                 Set-PSFConfig -Module $script:ModuleName -Name 'Settings.DefaultService' -Value 'PSMicrosoft365UsageReport.GraphBeta'
             }
-        } -EnableException $EnableException -Confirm:$($confirm) -PSCmdlet $PSCmdlet -Continue
+        } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue
         if (Test-PSFFunctionInterrupt) { return }
     }
     end {}

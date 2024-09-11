@@ -4,4 +4,5 @@ Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.name.days' -ScriptB
 
 Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.utility' -ScriptBlock { (Get-PSMicrosoft365UsageReport | Select-Object -Property Utility -Unique).Utility }
 Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.Service' -ScriptBlock { (Get-PSMicrosoft365UsageReport | Select-Object -Property Service -Unique).Service }
-Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.Type' -ScriptBlock { (Get-PSMicrosoft365UsageReport | Select-Object -Property Type -Unique).Type }
+Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.type' -ScriptBlock { (Get-PSMicrosoft365UsageReport | Select-Object -Property Type -Unique).type }
+Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.format' -ScriptBlock { (Get-PSMicrosoft365UsageReport | Where-Object -Property Name -Value $fakeBoundParameter.Name -EQ).Format }

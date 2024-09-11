@@ -48,8 +48,7 @@
         #>
     [OutputType('UsageReport.PSMicrosoft365UsageReport.Report')]
     [CmdletBinding(DefaultParameterSetName = 'NoParameter',
-        SupportsShouldProcess = $true,
-        ConfirmImpact = 'Medium')]
+        SupportsShouldProcess = $true)]
     param(
         [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'SingleDate')]
         [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'NumberDays')]
@@ -111,17 +110,11 @@
         [UsageReport.Microsoft365UsageReport[]]$templateUsageReportList = Get-PSMicrosoft365UsageReport
         [int]$commandRetryCount = Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryCount' -f $script:ModuleName)
         [System.TimeSpan]$commandRetryWait = New-TimeSpan -Seconds (Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryWaitInSeconds' -f $script:ModuleName))
-        if ($Force.IsPresent) {
-            [bool]$confirm = $false
+        if ($Force.IsPresent -and (-not $Confirm.IsPresent)) {
+            [bool]$cmdLetConfirm = $false
         }
         else {
-            [bool]$confirm = $true
-        }
-        if ($Confirm.IsPresent) {
-            [bool]$confirm = $false
-        }
-        else {
-            [bool]$confirm = $true
+            [bool]$cmdLetConfirm = $true
         }
         [string]$defaultFormat = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.Format' -f $script:ModuleName)
     }
@@ -173,19 +166,19 @@
                 'text/csv' {
                     Invoke-PSFProtectedCommand -ActionString 'Report.Invoke' -ActionStringValues $usageReport.Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
                         Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$false -WarningAction SilentlyContinue | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReport.Definition.ResponseProperty
-                    } -EnableException $EnableException -Confirm:$($confirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+                    } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
                     if (Test-PSFFunctionInterrupt) { return }
                 }
                 'application/json' {
                     Invoke-PSFProtectedCommand -ActionString 'Report.Invoke' -ActionStringValues $usageReport.Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
                         Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$false -WarningAction SilentlyContinue #| ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
-                    } -EnableException $EnableException -Confirm:$($confirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+                    } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
                     if (Test-PSFFunctionInterrupt) { return }
                 }
             }
         }
         else {
-            Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Get.Failed) -f $report)
+            Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Get.Failed) -f $usageReport.Name)
         }
     }
 
