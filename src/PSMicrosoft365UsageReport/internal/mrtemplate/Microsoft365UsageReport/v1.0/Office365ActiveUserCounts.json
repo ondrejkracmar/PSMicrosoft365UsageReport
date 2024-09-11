@@ -9,7 +9,7 @@
         "text/csv"
     ],
     "Definition": {
-        "Function": "Office365ActiveUserCounts",
+        "Function": "getOffice365ActiveUserCounts",
         "Parameters": {
             "Days": [
                 "7",

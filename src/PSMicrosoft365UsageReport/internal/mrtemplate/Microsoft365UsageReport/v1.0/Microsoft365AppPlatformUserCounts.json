@@ -6,7 +6,7 @@
     "Type": "Tenant",
     "Version": "v1.0",
     "Format": [
-        "application/json"
+        "text/csv"
     ],
     "Definition": {
         "Function": "getM365AppPlatformUserCounts",

@@ -1,5 +1,5 @@
 {
-    "Name": "TeamsUserActivityUserCounts",
+    "Name": "TeamsUserActivityCounts",
     "Description": "Get the number of Microsoft Teams users by activity type.",
     "Utility": "Microsoft365",
     "Service": "Teams",
@@ -9,7 +9,7 @@
         "text/csv"
     ],
     "Definition": {
-        "Function": "getTeamsUserActivityUserCounts",
+        "Function": "getTeamsUserActivityCounts",
         "Parameters": {
             "Days": [
                 "7",
