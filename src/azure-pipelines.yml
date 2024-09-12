@@ -64,7 +64,7 @@ steps:
           -LocalRepo
           -ModuleName "PSMicrosoft365UsageReport"
           -ModuleVersion '$(MajorMinorPatch)'
-          -PreRelease '$(PreReleaseLabel)$(CommitsSinceVersionSource)'
+          -PreRelease '$(PreReleaseLabel)'
           -CommitsSinceVersion '$(CommitsSinceVersionSource)'
 
    - task: PowerShell@2
