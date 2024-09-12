@@ -1,0 +1,56 @@
+{
+    "Name": "SharePointActivityUserCounts",
+    "Description": "Get the trend in the number of active users. A user is considered active if they have executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.",
+    "Utility": "Microsoft365",
+    "Service": "SharepointOnLine",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getSharePointActivityUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "VisitedPage",
+                "Expression": "Visited Page"
+            },
+            {
+                "Name": "ViewedOrEdited",
+                "Expression": "Viewed Or Edited"
+            },
+            {
+                "Name": "Synced",
+                "Expression": "Synced"
+            },
+            {
+                "Name": "SharedInternally",
+                "Expression": "Shared Internally"
+            },
+            {
+                "Name": "SharedExternally",
+                "Expression": "Shared Externally"
+            }
+        ]
+    }
+}

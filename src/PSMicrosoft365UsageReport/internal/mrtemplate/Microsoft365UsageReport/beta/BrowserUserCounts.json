@@ -1,0 +1,41 @@
+{
+    "Name": "BrowserUserCounts",
+    "Description": "Get a report that provides the trend in usage for the number of active users using Microsoft Edge when used to access the Microsoft 365 services over a selected period.",
+    "Utility": "Microsoft365",
+    "Service": "Office365",
+    "Type": "User",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getBrowserUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Edge",
+                "Expression": "Edge"
+            }
+        ]
+    }
+}

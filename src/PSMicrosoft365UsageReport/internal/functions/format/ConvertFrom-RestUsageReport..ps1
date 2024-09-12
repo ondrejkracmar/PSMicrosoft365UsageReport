@@ -28,7 +28,7 @@
 		foreach ($itemResponseProperty in $ResponseProperty) {
 			$outputObject[$itemResponseProperty.Name] = $InputObject.($itemResponseProperty.Expression)
 		}
-		$outputObject['PSTypeName'] = ('PSMicrosoft365UsageReport.UsageReport.{0}' -f $Name)
+		$outputObject['PSTypeName'] = ('UsageReport.Microsoft365UsageReport.{0}' -f $Name)
 		[PSCustomObject]$outputObject
  }
 

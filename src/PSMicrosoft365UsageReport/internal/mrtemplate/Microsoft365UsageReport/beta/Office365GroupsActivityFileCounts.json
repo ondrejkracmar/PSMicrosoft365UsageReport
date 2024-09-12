@@ -1,0 +1,45 @@
+{
+    "Name": "Office365GroupsActivityFileCounts",
+    "Description": "Get the total number of files and how many of them were active across all group sites associated with a Microsoft 365 group.",
+    "Utility": "Microsoft365",
+    "Service": "Office365Group",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getOffice365GroupsActivityFileCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Total",
+                "Expression": "Viewed Or Edited"
+            },
+            {
+                "Name": "Active",
+                "Expression": "Synced"
+            }
+        ]
+    }
+}

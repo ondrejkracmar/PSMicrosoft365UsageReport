@@ -1,0 +1,45 @@
+{
+    "Name": "MailboxUsageMailboxCounts",
+    "Description": "Get the total number of user mailboxes in your organization and how many are active each day of the reporting period. A mailbox is considered active if the user sent or read any email.",
+    "Utility": "Microsoft365",
+    "Service": "ExchangeOnline",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getMailboxUsageMailboxCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "Report Period",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Total",
+                "Expression": "Total"
+            },
+            {
+                "Name": "Active",
+                "Expression": "Active"
+            }
+        ]
+    }
+}

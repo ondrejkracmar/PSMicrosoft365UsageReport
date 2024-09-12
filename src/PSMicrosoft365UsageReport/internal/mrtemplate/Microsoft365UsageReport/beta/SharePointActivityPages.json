@@ -1,0 +1,41 @@
+{
+    "Name": "SharePointActivityPages",
+    "Description": "Get the number of unique pages visited by users.",
+    "Utility": "Microsoft365",
+    "Service": "SharepointOnLine",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getSharePointActivityPages",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "VisitedPageCount",
+                "Expression": "Visited Page Count"
+            }
+        ]
+    }
+}

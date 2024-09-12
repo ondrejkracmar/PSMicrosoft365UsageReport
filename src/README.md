@@ -28,4 +28,9 @@ Remember, it's the first thing a visitor will see.
 - Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
 - Validate (PowerShell Task; VSTS-Validate.ps1)
 - Build (PowerShell Task; VSTS-Build.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
+- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)### CSV
+
+If successful, this method returns a `302 Found` response that redirects to a preauthenticated download URL for the report. That URL can be found in the `Location` header in the response.
+
+Preauthenticated download URLs are only valid for a short period of time (a few minutes) and do not require an `Authorization` header.
+

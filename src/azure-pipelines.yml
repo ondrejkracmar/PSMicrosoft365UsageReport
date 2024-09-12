@@ -64,7 +64,7 @@ steps:
           -LocalRepo
           -ModuleName "PSMicrosoft365UsageReport"
           -ModuleVersion '$(MajorMinorPatch)'
-          -PreRelease '$(PreReleaseLabel)'
+          -PreRelease '$(PreReleaseLabel)$(CommitsSinceVersionSource)'
 
    - task: PowerShell@2
      displayName: Publish Nuget Package To Repository
@@ -80,7 +80,7 @@ steps:
           -PersonalAccessToken '$(personalAccessToken)'
           -ModuleName "PSMicrosoft365UsageReport"
           -ModuleVersion '$(MajorMinorPatch)'
-          -PreRelease '$(PreReleaseLabel)'
+          -PreRelease '$(PreReleaseLabel)$(CommitsSinceVersionSource)'
 
 
 

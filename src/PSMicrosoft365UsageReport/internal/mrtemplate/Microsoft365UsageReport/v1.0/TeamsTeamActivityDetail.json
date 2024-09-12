@@ -1,0 +1,97 @@
+{
+    "Name": "TeamsTeamActivityDetail",
+    "Description": "Get details about Microsoft Teams activity by team.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getTeamsTeamActivityDetail",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ],
+            "Date": "YYYY-MM-DD"
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "TeamId",
+                "Expression": "Team Id"
+            },
+            {
+                "Name": "TeamName",
+                "Expression": "Team Name"
+            },
+            {
+                "Name": "TeamType",
+                "Expression": "Team Type"
+            },
+            {
+                "Name": "LastActivityDate",
+                "Expression": "Last Activity Date"
+            },
+            {
+                "Name": "ActiveUsers",
+                "Expression": "Active Users"
+            },
+            {
+                "Name": "ActiveChannels",
+                "Expression": "Active Channels"
+            },
+            {
+                "Name": "Guests",
+                "Expression": "Guests"
+            },
+            {
+                "Name": "Reactions",
+                "Expression": "Reactions"
+            },
+            {
+                "Name": "MeetingsOrganized",
+                "Expression": "Meetings Organized"
+            },
+            {
+                "Name": "PostMessages",
+                "Expression": "Post Messages"
+            },
+            {
+                "Name": "ReplyMessages",
+                "Expression": "Reply Messages"
+            },
+            {
+                "Name": "ChannelMessages",
+                "Expression": "Channel Messages"
+            },
+            {
+                "Name": "UrgentMessages",
+                "Expression": "Urgent Messages"
+            },
+            {
+                "Name": "Mentions",
+                "Expression": "Mentions"
+            },
+            {
+                "Name": "ActiveSharedChannels",
+                "Expression": "Active Shared Channels"
+            },
+            {
+                "Name": "ActiveExternalUsers",
+                "Expression": "Active External Users"
+            }
+        ]
+    }
+}

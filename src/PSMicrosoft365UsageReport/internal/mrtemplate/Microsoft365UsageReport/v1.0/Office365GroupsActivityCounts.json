@@ -1,0 +1,52 @@
+{
+    "Name": "Office365GroupsActivityCounts",
+    "Description": "Get the number of group activities across group workloads.",
+    "Utility": "Microsoft365",
+    "Service": "Office365Group",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getOffice365GroupsActivityDetail",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "ExchangeEmailsReceived",
+                "Expression": "Exchange Emails Received"
+            },
+            {
+                "Name": "YammerMessagesPosted",
+                "Expression": "Yammer Messages Posted"
+            },
+            {
+                "Name": "YammerMessagesRead",
+                "Expression": "Yammer Messages Read"
+            },
+            {
+                "Name": "YammerMessagesLiked",
+                "Expression": "Yammer Messages Liked"
+            }
+        ]
+    }
+}

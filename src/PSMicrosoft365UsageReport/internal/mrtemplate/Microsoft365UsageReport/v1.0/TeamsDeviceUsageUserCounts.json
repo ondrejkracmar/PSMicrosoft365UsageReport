@@ -1,0 +1,68 @@
+{
+    "Name": "TeamsDeviceUsageUserCounts",
+    "Description": "Get the number of Microsoft Teams daily unique users by device type.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getTeamsDeviceUsageUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "Web",
+                "Expression": "Web"
+            },
+            {
+                "Name": "WindowsPhone",
+                "Expression": "Windows Phone"
+            },
+            {
+                "Name": "AndroidPhone",
+                "Expression": "Android Phone"
+            },
+            {
+                "Name": "iOS",
+                "Expression": "iOS"
+            },
+            {
+                "Name": "Mac",
+                "Expression": "Mac"
+            },
+            {
+                "Name": "Windows",
+                "Expression": "Windows"
+            },
+            {
+                "Name": "ChromeOS",
+                "Expression": "Chrome OS"
+            },
+            {
+                "Name": "Linux",
+                "Expression": "Linux"
+            }
+        ]
+    }
+}

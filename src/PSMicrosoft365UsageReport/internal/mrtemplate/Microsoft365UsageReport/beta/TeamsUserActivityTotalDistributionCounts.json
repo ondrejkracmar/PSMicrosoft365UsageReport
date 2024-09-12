@@ -1,0 +1,85 @@
+{
+    "Name": "TeamsUserActivityTotalDistributionCounts",
+    "Description": "Get the number of Microsoft Teams user activities over the selected period. The activity types are team chat messages, private chat messages, calls, meetings, meetings organized, meetings attended, audio duration, video duration, screen share duration, post messages, and reply messages.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getTeamsUserActivityTotalDistributionCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "TeamChatMessages",
+                "Expression": "Team Chat Messages"
+            },
+            {
+                "Name": "PostMessages",
+                "Expression": "Post Messages"
+            },
+            {
+                "Name": "ReplyMessages",
+                "Expression": "Reply Messages"
+            },
+            {
+                "Name": "PrivateChatMessages",
+                "Expression": "Private Chat Messages"
+            },
+            {
+                "Name": "Calls",
+                "Expression": "Calls"
+            },
+            {
+                "Name": "Meetings",
+                "Expression": "Meetings"
+            },
+            {
+                "Name": "TeamChatMessageCount",
+                "Expression": "Team Chat Message Count"
+            },
+            {
+                "Name": "AudioDuration",
+                "Expression": "Audio Duration"
+            },
+            {
+                "Name": "VideoDuration",
+                "Expression": "Video Duration"
+            },
+            {
+                "Name": "ScreenShareDuration",
+                "Expression": "Screen Share Duration"
+            },
+            {
+                "Name": "MeetingsOrganized",
+                "Expression": "Meetings Organized"
+            },
+            {
+                "Name": "MeetingsAttended",
+                "Expression": "Meetings Attended"
+            }
+        ]
+    }
+}

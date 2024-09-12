@@ -1,0 +1,65 @@
+{
+    "Name": "Office365ActiveUserCounts",
+    "Description": "Get the count of daily active users in the reporting period by product.",
+    "Utility": "Microsoft365",
+    "Service": "Office365",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getOffice365ActiveUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Office365",
+                "Expression": "Office 365"
+            },
+            {
+                "Name": "Exchange",
+                "Expression": "Exchange"
+            },
+            {
+                "Name": "OneDrive",
+                "Expression": "OneDrive"
+            },
+            {
+                "Name": "SharePoint",
+                "Expression": "SharePoint"
+            },
+            {
+                "Name": "SkypeForBusiness",
+                "Expression": "Skype For Business"
+            },
+            {
+                "Name": "Yammer",
+                "Expression": "Yammer"
+            },
+            {
+                "Name": "Teams",
+                "Expression": "Teams"
+            }
+        ]
+    }
+}

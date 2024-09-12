@@ -1,0 +1,44 @@
+{
+    "Name": "Office365GroupsActivityGroupCounts",
+    "Description": "Get the daily total number of groups and how many of them were active based on email conversations, Yammer posts, and SharePoint file activities.",
+    "Utility": "Microsoft365",
+    "Service": "Office365Group",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getOffice365GroupsActivityGroupCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "Total",
+                "Expression": "Total"
+            },
+            {
+                "Name": "Active",
+                "Expression": "Active"
+            }
+        ]
+    }
+}

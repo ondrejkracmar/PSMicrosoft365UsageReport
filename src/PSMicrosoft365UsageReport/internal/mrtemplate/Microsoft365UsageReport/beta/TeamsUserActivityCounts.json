@@ -1,0 +1,85 @@
+{
+    "Name": "TeamsUserActivityCounts",
+    "Description": "Get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.",
+    "Utility": "Microsoft365",
+    "Service": "Teams",
+    "Type": "Tenant",
+    "Version": "beta",
+    "Format": [
+        "text/csv",
+        "application/json"
+    ],
+    "Definition": {
+        "Function": "getTeamsUserActivityCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "TeamChatMessages",
+                "Expression": "Team Chat Messages"
+            },
+            {
+                "Name": "PostMessages",
+                "Expression": "Post Messages"
+            },
+            {
+                "Name": "ReplyMessages",
+                "Expression": "Reply Messages"
+            },
+            {
+                "Name": "PrivateChatMessages",
+                "Expression": "Private Chat Messages"
+            },
+            {
+                "Name": "Calls",
+                "Expression": "Calls"
+            },
+            {
+                "Name": "Meetings",
+                "Expression": "Meetings"
+            },
+            {
+                "Name": "TeamChatMessageCount",
+                "Expression": "Team Chat Message Count"
+            },
+            {
+                "Name": "AudioDuration",
+                "Expression": "Audio Duration"
+            },
+            {
+                "Name": "VideoDuration",
+                "Expression": "Video Duration"
+            },
+            {
+                "Name": "ScreenShareDuration",
+                "Expression": "Screen Share Duration"
+            },
+            {
+                "Name": "MeetingsOrganized",
+                "Expression": "Meetings Organized"
+            },
+            {
+                "Name": "MeetingsAttended",
+                "Expression": "Meetings Attended"
+            }
+        ]
+    }
+}

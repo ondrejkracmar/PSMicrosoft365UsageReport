@@ -1,0 +1,52 @@
+{
+    "Name": "OneDriveActivityUserCounts",
+    "Description": "Get the trend in the number of active OneDrive users.",
+    "Utility": "Microsoft365",
+    "Service": "OneDrive",
+    "Type": "Tenant",
+    "Version": "v1.0",
+    "Format": [
+        "text/csv"
+    ],
+    "Definition": {
+        "Function": "getOneDriveActivityUserCounts",
+        "Parameters": {
+            "Days": [
+                "7",
+                "30",
+                "90",
+                "180"
+            ]
+        },
+        "ResponseProperty": [
+            {
+                "Name": "ReportRefreshDate",
+                "Expression": "Report Refresh Date"
+            },
+            {
+                "Name": "ReportDate",
+                "Expression": "Report Date"
+            },
+            {
+                "Name": "ReportPeriod",
+                "Expression": "Report Period"
+            },
+            {
+                "Name": "ViewedOrEdited",
+                "Expression": "Viewed Or Edited"
+            },
+            {
+                "Name": "Synced",
+                "Expression": "Synced"
+            },
+            {
+                "Name": "SharedInternally",
+                "Expression": "Shared Internally"
+            },
+            {
+                "Name": "SharedExternally",
+                "Expression": "Shared Externally"
+            }
+        ]
+    }
+}

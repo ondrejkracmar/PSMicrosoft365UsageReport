@@ -9,11 +9,29 @@
         .PARAMETER Name
             Name of Microsoft365 Usage Report.
 
-        .PARAMETER Date
-            Specific 'Date' in format yyyy-mm-dd.
+        .PARAMETER Format
+            Output format text/csv or json.
 
-        .PARAMETER Days
-           Last report days (valid values aare 7, 30, 90, 180).
+        .PARAMETER EnableException
+            This parameters disables user-friendly warnings and enables the throwing of exceptions. This is less user
+            friendly, but allows catching exceptions in calling scripts.
+
+        .PARAMETER WhatIf
+            Enables the function to simulate what it will do instead of actually executing.
+
+        .PARAMETER Force
+            The Force switch instructs the command to which it is applied to stop processing before any changes are made.
+            The command then prompts you to acknowledge each action before it continues.
+            When you use the Force switch, you can step through changes to objects to make sure that changes are made only to the specific objects that you want to change.
+            This functionality is useful when you apply changes to many objects and want precise control over the operation of the Shell.
+            A confirmation prompt is displayed for each object before the Shell modifies the object.
+
+        .PARAMETER Confirm
+            The Force switch instructs the command to which it is applied to stop processing before any changes are made.
+            The command then prompts you to acknowledge each action before it continues.
+            When you use the Force switch, you can step through changes to objects to make sure that changes are made only to the specific objects that you want to change.
+            This functionality is useful when you apply changes to many objects and want precise control over the operation of the Shell.
+            A confirmation prompt is displayed for each object before the Shell modifies the object.
 
         .EXAMPLE
             PS C:\> Invoke-PSMicrosof365tUsageReport -Name EmailActivityUserDetail -Days 30
@@ -24,86 +42,143 @@
 
             Get details about email activity users have performed from 23.9.2023.
 
-    #>
-    [OutputType('PSMicrosoft365UsageReport.Report')]
-    [CmdletBinding(DefaultParameterSetName = 'UsageReport',
-        SupportsShouldProcess = $false,
-        PositionalBinding = $true,
-        ConfirmImpact = 'Medium')]
+            PS C:\> Invoke-PSMicrosof365tUsageReport -Name EmailActivityUserDetail -Date 2023-09-23 -force
+
+            Get details about email activity users have performed from 23.9.2023 without question to perform operation.
+        #>
+    [OutputType('UsageReport.PSMicrosoft365UsageReport.Report')]
+    [CmdletBinding(DefaultParameterSetName = 'NoParameter',
+        SupportsShouldProcess = $true)]
     param(
-        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $false, ParameterSetName = 'SingleDate')]
-        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $false, ParameterSetName = 'NumberDays')]
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'SingleDate')]
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'NumberDays')]
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'NoParameter')]
         [ValidateNotNullOrEmpty()]
-        [string]
-        $Name,
-        [Parameter(Mandatory = $True, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'SingleDate')]
-        [string]
-        $Date,
-        [Parameter(Mandatory = $True, ParameterSetName = 'NumberDays')]
-        [ValidateSet(7, 30, 90, 180)]
-        [int]
-        $Days
+        [string]$Name,
+        [string]$Format,
+        [switch]$EnableException,
+        [switch]$Force
     )
+    DynamicParam {
+        [UsageReport.Microsoft365UsageReport]$usageReport = Get-PSMicrosoft365UsageReport | Where-Object -Property Name -EQ -Value $Name
+        If (-not($null -eq $usageReport)) {
+            [System.Management.Automation.RuntimeDefinedParameterDictionary]$paramDictionary = New-Object System.Management.Automation.RuntimeDefinedParameterDictionary
+            If (-not($null -eq $usageReport.Definition.Parameters.Days)) {
+                if (-not($null -eq $usageReport.Definition.Parameters.Days)) {
+                    [System.Management.Automation.ParameterAttribute]$daysAttribute = New-Object System.Management.Automation.ParameterAttribute -Property @{
+                        Mandatory         = $true
+                        ParameterSetName  = 'NumberDays'
+                        ValueFromPipeline = $true
+                    }
+                    # create a validation set
+                    [System.Management.Automation.ValidateSetAttribute]$daysParameterValidateSet = New-Object System.Management.Automation.ValidateSetAttribute -ArgumentList @('7', '30', '90', '180')
+                    [System.Collections.ObjectModel.Collection[System.Attribute]]$attributeCollection = New-Object System.Collections.ObjectModel.Collection[System.Attribute]
+                    [void]$attributeCollection.Add($daysAttribute)
+                    [void]$attributeCollection.Add($daysParameterValidateSet)
+                    [System.Management.Automation.RuntimeDefinedParameter]$daysParam = New-Object System.Management.Automation.RuntimeDefinedParameter('Days', [String], $attributeCollection)
+                    [void]$paramDictionary.Add('Days', $daysParam)
+                }
+                if (-not($null -eq $usageReport.Definition.Parameters.Date)) {
+                    [System.Management.Automation.ParameterAttribute]$dateAttribute = New-Object System.Management.Automation.ParameterAttribute -Property @{
+                        Mandatory         = $true
+                        ParameterSetName  = 'SingleDate'
+                        ValueFromPipeline = $true
+                    }
+                    # create a validation set
+                    [scriptblock]$dateListScriptBlock = { For ($i = 2; $i -le 27; $i++) { ((Get-Date).AddDays(-$i) | Get-Date -Format 'yyyy-MM-dd').ToString() } }
+                    [object[]]$dateList = Invoke-Command -ScriptBlock $dateListScriptBlock
+                    [System.Management.Automation.ValidateSetAttribute]$dateParameterValidateSet = New-Object System.Management.Automation.ValidateSetAttribute -ArgumentList $dateList
+                    [System.Collections.ObjectModel.Collection[System.Attribute]]$attributeCollection = New-Object System.Collections.ObjectModel.Collection[System.Attribute]
+                    [void]$attributeCollection.Add($dateAttribute)
+                    [void]$attributeCollection.Add($dateParameterValidateSet)
+                    [System.Management.Automation.RuntimeDefinedParameter]$dateParam = New-Object System.Management.Automation.RuntimeDefinedParameter('Date', [String], $attributeCollection)
+                    [void]$paramDictionary.Add('Date', $dateParam)
+                }
+            }
+            return $paramDictionary
+        }
+
+    }
 
     begin {
-        $service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
+        [string]$service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
         Assert-EntraConnection -Service $service -Cmdlet $PSCmdlet
-        $query = @{
+        [hashtable]$query = @{
             '$count' = 'true'
             '$top'   = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.PageSize' -f $script:ModuleName)
         }
-        $templateUsageReportList = Get-PSMicrosoft365UsageReport
-        $commandRetryCount = Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryCount' -f $script:ModuleName)
-        $commandRetryWait = New-TimeSpan -Seconds (Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryWaitInSeconds' -f $script:ModuleName))
+        [UsageReport.Microsoft365UsageReport[]]$templateUsageReportList = Get-PSMicrosoft365UsageReport
+        [int]$commandRetryCount = Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryCount' -f $script:ModuleName)
+        [System.TimeSpan]$commandRetryWait = New-TimeSpan -Seconds (Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryWaitInSeconds' -f $script:ModuleName))
+        if ($Force.IsPresent -and (-not $Confirm.IsPresent)) {
+            [bool]$cmdLetConfirm = $false
+        }
+        else {
+            [bool]$cmdLetConfirm = $true
+        }
+        [string]$defaultFormat = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.Format' -f $script:ModuleName)
     }
 
     process {
-        $usageReport = $templateUsageReportList | Where-Object -Property Name -EQ -Value $Name
+        [UsageReport.Microsoft365UsageReport]$usageReport = $templateUsageReportList | Where-Object -Property Name -EQ -Value $Name
         if (-not ([object]::Equals($usageReport, $null))) {
-            $query['$format'] = $usageReport.Definition.Format
+            if (Test-PSFParameterBinding -ParameterName Format) {
+                [string]$useFormat = $Format
+            }
+            else {
+                if ($defaultFormat -in $usageReport.Format) {
+                    [string]$useFormat = $defaultFormat
+                }
+                else {
+                    [string]$useFormat = @($usageReport.Format)[0]
+                }
+            }
+
+            $query['$format'] = $useFormat
             switch ($PSCmdlet.ParameterSetName) {
                 'NumberDays' {
-                    if ($Days -in $usageReport.Definition.Parameters.Days) {
-                        $url = Join-UriPath -Uri reports -ChildPath ("{0}(period='D{1}')" -f $usageReport.Definition.Function, $Days)
+                    if ($PSBoundParameters.Days -in $usageReport.Definition.Parameters.Days) {
+                        [string]$url = Join-UriPath -Uri reports -ChildPath ("{0}(period='D{1}')" -f $usageReport.Definition.Function, $PSBoundParameters.Days)
                     }
                     else {
                         if (Test-PSFPowerShell -PSMinVersion 7.0) {
-                            $dayList = ($usageReport.Definition.Parameters.Days | Join-String -SingleQuote -Separator ',')
+                            [string]$dayList = ($usageReport.Definition.Parameters.Days | Join-String -SingleQuote -Separator ',')
                         }
                         else {
-                            $dayList = ($usageReport.Definition.Parameters.Days | ForEach-Object { "'{0}'" -f $_ }) -join ','
+                            [string]$dayList = ($usageReport.Definition.Parameters.Days | ForEach-Object { "'{0}'" -f $_ }) -join ','
                         }
-                        Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.DayFormat.Failed) -f $Days, $dayList)
+                        Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.DayFormat.Failed) -f $PSBoundParameters.Days, $dayList)
                     }
                 }
                 'SingleDate' {
-                    if (($Date -match "^(20|21|22)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$") -and (-not([object]::Equals(($Date | Get-Date -ErrorAction SilentlyContinue), $null)))) {
-                        $url = Join-UriPath -Uri reports -ChildPath ("{0}(date={1})" -f $usageReport.Definition.Function, $Date)
+                    if (($PSBoundParameters.Date -match "^(20|21|22)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$") -and (-not([object]::Equals(($PSBoundParameters.Date | Get-Date -ErrorAction SilentlyContinue), $null)))) {
+                        [string]$url = Join-UriPath -Uri reports -ChildPath ("{0}(date={1})" -f $usageReport.Definition.Function, $PSBoundParameters.Date)
                     }
                     else {
-                        Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.DateFormat.Failed) -f $Date)
+                        Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.DateFormat.Failed) -f $PSBoundParameters.Date)
                     }
                 }
-                default {
-                    $url = Join-UriPath -Uri reports -ChildPath ("{0}?{1}" -f $usageReport.Definition.Function, $Date)
+                'NoParameter' {
+                    [string]$url = Join-UriPath -Uri reports -ChildPath ("{0}" -f $usageReport.Definition.Function)
                 }
             }
-            switch ($usageReport.Definition.Format) {
+            switch ($useFormat) {
                 'text/csv' {
-                    Invoke-PSFProtectedCommand -ActionString 'Report.Get' -ActionStringValues $Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
-                        Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReport.Definition.ResponseProperty
-                    } -EnableException $EnableException -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
-
+                    Invoke-PSFProtectedCommand -ActionString 'Report.Invoke' -ActionStringValues $usageReport.Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
+                        Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$false -WarningAction SilentlyContinue | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReport.Definition.ResponseProperty
+                    } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+                    if (Test-PSFFunctionInterrupt) { return }
                 }
                 'application/json' {
-                    Invoke-PSFProtectedCommand -ActionString 'Report.Get' -ActionStringValues $report -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
-                        Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop #| ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
-                    } -EnableException $EnableException -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+                    Invoke-PSFProtectedCommand -ActionString 'Report.Invoke' -ActionStringValues $usageReport.Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
+                        Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$false -WarningAction SilentlyContinue #| ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
+                    } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
+                    if (Test-PSFFunctionInterrupt) { return }
                 }
             }
         }
         else {
-            Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Get.Failed) -f $report)
+            Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Get.Failed) -f $usageReport.Name)
         }
     }
 

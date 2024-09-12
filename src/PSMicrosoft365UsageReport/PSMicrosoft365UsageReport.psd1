@@ -31,16 +31,18 @@
 	# RequiredAssemblies = @('bin\PSMicrosoft365UsageReport.dll')
 
 	# Type files (.ps1xml) to be loaded when importing this module
-	# TypesToProcess = @('xml\PSMicrosoft365UsageReport.Types.ps1xml')
+	TypesToProcess = @('types\PSMicrosoft365UsageReportTypes.ps1xml')
 
 	# Format files (.ps1xml) to be loaded when importing this module
-	# FormatsToProcess = @('xml\PSMicrosoft365UsageReport.Format.ps1xml')
+	FormatsToProcess = @('views\PSMicrosoft365UsageReportT.Format.ps1xml')
 
 	# Functions to export from this module
 	FunctionsToExport = @(
 		'Connect-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReport'
+		'Get-PSMicrosoft365UsageReportService'
 		'Invoke-PSMicrosoft365UsageReport'
+		'Set-PSMicrosoft365UsageReportService'
 	)
 
 	# Cmdlets to export from this module
@@ -65,7 +67,7 @@
 		PSData = @{
 
 			# Tags applied to this module. These help with module discovery in online galleries.
-			# Tags = @()
+			Tags = @('Microsof365','Microsof365UsageReport','UsageReport','Report')
 
 			# A URL to the license for this module.
 			# LicenseUri = ''
