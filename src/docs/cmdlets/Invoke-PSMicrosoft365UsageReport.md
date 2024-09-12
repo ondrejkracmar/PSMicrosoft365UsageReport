@@ -14,20 +14,20 @@ Return data of Microsoft365 Usage report.
 
 ### NoParameter (Default)
 ```
-Invoke-PSMicrosoft365UsageReport -Name <String> [-Format <String>] [-EnableException] [-Force]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-PSMicrosoft365UsageReport -Name <String> [-Format <String>] [-EnableException] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### NumberDays
 ```
-Invoke-PSMicrosoft365UsageReport -Name <String> [-Format <String>] [-EnableException] [-Force]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-PSMicrosoft365UsageReport -Name <String> [-Format <String>] [-EnableException] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### SingleDate
 ```
-Invoke-PSMicrosoft365UsageReport -Name <String> [-Format <String>] [-EnableException] [-Force]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-PSMicrosoft365UsageReport -Name <String> [-Format <String>] [-EnableException] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,21 +115,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ProgressAction
-{{ Fill ProgressAction Description }}
-
-```yaml
-Type: System.Management.Automation.ActionPreference
-Parameter Sets: (All)
-Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

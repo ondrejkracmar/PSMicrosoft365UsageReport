@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Set-PSMicrosoft365UsageReportVersion
+# Set-PSMicrosoft365UsageReportService
 
 ## SYNOPSIS
 Set version of Microsoft 365 Usage Reports.
@@ -13,8 +13,8 @@ Set version of Microsoft 365 Usage Reports.
 ## SYNTAX
 
 ```
-Set-PSMicrosoft365UsageReportVersion [[-Version] <String>] [-EnableException] [-Force]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-PSMicrosoft365UsageReportService [[-Version] <String>] [-EnableException] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,7 +24,7 @@ Set version of Microsoft 365 Usage Reports.
 
 ### EXAMPLE 1
 ```
-Set-PSMicrosoft365UsageReportVersion -Version 'beta'
+Set-PSMicrosoft365UsageReportService -Version 'beta'
 ```
 
 Set beta version of Microsoft 365 Usage Reports
@@ -63,21 +63,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProgressAction
-{{ Fill ProgressAction Description }}
-
-```yaml
-Type: System.Management.Automation.ActionPreference
-Parameter Sets: (All)
-Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
