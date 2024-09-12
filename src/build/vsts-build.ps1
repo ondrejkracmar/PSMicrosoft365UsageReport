@@ -26,6 +26,9 @@ param (
 	[string]
 	$PreRelease,
 
+	[string]
+	$CommitsSinceVersionSource,
+
 	[switch]
 	$AutoVersion
 )
@@ -121,8 +124,8 @@ if ($AutoVersion) {
 }
 
 if (-not ([string]::IsNullOrEmpty($ModuleVersion))) {
-	if ((-not ([string]::IsNullOrEmpty($PreRelease))) -or ($PreRelease -eq '0')) {
-		Update-ModuleManifest -Path "$($publishDir.FullName)\$($ModuleName)\$($ModuleName).psd1" -ModuleVersion $ModuleVersion -Prerelease $PreRelease
+	if (-not ([string]::IsNullOrEmpty($PreRelease))) {
+		Update-ModuleManifest -Path "$($publishDir.FullName)\$($ModuleName)\$($ModuleName).psd1" -ModuleVersion $ModuleVersion -Prerelease ('{0}{1}' -f $PreRelease, $CommitsSinceVersionSource)
 	}
 	else {
 		Update-ModuleManifest -Path "$($publishDir.FullName)\$($ModuleName)\$($ModuleName).psd1" -ModuleVersion $ModuleVersion
