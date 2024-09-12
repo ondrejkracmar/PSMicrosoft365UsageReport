@@ -72,18 +72,6 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
           <maml:description>
@@ -246,18 +234,6 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
           <maml:description>
@@ -342,18 +318,6 @@
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
@@ -477,18 +441,6 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
           <maml:description>
@@ -587,18 +539,6 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
           <maml:description>
@@ -694,18 +634,6 @@
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
@@ -826,18 +754,6 @@
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Resource</maml:name>
@@ -1077,18 +993,6 @@
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-        <maml:name>ProgressAction</maml:name>
-        <maml:description>
-          <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.ActionPreference</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Resource</maml:name>
         <maml:description>
@@ -1235,18 +1139,6 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Get-PSMicrosoft365UsageReport</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Service</maml:name>
           <maml:description>
@@ -1286,18 +1178,6 @@
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-        <maml:name>ProgressAction</maml:name>
-        <maml:description>
-          <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.ActionPreference</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Service</maml:name>
         <maml:description>
@@ -1371,9 +1251,9 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-PSMicrosoft365UsageReportVersion</command:name>
+      <command:name>Get-PSMicrosoft365UsageReportService</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>PSMicrosoft365UsageReportVersion</command:noun>
+      <command:noun>PSMicrosoft365UsageReportService</command:noun>
       <maml:description>
         <maml:para>Get version of Microsoft 365 Usage Reports.</maml:para>
       </maml:description>
@@ -1383,35 +1263,10 @@
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-PSMicrosoft365UsageReportVersion</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
+        <maml:name>Get-PSMicrosoft365UsageReportService</maml:name>
       </command:syntaxItem>
     </command:syntax>
-    <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-        <maml:name>ProgressAction</maml:name>
-        <maml:description>
-          <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.ActionPreference</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-    </command:parameters>
+    <command:parameters />
     <command:inputTypes />
     <command:returnValues>
       <command:returnValue>
@@ -1431,7 +1286,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Get-PSMicrosoft365UsageReportVersion</dev:code>
+        <dev:code>Get-PSMicrosoft365UsageReportService</dev:code>
         <dev:remarks>
           <maml:para>Get version (string) of Microsoft 365 Usage Reports</maml:para>
         </dev:remarks>
@@ -1496,18 +1351,6 @@
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -1585,18 +1428,6 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-        <maml:name>ProgressAction</maml:name>
-        <maml:description>
-          <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.ActionPreference</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
         <maml:description>
@@ -1655,9 +1486,9 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Set-PSMicrosoft365UsageReportVersion</command:name>
+      <command:name>Set-PSMicrosoft365UsageReportService</command:name>
       <command:verb>Set</command:verb>
-      <command:noun>PSMicrosoft365UsageReportVersion</command:noun>
+      <command:noun>PSMicrosoft365UsageReportService</command:noun>
       <maml:description>
         <maml:para>Set version of Microsoft 365 Usage Reports.</maml:para>
       </maml:description>
@@ -1667,7 +1498,7 @@
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Set-PSMicrosoft365UsageReportVersion</maml:name>
+        <maml:name>Set-PSMicrosoft365UsageReportService</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Version</maml:name>
           <maml:description>
@@ -1701,18 +1532,6 @@
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-          <maml:name>ProgressAction</maml:name>
-          <maml:description>
-            <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Management.Automation.ActionPreference</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -1763,18 +1582,6 @@
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
-        <maml:name>ProgressAction</maml:name>
-        <maml:description>
-          <maml:para>{{ Fill ProgressAction Description }}</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.ActionPreference</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.ActionPreference</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Version</maml:name>
         <maml:description>
@@ -1822,7 +1629,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Set-PSMicrosoft365UsageReportVersion -Version 'beta'</dev:code>
+        <dev:code>Set-PSMicrosoft365UsageReportService -Version 'beta'</dev:code>
         <dev:remarks>
           <maml:para>Set beta version of Microsoft 365 Usage Reports</maml:para>
         </dev:remarks>

@@ -16,28 +16,28 @@ Establish a connection to an Entra Service.
 ```
 Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> [-Scopes <String[]>] [-Browser]
  [-BrowserMode <String>] [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>] [-MakeDefault]
- [-PassThru] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### KeyVault
 ```
 Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> -VaultName <String>
  -SecretName <String> [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>] [-MakeDefault]
- [-PassThru] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### UsernamePassword
 ```
 Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> -Credential <PSCredential>
  [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>] [-MakeDefault] [-PassThru]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### AppSecret
 ```
 Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> -ClientSecret <SecureString>
  [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>] [-MakeDefault] [-PassThru]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### AppCertificate
@@ -45,21 +45,21 @@ Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> -ClientS
 Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> [-Certificate <X509Certificate2>]
  [-CertificateThumbprint <String>] [-CertificateName <String>] [-CertificatePath <String>]
  [-CertificatePassword <SecureString>] [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>]
- [-MakeDefault] [-PassThru] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-MakeDefault] [-PassThru] [<CommonParameters>]
 ```
 
 ### DeviceCode
 ```
 Connect-PSMicrosoft365UsageReport -ClientID <String> -TenantID <String> [-Scopes <String[]>] [-DeviceCode]
  [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>] [-MakeDefault] [-PassThru]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Identity
 ```
 Connect-PSMicrosoft365UsageReport [-Identity] [-IdentityID <String>] [-IdentityType <String>]
  [-Service <String[]>] [-ServiceUrl <String>] [-Resource <String>] [-MakeDefault] [-PassThru]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -367,21 +367,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProgressAction
-{{ Fill ProgressAction Description }}
-
-```yaml
-Type: System.Management.Automation.ActionPreference
-Parameter Sets: (All)
-Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

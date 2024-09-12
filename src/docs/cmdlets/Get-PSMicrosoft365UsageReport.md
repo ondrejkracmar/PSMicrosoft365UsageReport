@@ -13,8 +13,7 @@ Get list of Microsoft 365 Usage Reports.
 ## SYNTAX
 
 ```
-Get-PSMicrosoft365UsageReport [-Utility <String>] [-Service <String>] [-Type <String>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-PSMicrosoft365UsageReport [-Utility <String>] [-Service <String>] [-Type <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +36,6 @@ Get-PSMicrosoft365UsageReport -Service Teams -Type User
 Get list of Microsoft 365 Usage Teams Reports with user's details
 
 ## PARAMETERS
-
-### -ProgressAction
-{{ Fill ProgressAction Description }}
-
-```yaml
-Type: System.Management.Automation.ActionPreference
-Parameter Sets: (All)
-Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Service
 Get list of Microsoft365 Usage Report with selected service name.
