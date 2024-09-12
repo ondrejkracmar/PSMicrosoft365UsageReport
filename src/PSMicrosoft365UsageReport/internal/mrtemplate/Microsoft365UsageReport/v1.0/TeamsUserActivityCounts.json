@@ -28,10 +28,6 @@
                 "Expression": "Report Date"
             },
             {
-                "Name": "ReportPeriod",
-                "Expression": "Report Period"
-            },
-            {
                 "Name": "TeamChatMessages",
                 "Expression": "Team Chat Messages"
             },
