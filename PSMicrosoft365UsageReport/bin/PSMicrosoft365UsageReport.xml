@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PSMicrosoftUsage365Report</name>
+    </assembly>
+    <members>
+        <member name="M:EmailActivityCounts.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:EmailActivityCounts"/> class.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.ReportRefreshDate">
+            <summary>
+            The date when the report was last refreshed.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.ReportDate">
+            <summary>
+            The date associated with the report.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.ReportPeriod">
+            <summary>
+            The period covered by the report.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.Send">
+            <summary>
+            Indicates data related to sending actions.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.Receive">
+            <summary>
+            Indicates data related to receiving actions.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.Read">
+            <summary>
+            Indicates data related to reading actions.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.MeetingCreated">
+            <summary>
+            Data on the number or details of created meetings.
+            </summary>
+        </member>
+        <member name="P:EmailActivityCounts.MeetingInteracted">
+            <summary>
+            Data on the interactions with created meetings.
+            </summary>
+        </member>
+    </members>
+</doc>

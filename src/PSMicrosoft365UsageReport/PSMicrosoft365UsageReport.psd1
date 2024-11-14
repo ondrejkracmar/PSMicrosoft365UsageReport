@@ -31,10 +31,10 @@
 	# RequiredAssemblies = @('bin\PSMicrosoft365UsageReport.dll')
 
 	# Type files (.ps1xml) to be loaded when importing this module
-	TypesToProcess = @('types\PSMicrosoft365UsageReportTypes.ps1xml')
+	TypesToProcess = @('types\PSMicrosoft365UsageReport.Types.ps1xml')
 
 	# Format files (.ps1xml) to be loaded when importing this module
-	FormatsToProcess = @('views\PSMicrosoft365UsageReportT.Format.ps1xml')
+	FormatsToProcess = @('views\PSMicrosoft365UsageReport.Format.ps1xml')
 
 	# Functions to export from this module
 	FunctionsToExport = @(
