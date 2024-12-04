@@ -1,0 +1,11 @@
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.xml
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.dll
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.pdb
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.csproj.AssemblyReference.cache
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.AssemblyInfoInputs.cache
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.AssemblyInfo.cs
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.csproj.CoreCompileInputs.cache
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.sourcelink.json
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.dll
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.pdb

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoftUsage365Report.csproj": {}
+    "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoftUsage365Report.csproj": {
+    "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoftUsage365Report.csproj",
-        "projectName": "PSMicrosoftUsage365Report",
-        "projectPath": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoftUsage365Report.csproj",
+        "projectUniqueName": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj",
+        "projectName": "PSMicrosoft365UsageReport",
+        "projectPath": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj",
         "packagesPath": "C:\\Users\\KracmarOndrej\\.nuget\\packages\\",
         "outputPath": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\obj\\",
         "projectStyle": "PackageReference",

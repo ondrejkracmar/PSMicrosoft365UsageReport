@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Types>
-  <!-- UsageReport.Microsoft365UsageReport -->
+  <!-- PSMicrosoft365UsageReport.UsageReport -->
   <Type>
-    <Name>UsageReport.Microsoft365UsageReport</Name>
+    <Name>PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport</Name>
     <Members>
       <MemberSet>
         <Name>PSStandardMembers</Name>

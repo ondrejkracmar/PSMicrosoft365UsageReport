@@ -23,7 +23,7 @@
     process {
 
         switch ((Get-PSFConfig -Module 'PSMicrosoft365UsageReport' -Name 'Settings.DefaultService').value) {
-            'PSMicrosoft365UsageReport.Graph' { 'v1.0 ' }
+            'PSMicrosoft365UsageReport.Graph' { 'v1.0' }
             'PSMicrosoft365UsageReport.GraphBeta' { 'beta' }
             Default {
                 'v1.0'

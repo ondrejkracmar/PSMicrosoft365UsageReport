@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ppzBrNREjmI=",
+  "dgSpecHash": "PkfZO8+IBrQ=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoftUsage365Report.csproj",
+  "projectFilePath": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KracmarOndrej\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
-    "C:\\Users\\KracmarOndrej\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net452\\1.0.3\\microsoft.netframework.referenceassemblies.net452.1.0.3.nupkg.sha512"
+    "C:\\Users\\KracmarOndrej\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net47\\1.0.3\\microsoft.netframework.referenceassemblies.net47.1.0.3.nupkg.sha512"
   ],
   "logs": []
 }

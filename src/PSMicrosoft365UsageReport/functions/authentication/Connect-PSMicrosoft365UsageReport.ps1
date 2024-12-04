@@ -248,9 +248,15 @@
 	begin {
 		$service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
 		$param = $PSBoundParameters | ConvertTo-PSFHashtable -ReferenceCommand Connect-EntraService
+		if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('Verbose')) {
+            [boolean]$cmdLetVerbose = $true
+        }
+        else{
+            [boolean]$cmdLetVerbose =  $false
+        }
 	}
 
 	process {
-		Connect-EntraService @param -Service $service
+		Connect-EntraService @param -Service $service -Verbose:$($cmdLetVerbose)
 	}end { }
 }

@@ -46,7 +46,7 @@
 
             Get details about email activity users have performed from 23.9.2023 without question to perform operation.
         #>
-    [OutputType('UsageReport.PSMicrosoft365UsageReport.Report')]
+    [OutputType('PSMicrosoft365UsageReport.IReport')]
     [CmdletBinding(DefaultParameterSetName = 'NoParameter',
         SupportsShouldProcess = $true)]
     param(
@@ -60,7 +60,7 @@
         [switch]$Force
     )
     DynamicParam {
-        [UsageReport.Microsoft365UsageReport]$usageReport = Get-PSMicrosoft365UsageReport | Where-Object -Property Name -EQ -Value $Name
+        [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport]$usageReport = Get-PSMicrosoft365UsageReport | Where-Object -Property Name -EQ -Value $Name
         If (-not($null -eq $usageReport)) {
             [System.Management.Automation.RuntimeDefinedParameterDictionary]$paramDictionary = New-Object System.Management.Automation.RuntimeDefinedParameterDictionary
             If (-not($null -eq $usageReport.Definition.Parameters.Days)) {
@@ -107,7 +107,7 @@
             '$count' = 'true'
             '$top'   = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.PageSize' -f $script:ModuleName)
         }
-        [UsageReport.Microsoft365UsageReport[]]$templateUsageReportList = Get-PSMicrosoft365UsageReport
+        [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport[]]$templateUsageReportList = Get-PSMicrosoft365UsageReport
         [int]$commandRetryCount = Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryCount' -f $script:ModuleName)
         [System.TimeSpan]$commandRetryWait = New-TimeSpan -Seconds (Get-PSFConfigValue -FullName ('{0}.Settings.Command.RetryWaitInSeconds' -f $script:ModuleName))
         if ($Force.IsPresent -and (-not $Confirm.IsPresent)) {
@@ -116,11 +116,18 @@
         else {
             [bool]$cmdLetConfirm = $true
         }
+
+        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('Verbose')) {
+            [boolean]$cmdLetVerbose = $true
+        }
+        else{
+            [boolean]$cmdLetVerbose =  $false
+        }
         [string]$defaultFormat = Get-PSFConfigValue -FullName ('{0}.Settings.GraphApiQuery.Format' -f $script:ModuleName)
     }
 
     process {
-        [UsageReport.Microsoft365UsageReport]$usageReport = $templateUsageReportList | Where-Object -Property Name -EQ -Value $Name
+        [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport]$usageReport = $templateUsageReportList | Where-Object -Property Name -EQ -Value $Name
         if (-not ([object]::Equals($usageReport, $null))) {
             if (Test-PSFParameterBinding -ParameterName Format) {
                 [string]$useFormat = $Format
@@ -162,16 +169,39 @@
                     [string]$url = Join-UriPath -Uri reports -ChildPath ("{0}" -f $usageReport.Definition.Function)
                 }
             }
+            $apiVersion = Get-PSMicrosoft365UsageReportService
             switch ($useFormat) {
                 'text/csv' {
                     Invoke-PSFProtectedCommand -ActionString 'Report.Invoke' -ActionStringValues $usageReport.Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
-                        Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$false -WarningAction SilentlyContinue | ConvertFrom-Csv | ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReport.Definition.ResponseProperty
+                        $csvString = (Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$($cmdLetVerbose) -WarningAction SilentlyContinue)
+                        switch ($apiVersion) {
+                            'v1.0' {
+                                [string]$updateCsvString =  ($csvString -replace "^[ï»¿]+", "" )
+                                ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject ($updateCsvString | ConvertFrom-Csv)
+                            }
+                            'beta' {
+                                [string[]]$lineCsvString = $csvString -split "`n"
+                                [string]$lineCsvString[0] = ($lineCsvString[0] -replace "ï»¿", "") -replace '\s*,\s*', ',' -replace '\s+', ''
+                                [string]$updateCsvString =  ($lineCsvString -join "`n")
+                                ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.Beta.{0}' -f $usageReport.Name) -InputObject ($updateCsvString | ConvertFrom-Csv)
+                            }
+                        }
                     } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
                     if (Test-PSFFunctionInterrupt) { return }
                 }
                 'application/json' {
                     Invoke-PSFProtectedCommand -ActionString 'Report.Invoke' -ActionStringValues $usageReport.Name -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) -ScriptBlock {
-                        Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$false -WarningAction SilentlyContinue #| ConvertFrom-RestUsageReport -Name $usageReport.Name -ResponseProperty $usageReportDefinition.ResponseProperty
+                        [string[]]$selectProperty = $usageReport.Definition.ResponseProperty | ForEach-Object { $_.Name }
+                        $jsonResponseObject = Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop -Verbose:$($cmdLetVerbose) -WarningAction SilentlyContinue |
+                        ConvertFrom-RestUsgaeReportJson -ResponseProperty $selectProperty
+                        switch ($apiVersion) {
+                            'v1.0' {
+                                ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject $jsonResponseObject
+                            }
+                            'beta' {
+                                ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.Beta.{0}' -f $usageReport.Name) -InputObject $jsonResponseObject
+                            }
+                        }
                     } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait
                     if (Test-PSFFunctionInterrupt) { return }
                 }

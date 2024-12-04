@@ -1,5 +1,4 @@
-﻿using namespace UsageReport
-function Get-PSMicrosoft365UsageReport {
+﻿function Get-PSMicrosoft365UsageReport {
     <#
         .SYNOPSIS
             Get list of Microsoft 365 Usage Reports.
@@ -27,7 +26,7 @@ function Get-PSMicrosoft365UsageReport {
             Get list of Microsoft 365 Usage Teams Reports with user's details
 
     #>
-    [OutputType([UsageReport.Microsoft365UsageReport])]
+    [OutputType([PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport])]
     [CmdletBinding(DefaultParameterSetName = 'FilterReport')]
     param(
         [Parameter(Mandatory = $false, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $false, ParameterSetName = 'FilterReport')]
@@ -63,7 +62,7 @@ function Get-PSMicrosoft365UsageReport {
         $templateReportFileList = Join-Path -Path (Get-PSFConfigValue -FullName ('{0}.Template.Microsoft365UsageReport.Location' -f $Script:ModuleName)) -ChildPath $mrTemplate |
         Get-ChildItem -Filter *.json -Recurse
         foreach ($templateReportFile in $templateReportFileList) {
-            [Microsoft365UsageReport] $usageReport = [Microsoft365UsageReport]::new()
+            [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport] $usageReport = [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport]::new()
 
             # Load the configuration from the JSON file
             [string] $templateReportFilePath = $templateReportFile.FullName
@@ -76,7 +75,7 @@ function Get-PSMicrosoft365UsageReport {
                 throw [System.IO.FileNotFoundException]::new($message, $templateReportFilePath)
             }
 
-            [System.Runtime.Serialization.Json.DataContractJsonSerializer] $serializer = [System.Runtime.Serialization.Json.DataContractJsonSerializer]::new([Microsoft365UsageReport])
+            [System.Runtime.Serialization.Json.DataContractJsonSerializer] $serializer = [System.Runtime.Serialization.Json.DataContractJsonSerializer]::new([PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport])
             [System.IO.FileStream] $stream = [System.IO.File]::Open($templateReportFilePath, [System.IO.FileMode]::Open)
             try {
                 $usageReport = $serializer.ReadObject($stream)

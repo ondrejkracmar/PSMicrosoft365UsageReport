@@ -30,7 +30,6 @@ $moduleRoot = Split-Path (Split-Path $PSScriptRoot)
 
 # Load all internal classes
 "$moduleRoot\internal\classes\token\EntraToken.ps1"
-"$moduleRoot\internal\classes\report\UsageReport.ps1"
 
 # Load services
 "$moduleRoot\internal\scripts\services.ps1"

@@ -13,23 +13,23 @@
 		PS C:\> Invoke-RestRequest -Service 'graph' -Path subscribedSkus -Method Get -ErrorAction Stop | ConvertFrom-ResUsageReport -ResponseProperty $usageReportDefinition.ResponseProperty
 		Retrieves the specified Microsoft 365 Usage report and converts it into something userfriendly
 	#>
-	[CmdletBinding()]
 	param (
-		[Parameter(ValueFromPipeline = $true)]
-		$InputObject,
-		[string]$Name,
-		[psobject[]]$ResponseProperty
+		[string]$ReportName,
+		$InputObject
 	)
-
-	process {
-		if (-not $InputObject) { return }
-
-		$outputObject = [ordered]@{}
-		foreach ($itemResponseProperty in $ResponseProperty) {
-			$outputObject[$itemResponseProperty.Name] = $InputObject.($itemResponseProperty.Expression)
-		}
-		$outputObject['PSTypeName'] = ('UsageReport.Microsoft365UsageReport.{0}' -f $Name)
-		[PSCustomObject]$outputObject
- }
-
+	if (-not $InputObject) { return }
+	$jsonString = ($InputObject | ConvertTo-Json -Depth 3) -replace '""', 'null'
+	if ($InputObject -is [array]) {
+		[byte[]] $byteArray = [System.Text.Encoding]::UTF8.GetBytes($jsonString)
+		[System.IO.MemoryStream] $stream = [System.IO.MemoryStream]::new($byteArray)
+		$scriptBlock = [scriptblock]::Create("[System.Runtime.Serialization.Json.DataContractJsonSerializer]::new([$ReportName[]])")
+		[System.Runtime.Serialization.Json.DataContractJsonSerializer] $serializer = Invoke-Command -ScriptBlock $scriptBlock
+	}
+	else {
+		[byte[]] $byteArray = [System.Text.Encoding]::UTF8.GetBytes($jsonString)
+		[System.IO.MemoryStream] $stream = [System.IO.MemoryStream]::new($byteArray)
+		$scriptBlock = [scriptblock]::Create("[System.Runtime.Serialization.Json.DataContractJsonSerializer]::new([$ReportName])")
+		[System.Runtime.Serialization.Json.DataContractJsonSerializer] $serializer = Invoke-Command -ScriptBlock $scriptBlock
+	}
+	return	$serializer.ReadObject($stream)
 }
