@@ -1,4 +1,4 @@
-function ConvertFrom-RestUsgaeReportJson {
+﻿function ConvertFrom-RestUsgaeReportJson {
 	<#
 	.SYNOPSIS
 		Converts Microsoft 365 Usage report objects to look nice.
