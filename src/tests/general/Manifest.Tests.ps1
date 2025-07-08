@@ -1,6 +1,6 @@
 ﻿Describe "Validating the module manifest" {
 	$moduleRoot = (Resolve-Path "$global:testroot\..").Path
-	$manifest = ((Get-Content "$moduleRoot\PSMicrosoftEntraID.psd1") -join "`n") | Invoke-Expression
+	$manifest = ((Get-Content "$moduleRoot\PSMicrosoft365UsageReport.psd1") -join "`n") | Invoke-Expression
 	Context "Basic resources validation" {
 		$files = Get-ChildItem "$moduleRoot\functions" -Recurse -File | Where-Object Name -like "*.ps1"
 		It "Exports all functions in the public folder" -TestCases @{ files = $files; manifest = $manifest } {
