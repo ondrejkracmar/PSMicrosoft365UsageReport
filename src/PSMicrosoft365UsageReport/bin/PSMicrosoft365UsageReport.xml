@@ -4,6 +4,31 @@
         <name>PSMicrosoft365UsageReport</name>
     </assembly>
     <members>
+        <member name="T:PSMicrosoft365UsageReport.Environment">
+            <summary>
+            What environment this service should connect to.
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Environment.Global">
+            <summary>
+            Global Microsoft cloud https://login.microsoftonline.com
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Environment.USGov">
+            <summary>
+            US Gov Microsoft cloud https://login.microsoftonline.us
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Environment.USGovDOD">
+            <summary>
+            US Gov DOD Microsoft cloud https://login.microsoftonline.us
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Environment.China">
+            <summary>
+            China Microsoft cloud https://login.chinacloudapi.cn
+            </summary>
+        </member>
         <member name="T:PSMicrosoft365UsageReport.Helper.DurationToSecondsConverter">
             <summary>
             Utility class to handle the conversion of ISO 8601 duration strings to total seconds.
@@ -4578,172 +4603,172 @@
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Windows">
             <summary>
-            The count of active users on the Windows platform.
+            Indicates if the user is active on the Windows platform.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Mac">
             <summary>
-            The count of active users on the Mac platform.
+            Indicates if the user is active on the Mac platform.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Mobile">
             <summary>
-            The count of active users on the Mobile platform.
+            Indicates if the user is active on the Mobile platform.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Web">
             <summary>
-            The count of active users on the Web platform.
+            Indicates if the user is active on the Web platform.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Outlook">
             <summary>
-            The count of active users for Outlook.
+            Determines whether the user is using the Outlook.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Word">
             <summary>
-            The count of active users for Word.
+            Determines whether the user is using the Word.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Excel">
             <summary>
-            The count of active users for Excel.
+            Determines whether the user is using the Excel.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerPoint">
             <summary>
-            The count of active users for PowerPoint.
+            Determines whether the user is using the PowerPoint.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OneNote">
             <summary>
-            The count of active users for OneNote.
+            Determines whether the user is using the OneNote.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.Teams">
             <summary>
-            The count of active users for Teams.
+            Determines whether the user is using the Teams.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OutlookWindows">
             <summary>
-            The count of active users for Outlook on Windows.
+            Determines whether the user is using the Outlook on Windows.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.WordWindows">
             <summary>
-            The count of active users for Word on Windows.
+            Determines whether the user is using the Word on Windows.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.ExcelWindows">
             <summary>
-            The count of active users for Excel on Windows.
+            Determines whether the user is using the Excel on Windows.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerPointWindows">
             <summary>
-            The count of active users for PowerPoint on Windows.
+            Determines whether the user is using the PowerPoint on Windows.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OneNoteWindows">
             <summary>
-            The count of active users for OneNote on Windows.
+            Determines whether the user is using the OneNote on Windows.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.TeamsWindows">
             <summary>
-            The count of active users for Teams on Windows.
+            Determines whether the user is using the Teams on Windows.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OutlookMac">
             <summary>
-            The count of active users for Outlook on Mac.
+            Determines whether the user is using the Outlook on Mac.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.WordMac">
             <summary>
-            The count of active users for Word on Mac.
+            Determines whether the user is using the Word on Mac.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.ExcelMac">
             <summary>
-            The count of active users for Excel on Mac.
+            Determines whether the user is using the Excel on Mac.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerPointMac">
             <summary>
-            The count of active users for PowerPoint on Mac.
+            Determines whether the user is using the PowerPoint on Mac.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OneNoteMac">
             <summary>
-            The count of active users for OneNote on Mac.
+            Determines whether the user is using the OneNote on Mac.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.TeamsMac">
             <summary>
-            The count of active users for Teams on Mac.
+            Determines whether the user is using the Teams on Mac.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OutlookMobile">
             <summary>
-            The count of active users for Outlook on Mobile.
+            Determines whether the user is using the Outlook on Mobile.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.WordMobile">
             <summary>
-            The count of active users for Word on Mobile.
+            Determines whether the user is using the Word on Mobile.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.ExcelMobile">
             <summary>
-            The count of active users for Excel on Mobile.
+            Determines whether the user is using the Excel on Mobile.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerPointMobile">
             <summary>
-            The count of active users for PowerPoint on Mobile.
+            Determines whether the user is using the PowerPoint on Mobile.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OneNoteMobile">
             <summary>
-            The count of active users for OneNote on Mobile.
+            Determines whether the user is using the OneNote on Mobile.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.TeamsMobile">
             <summary>
-            The count of active users for Teams on Mobile.
+            Determines whether the user is using the Teams on Mobile.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OutlookWeb">
             <summary>
-            The count of active users for Outlook on Web.
+            Determines whether the user is using the Outlook on Web.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.WordWeb">
             <summary>
-            The count of active users for Word on Web.
+            Determines whether the user is using the Word on Web.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.ExcelWeb">
             <summary>
-            The count of active users for Excel on Web.
+            Determines whether the user is using the Excel on Web.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerPointWeb">
             <summary>
-            The count of active users for PowerPoint on Web.
+            Determines whether the user is using the PowerPoint on Web.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.OneNoteWeb">
             <summary>
-            The count of active users for OneNote on Web.
+            Determines whether the user is using the OneNote on Web.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.TeamsWeb">
             <summary>
-            The count of active users for Teams on Web.
+            Determines whether the user is using the Teams on Web.
             </summary>
         </member>
         <member name="T:PSMicrosoft365UsageReport.Report.Office365ActivationCounts">

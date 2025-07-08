@@ -1,5 +1,5 @@
-# PSMicrosoftEntraID
-## about_PSMicrosoftEntraID
+# PSMicrosoft365UsageReport
+## about_PSMicrosoft365UsageReport
 
 ```
 ABOUT TOPIC NOTE:

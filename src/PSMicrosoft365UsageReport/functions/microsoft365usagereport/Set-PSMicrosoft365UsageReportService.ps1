@@ -46,6 +46,12 @@
         [switch]$Force
     )
     begin {
+        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('Verbose')) {
+            [boolean]$cmdLetVerbose = $true
+        }
+        else{
+            [boolean]$cmdLetVerbose =  $false
+        }
         if ($Force.IsPresent -and (-not $Confirm.IsPresent)) {
             [bool]$cmdLetConfirm = $false
         }

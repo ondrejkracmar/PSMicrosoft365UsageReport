@@ -3,7 +3,7 @@
 {
 	"name": "i-system_PowerShellModule",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/powershell:lts-debian-11",
+	"image": "mcr.microsoft.com/powershell:7.4-debian-12",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
@@ -15,7 +15,10 @@
 			"modules": [
 				"PSFramework",
 				"Profiler",
-				"Pester"
+				"Pester",
+				"PlatyPS",
+				"PSModuleDevelopment",
+				"PSScriptAnalyzer"
 			],
 			"powershellProfileURL": "https://gist.githubusercontent.com/ondrejkracmar/5beceaccb6bd72a7a8ce60993fb9beed/raw/828988ad6a88e0432cc928650bea3b957bba8e43/Profile.ps1"
 		}

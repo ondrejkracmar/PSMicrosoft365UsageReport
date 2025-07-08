@@ -1,5 +1,5 @@
 ﻿New-PSFLicense -Product 'PSMicrosoft365UsageReport' -Manufacturer 'Ondrej Kracmar' -ProductVersion $script:ModuleVersion -ProductType Module -Name MIT -Version "1.0.0.0" -Date (Get-Date "2021-05-28") -Text @"
-Copyright (c) 2021 KracmarOndrej
+Copyright (c) 2025 KracmarOndrej
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -93,3 +93,12 @@ $usageReportAzureKeyVaultCfg = @{
 	}
 }
 Register-EntraService @usageReportAzureKeyVaultCfg
+
+$entraIDazTokenCfg = @{
+	Name          = 'PSMicrosoft365UsageReport.AzToken'
+	ServiceUrl    = 'https://graph.microsoft.com/v1.0'
+	Resource      = 'https://graph.microsoft.com'
+	DefaultScopes = @()
+	HelpUrl       = 'https://developer.microsoft.com/en-us/graph/quick-start'
+}
+Register-EntraService @entraIDazTokenCfg -NoRefresh

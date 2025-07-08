@@ -1,7 +1,7 @@
 C:\Projects\PSModules\PSMicrosoft365UsageReport\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.xml
 C:\Projects\PSModules\PSMicrosoft365UsageReport\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.dll
 C:\Projects\PSModules\PSMicrosoft365UsageReport\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.pdb
-C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoftEntraID.xml
+C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.xml
 C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.dll
 C:\Projects\PSModules\PSMicrosoft365UsageReport\src\PSMicrosoft365UsageReport\bin\PSMicrosoft365UsageReport.pdb
 C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\obj\Debug\PSMicrosoft365UsageReport.csproj.AssemblyReference.cache

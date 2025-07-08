@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Text.RegularExpressions;
 
 namespace PSMicrosoft365UsageReport.Helper

@@ -55,14 +55,13 @@
 	
 		Return a list of defender alerts.
 #>
-	[CmdletBinding()]
+	[CmdletBinding(DefaultParameterSetName = 'default')]
 	param (
 		[Parameter(Mandatory = $true)]
 		[string]
 		$Path,
 		
-		[Hashtable]
-		$Body = @{ },
+		$Body,
 
 		[Hashtable]
 		$Query = @{ },
@@ -134,12 +133,23 @@
 	process {
 		$parameters = @{
 			Method = $Method
-			Uri    = Resolve-RequestUri -TokenObject $tokenObject -ServiceObject $script:_EntraEndpoints.$($tokenObject.Service) -BoundParameters $PSBoundParameters
+			Uri    = Resolve-RequestUri -TokenObject $tokenObject -ServiceObject $serviceObject -BoundParameters $PSBoundParameters
 		}
 		
-		if ($Body.Count -gt 0) {
-			$parameters.Body = $Body | ConvertTo-Json -Compress -Depth $SerializationDepth
+		if ($PSBoundParameters.Keys -contains 'Body') {
+			if ($Body -is [string]) {
+				$parameters.Body = $Body
+			}
+			else {
+				$parameters.Body = $Body | ConvertTo-Json -Compress -Depth $SerializationDepth
+			}
 		}
+		# In PS5.1, some methods cannot contain a body
+		$noBodyMethods = 'Default', 'Get', 'Head'
+		if ($PSVersionTable.PSVersion.Major -lt 6 -and $Method -in $noBodyMethods) {
+			$parameters.Remove('Body')
+		}
+		
 		$parameters.Uri += ConvertTo-QueryString -QueryHash $Query -DefaultQuery $serviceObject.Query
 
 		do {

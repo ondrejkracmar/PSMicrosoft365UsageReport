@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿#nullable enable
+using System.Runtime.Serialization;
 using PSMicrosoft365UsageReport.Interface;
 
 namespace PSMicrosoft365UsageReport.Report

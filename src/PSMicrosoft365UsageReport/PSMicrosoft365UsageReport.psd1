@@ -39,6 +39,7 @@
 	# Functions to export from this module
 	FunctionsToExport = @(
 		'Connect-PSMicrosoft365UsageReport'
+		'Disconnect-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReportService'
 		'Invoke-PSMicrosoft365UsageReport'
