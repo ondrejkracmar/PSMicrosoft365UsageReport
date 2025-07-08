@@ -20,7 +20,7 @@ $global:testroot = $PSScriptRoot
 $global:__pester_data = @{ }
 
 Remove-Module PSMicrosoft365UsageReport -ErrorAction Ignore
-Import-Module "$PSScriptRoot\..\PSMicrosoft365UsageReport\PSMicrosoft365UsageReport5.psd1"
+Import-Module "$PSScriptRoot\..\PSMicrosoft365UsageReport\PSMicrosoft365UsageReport.psd1"
 Import-Module "$PSScriptRoot\..\PSMicrosoft365UsageReport\PSMicrosoft365UsageReport.psm1" -Force
 
 # Need to import explicitly so we can use the configuration class
