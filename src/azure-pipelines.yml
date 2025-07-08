@@ -75,7 +75,7 @@ steps:
        arguments: > # Use this to avoid newline characters in multiline string
           -WorkingDirectory '$(sourceDirectory)'
           -LocalRepo
-          -ModuleName "PSMicrosoft365UsageReport"
+          -ModuleName "PSMicrosoftEntraID"
           -ModuleVersion '$(MajorMinorPatch)'
           -PreRelease '$(PreReleaseLabel)'
           -CommitsSinceVersion '$(CommitsSinceVersionSource)'
@@ -92,7 +92,7 @@ steps:
           -ArtifactFeedName '$(artifactFeedName)'
           -FeedUsername '$(FeedUsername)'
           -PersonalAccessToken '$(personalAccessToken)'
-          -ModuleName "PSMicrosoft365UsageReport"
+          -ModuleName "PSMicrosoftEntraID"
           -ModuleVersion '$(MajorMinorPatch)'
           -PreRelease '$(PreReleaseLabel)'
           -CommitsSinceVersion '$(CommitsSinceVersionSource)'
@@ -105,9 +105,9 @@ steps:
        arguments: > # Use this to avoid newline characters in multiline string
           -AzureDevOpsOrganizationName '$(organizationName)'
           -AzureDevOpsProjectName '$(projectName)'
-          -AzureDevOpsRepositoryName "PSMicrosoft365UsageReport"
+          -AzureDevOpsRepositoryName "PSMicrosoftEntraID"
           -AzureDevOpsUsername '$(azureDevOpsUsername)'
           -AzureDevOpsToken '$(azureDevOpsPAT)'
-          -GitHubRepositoryName "PSMicrosoft365UsageReport"
+          -GitHubRepositoryName "PSMicrosoftEntraID"
           -GitHubUsername '$(gitHubUsername)'
           -GitHubToken '$(gitHubPAT)'
