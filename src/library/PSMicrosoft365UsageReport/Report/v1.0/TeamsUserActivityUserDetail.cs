@@ -170,7 +170,7 @@ namespace PSMicrosoft365UsageReport.Report
         /// The duration of screen sharing in Microsoft Teams, in SO 8601 duration.
         /// </summary>
         [DataMember(Name = "Screen Share Duration")]
-        public int? ScreenShareDuration { get; set; }
+        public string? ScreenShareDuration { get; set; }
 
         /// <summary>
         /// The duration of audio usage in seconds.

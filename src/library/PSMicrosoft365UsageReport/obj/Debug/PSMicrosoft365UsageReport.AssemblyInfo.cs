@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PSMicrosoft365UsageReport")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+946d13935d22b51e75103a538898c9b76c72f81d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b09f51d129159cf608ab526da1172a5df1adcf5")]
 [assembly: System.Reflection.AssemblyProductAttribute("PSMicrosoft365UsageReport")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PSMicrosoft365UsageReport")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
