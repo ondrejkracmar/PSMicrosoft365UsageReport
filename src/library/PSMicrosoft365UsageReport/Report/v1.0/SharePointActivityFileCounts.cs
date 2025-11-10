@@ -19,25 +19,25 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The count of files that were viewed or edited by users.
         /// </summary>
-        [DataMember(Name = "Viewed Or Edited")]
+        [DataMember(Name = "ViewedOrEdited")]
         public int? ViewedOrEdited { get; set; }
 
         /// <summary>
@@ -49,13 +49,13 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The count of files shared internally within the organization.
         /// </summary>
-        [DataMember(Name = "Shared Internally")]
+        [DataMember(Name = "SharedInternally")]
         public int? SharedInternally { get; set; }
 
         /// <summary>
         /// The count of files shared externally outside the organization.
         /// </summary>
-        [DataMember(Name = "Shared Externally")]
+        [DataMember(Name = "SharedExternally")]
         public int? SharedExternally { get; set; }
     }
 }

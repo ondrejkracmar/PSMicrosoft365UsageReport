@@ -20,19 +20,19 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
@@ -56,13 +56,13 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// Data on the number or details of created meetings.
         /// </summary>
-        [DataMember(Name = "Meeting Created")]
+        [DataMember(Name = "MeetingCreated")]
         public int? MeetingCreated { get; set; }
 
         /// <summary>
         /// Data on the interactions with created meetings.
         /// </summary>
-        [DataMember(Name = "Meeting Interacted")]
+        [DataMember(Name = "MeetingInteracted")]
         public int? MeetingInteracted { get; set; }
     }
 }

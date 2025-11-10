@@ -1,0 +1,69 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents the count of daily active users within the reporting period for various Office 365 products.
+    /// This includes details on the Report Refresh Date, reporting period, and daily active user counts by product (Office 365, Exchange, OneDrive, etc.).
+    /// </summary>
+    [DataContract]
+    public class Office365ActiveUserCounts : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Office365ActiveUserCounts"/> class.
+        /// </summary>
+        public Office365ActiveUserCounts() { }
+
+        /// <summary>
+        /// The date when the report was last refreshed.
+        /// </summary>
+        public string? ReportRefreshDate { get; set; }
+
+        /// <summary>
+        /// The date associated with the report.
+        /// </summary>
+        public string? ReportDate { get; set; }
+
+        /// <summary>
+        /// The period covered by the report.
+        /// </summary>
+        public int? ReportPeriod { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for Office 365.
+        /// </summary>
+        public int? Office365 { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for Exchange.
+        /// </summary>
+        public int? Exchange { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for OneDrive.
+        /// </summary>
+        public int? OneDrive { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for SharePoint.
+        /// </summary>
+        public int? SharePoint { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for Skype for Business.
+        /// </summary>
+        public int? SkypeForBusiness { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for Yammer.
+        /// </summary>
+        public int? Yammer { get; set; }
+
+        /// <summary>
+        /// The count of daily active users for Teams.
+        /// </summary>
+        public int? Teams { get; set; }
+    }
+}

@@ -19,37 +19,37 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier (UPN) of the user within the organization.
         /// </summary>
-        [DataMember(Name = "User Principal Name")]
+        [DataMember(Name = "UserPrincipalName")]
         public string? UserPrincipalName { get; set; }
 
         /// <summary>
         /// The display name of the user.
         /// </summary>
-        [DataMember(Name = "Display Name")]
+        [DataMember(Name = "DisplayName")]
         public string? DisplayName { get; set; }
 
         /// <summary>
         /// The type of Microsoft 365 product.
         /// </summary>
-        [DataMember(Name = "Product Type")]
+        [DataMember(Name = "ProductType")]
         public string? ProductType { get; set; }
 
         /// <summary>
         /// The last date on which the user activated the product.
         /// </summary>
-        [DataMember(Name = "Last Activated Date")]
+        [DataMember(Name = "LastActivatedDate")]
         public string? LastActivatedDate { get; set; }
 
         /// <summary>
@@ -67,13 +67,13 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The count of activations on iOS devices.
         /// </summary>
-        [DataMember(Name = "iOS")]
+        [DataMember(Name = "AppleiOS")]
         public int? AppleiOS { get; set; }
 
         /// <summary>
         /// The count of activations on Windows 10 Mobile devices.
         /// </summary>
-        [DataMember(Name = "Windows 10 Mobile")]
+        [DataMember(Name = "Windows10Mobile")]
         public int? Windows10Mobile { get; set; }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// Indicates whether the product was activated on a shared computer.
         /// </summary>
-        [DataMember(Name = "Activated On Shared Computer")]
+        [DataMember(Name = "ActivatedOnSharedComputer")]
         public string? ActivatedOnSharedComputer { get; set; }
     }
 }

@@ -19,43 +19,43 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The count of team chat messages in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Team Chat Messages")]
+        [DataMember(Name = "TeamChatMessages")]
         public int? TeamChatMessages { get; set; }
 
         /// <summary>
         /// The count of post messages in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Post Messages")]
+        [DataMember(Name = "PostMessages")]
         public int? PostMessages { get; set; }
 
         /// <summary>
         /// The count of reply messages in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Reply Messages")]
+        [DataMember(Name = "ReplyMessages")]
         public int? ReplyMessages { get; set; }
 
         /// <summary>
         /// The count of private chat messages in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Private Chat Messages")]
+        [DataMember(Name = "PrivateChatMessages")]
         public int? PrivateChatMessages { get; set; }
 
         /// <summary>
@@ -71,33 +71,33 @@ namespace PSMicrosoft365UsageReport.Report
         public int? Meetings { get; set; }
 
         /// <summary>
-        /// The duration of audio usage in Microsoft Teams, in SO 8601 duration.
+        /// The duration of audio usage in Microsoft Teams, in SO8601 duration.
         /// </summary>
-        [DataMember(Name = "Audio Duration")]
+        [DataMember(Name = "AudioDuration")]
         public string? AudioDuration { get; set; }
 
         /// <summary>
-        /// The duration of video usage in Microsoft Teams, in SO 8601 duration.
+        /// The duration of video usage in Microsoft Teams, in SO8601 duration.
         /// </summary>
-        [DataMember(Name = "Video Duration")]
+        [DataMember(Name = "VideoDuration")]
         public string? VideoDuration { get; set; }
 
         /// <summary>
-        /// The duration of screen sharing in Microsoft Teams, in SO 8601 duration.
+        /// The duration of screen sharing in Microsoft Teams, in SO8601 duration.
         /// </summary>
-        [DataMember(Name = "Screen Share Duration")]
+        [DataMember(Name = "ScreenShareDuration")]
         public string? ScreenShareDuration { get; set; }
 
         /// <summary>
         /// The number of meetings organized by users in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Meetings Organized")]
+        [DataMember(Name = "MeetingsOrganized")]
         public int? MeetingsOrganized { get; set; }
 
         /// <summary>
         /// The number of meetings attended by users in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Meetings Attended")]
+        [DataMember(Name = "MeetingsAttended")]
         public int? MeetingsAttended { get; set; }
     }
 }

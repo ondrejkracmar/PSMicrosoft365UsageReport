@@ -39,15 +39,21 @@
 	# Functions to export from this module
 	FunctionsToExport = @(
 		'Connect-PSMicrosoft365UsageReport'
+		'ConvertFrom-PSMicrosoft365UsageReportBatchRequest'
 		'Disconnect-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReportService'
 		'Invoke-PSMicrosoft365UsageReport'
 		'Set-PSMicrosoft365UsageReportService'
+		'Invoke-PSMicrosoft365UsageReportBatchRequest'
+		'Get-PSMicrosoft365UsageReportCommandRetry'
+		'Set-PSMicrosoft365UsageReportCommandRetry'
 	)
 
-	# Cmdlets to export from this module
-	CmdletsToExport = ''
+# Cmdlets to export from this module
+	CmdletsToExport    = @(
+		'New-PSMicrosoft365UsageReportBatchRequest'
+	)
 
 	# Variables to export from this module
 	VariablesToExport = ''

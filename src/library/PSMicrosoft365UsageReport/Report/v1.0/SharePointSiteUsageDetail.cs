@@ -19,91 +19,91 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The principal name of the site owner.
         /// </summary>
-        [DataMember(Name = "Owner Principal Name")]
+        [DataMember(Name = "OwnerPrincipalName")]
         public string? OwnerPrincipalName { get; set; }
 
         /// <summary>
         /// The display name of the site owner.
         /// </summary>
-        [DataMember(Name = "Owner Display Name")]
+        [DataMember(Name = "OwnerDisplayName")]
         public string? OwnerDisplayName { get; set; }
 
         /// <summary>
         /// Indicates if the site is deleted.
         /// </summary>
-        [DataMember(Name = "Is Deleted")]
+        [DataMember(Name = "IsDeleted")]
         public string? IsDeleted { get; set; }
 
         /// <summary>
         /// The last date of activity on the site.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// The unique identifier of the site.
         /// </summary>
-        [DataMember(Name = "Site Id")]
+        [DataMember(Name = "SiteId")]
         public string? SiteId { get; set; }
 
         /// <summary>
         /// The URL of the site.
         /// </summary>
-        [DataMember(Name = "Site URL")]
+        [DataMember(Name = "SiteURL")]
         public string? SiteURL { get; set; }
 
         /// <summary>
         /// The total count of files on the site.
         /// </summary>
-        [DataMember(Name = "File Count")]
+        [DataMember(Name = "FileCount")]
         public int? FileCount { get; set; }
 
         /// <summary>
         /// The count of active files on the site.
         /// </summary>
-        [DataMember(Name = "Active File Count")]
+        [DataMember(Name = "ActiveFileCount")]
         public int? ActiveFileCount { get; set; }
 
         /// <summary>
         /// The count of page views on the site.
         /// </summary>
-        [DataMember(Name = "Page View Count")]
+        [DataMember(Name = "PageViewCount")]
         public int? PageViewCount { get; set; }
 
         /// <summary>
         /// The count of unique pages visited on the site.
         /// </summary>
-        [DataMember(Name = "Visited Page Count")]
+        [DataMember(Name = "VisitedPageCount")]
         public int? VisitedPageCount { get; set; }
 
         /// <summary>
         /// The amount of storage used by the site in bytes.
         /// </summary>
-        [DataMember(Name = "Storage Used (Byte)")]
+        [DataMember(Name = "StorageUsedByte")]
         public long StorageUsedByte { get; set; }
 
         /// <summary>
         /// The amount of storage allocated to the site in bytes.
         /// </summary>
-        [DataMember(Name = "Storage Allocated (Byte)")]
+        [DataMember(Name = "StorageAllocatedByte")]
         public long StorageAllocatedByte { get; set; }
 
         /// <summary>
         /// The template used for the root web of the site.
         /// </summary>
-        [DataMember(Name = "Root Web Template")]
+        [DataMember(Name = "RootWebTemplate")]
         public string? RootWebTemplate { get; set; }
     }
 }

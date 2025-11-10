@@ -19,61 +19,61 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The URL of the OneDrive site.
         /// </summary>
-        [DataMember(Name = "Site URL")]
+        [DataMember(Name = "SiteURL")]
         public string? SiteURL { get; set; }
 
         /// <summary>
         /// The principal name of the OneDrive site owner.
         /// </summary>
-        [DataMember(Name = "Owner Principal Name")]
+        [DataMember(Name = "OwnerPrincipalName")]
         public string? OwnerPrincipalName { get; set; }
 
         /// <summary>
         /// The display name of the OneDrive site owner.
         /// </summary>
-        [DataMember(Name = "Owner Display Name")]
+        [DataMember(Name = "OwnerDisplayName")]
         public string? OwnerDisplayName { get; set; }
 
         /// <summary>
         /// Indicates if the OneDrive site is deleted.
         /// </summary>
-        [DataMember(Name = "Is Deleted")]
+        [DataMember(Name = "IsDeleted")]
         public string? IsDeleted { get; set; }
 
         /// <summary>
         /// The date of the last activity on the OneDrive site.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// The count of active files on the OneDrive site.
         /// </summary>
-        [DataMember(Name = "Active File Count")]
+        [DataMember(Name = "ActiveFileCount")]
         public int? ActiveFileCount { get; set; }
 
         /// <summary>
         /// The storage used by the OneDrive site in bytes.
         /// </summary>
-        [DataMember(Name = "Storage Used (Byte)")]
+        [DataMember(Name = "StorageUsedByte")]
         public long StorageUsedByte { get; set; }
 
         /// <summary>
         /// The storage allocated to the OneDrive site in bytes.
         /// </summary>
-        [DataMember(Name = "Storage Allocated (Byte)")]
+        [DataMember(Name = "StorageAllocatedByte")]
         public long StorageAllocatedByte { get; set; }
     }
 }

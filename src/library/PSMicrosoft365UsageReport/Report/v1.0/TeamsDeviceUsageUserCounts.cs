@@ -19,19 +19,19 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
@@ -43,13 +43,13 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The count of unique users accessing Microsoft Teams via Windows Phone.
         /// </summary>
-        [DataMember(Name = "Windows Phone")]
+        [DataMember(Name = "WindowsPhone")]
         public int? WindowsPhone { get; set; }
 
         /// <summary>
         /// The count of unique users accessing Microsoft Teams via Android Phone.
         /// </summary>
-        [DataMember(Name = "Android Phone")]
+        [DataMember(Name = "AndroidPhone")]
         public int? AndroidPhone { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The count of unique users accessing Microsoft Teams via Chrome OS.
         /// </summary>
-        [DataMember(Name = "Chrome OS")]
+        [DataMember(Name = "ChromeOS")]
         public int? ChromeOS { get; set; }
 
         /// <summary>

@@ -19,97 +19,97 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier of the user.
         /// </summary>
-        [DataMember(Name = "User Id")]
+        [DataMember(Name = "UserId")]
         public string? UserId { get; set; }
 
         /// <summary>
         /// The principal name of the user.
         /// </summary>
-        [DataMember(Name = "User Principal Name")]
+        [DataMember(Name = "UserPrincipalName")]
         public string? UserPrincipalName { get; set; }
 
         /// <summary>
         /// Indicates if the user is deleted.
         /// </summary>
-        [DataMember(Name = "Is Deleted")]
+        [DataMember(Name = "IsDeleted")]
         public string? IsDeleted { get; set; }
 
         /// <summary>
         /// The date when the user was deleted, if applicable.
         /// </summary>
-        [DataMember(Name = "Deleted Date")]
+        [DataMember(Name = "DeletedDate")]
         public string? DeletedDate { get; set; }
 
         /// <summary>
         /// The last date of activity for the user in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via the web.
         /// </summary>
-        [DataMember(Name = "Used Web")]
+        [DataMember(Name = "UsedWeb")]
         public string? UsedWeb { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via Windows Phone.
         /// </summary>
-        [DataMember(Name = "Used Windows Phone")]
+        [DataMember(Name = "UsedWindowsPhone")]
         public string? UsedWindowsPhone { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via iOS.
         /// </summary>
-        [DataMember(Name = "Used iOS")]
+        [DataMember(Name = "UsediOS")]
         public string? UsediOS { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via Mac.
         /// </summary>
-        [DataMember(Name = "Used Mac")]
+        [DataMember(Name = "UsedMac")]
         public string? UsedMac { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via Android Phone.
         /// </summary>
-        [DataMember(Name = "Used Android Phone")]
+        [DataMember(Name = "UsedAndroidPhone")]
         public string? UsedAndroidPhone { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via Windows.
         /// </summary>
-        [DataMember(Name = "Used Windows")]
+        [DataMember(Name = "UsedWindows")]
         public string? UsedWindows { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via Chrome OS.
         /// </summary>
-        [DataMember(Name = "Used Chrome OS")]
+        [DataMember(Name = "UsedChromeOS")]
         public string? UsedChromeOS { get; set; }
 
         /// <summary>
         /// Indicates if the user accessed Teams via Linux.
         /// </summary>
-        [DataMember(Name = "Used Linux")]
+        [DataMember(Name = "UsedLinux")]
         public string? UsedLinux { get; set; }
 
         /// <summary>
         /// Indicates if the user is licensed for Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Is Licensed")]
+        [DataMember(Name = "IsLicensed")]
         public string? IsLicensed { get; set; }
     }
 }

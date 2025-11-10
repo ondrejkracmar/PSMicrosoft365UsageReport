@@ -19,139 +19,139 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier (UPN) of the user within the organization.
         /// </summary>
-        [DataMember(Name = "User Principal Name")]
+        [DataMember(Name = "UserPrincipalName")]
         public string? UserPrincipalName { get; set; }
 
         /// <summary>
         /// The display name of the user.
         /// </summary>
-        [DataMember(Name = "Display Name")]
+        [DataMember(Name = "DisplayName")]
         public string? DisplayName { get; set; }
 
         /// <summary>
         /// Indicates if the user has an Exchange license.
         /// </summary>
-        [DataMember(Name = "Has Exchange License")]
+        [DataMember(Name = "HasExchangeLicense")]
         public string? HasExchangeLicense { get; set; }
 
         /// <summary>
         /// Indicates if the user has a OneDrive license.
         /// </summary>
-        [DataMember(Name = "Has OneDrive License")]
+        [DataMember(Name = "HasOneDriveLicense")]
         public string? HasOneDriveLicense { get; set; }
 
         /// <summary>
         /// Indicates if the user has a SharePoint license.
         /// </summary>
-        [DataMember(Name = "Has SharePoint License")]
+        [DataMember(Name = "HasSharePointLicense")]
         public string? HasSharePointLicense { get; set; }
 
         /// <summary>
         /// Indicates if the user has a Skype for Business license.
         /// </summary>
-        [DataMember(Name = "Has Skype For Business License")]
+        [DataMember(Name = "HasSkypeForBusinessLicense")]
         public string? HasSkypeForBusinessLicense { get; set; }
 
         /// <summary>
         /// Indicates if the user has a Yammer license.
         /// </summary>
-        [DataMember(Name = "Has Yammer License")]
+        [DataMember(Name = "HasYammerLicense")]
         public string? HasYammerLicense { get; set; }
 
         /// <summary>
         /// Indicates if the user has a Teams license.
         /// </summary>
-        [DataMember(Name = "Has Teams License")]
+        [DataMember(Name = "HasTeamsLicense")]
         public string? HasTeamsLicense { get; set; }
 
         /// <summary>
         /// The last date of activity in Exchange.
         /// </summary>
-        [DataMember(Name = "Exchange Last Activity Date")]
+        [DataMember(Name = "ExchangeLastActivityDate")]
         public string? ExchangeLastActivityDate { get; set; }
 
         /// <summary>
         /// The last date of activity in OneDrive.
         /// </summary>
-        [DataMember(Name = "OneDrive Last Activity Date")]
+        [DataMember(Name = "OneDriveLastActivityDate")]
         public string? OneDriveLastActivityDate { get; set; }
 
         /// <summary>
         /// The last date of activity in SharePoint.
         /// </summary>
-        [DataMember(Name = "SharePoint Last Activity Date")]
+        [DataMember(Name = "SharePointLastActivityDate")]
         public string? SharePointLastActivityDate { get; set; }
 
         /// <summary>
         /// The last date of activity in Skype for Business.
         /// </summary>
-        [DataMember(Name = "Skype For Business Last Activity Date")]
+        [DataMember(Name = "SkypeForBusinessLastActivityDate")]
         public string? SkypeForBusinessLastActivityDate { get; set; }
 
         /// <summary>
         /// The last date of activity in Yammer.
         /// </summary>
-        [DataMember(Name = "Yammer Last Activity Date")]
+        [DataMember(Name = "YammerLastActivityDate")]
         public string? YammerLastActivityDate { get; set; }
 
         /// <summary>
         /// The last date of activity in Teams.
         /// </summary>
-        [DataMember(Name = "Teams Last Activity Date")]
+        [DataMember(Name = "TeamsLastActivityDate")]
         public string? TeamsLastActivityDate { get; set; }
 
         /// <summary>
         /// The date when the Exchange license was assigned.
         /// </summary>
-        [DataMember(Name = "Exchange License Assign Date")]
+        [DataMember(Name = "ExchangeLicenseAssignDate")]
         public string? ExchangeLicenseAssignDate { get; set; }
 
         /// <summary>
         /// The date when the OneDrive license was assigned.
         /// </summary>
-        [DataMember(Name = "OneDrive License Assign Date")]
+        [DataMember(Name = "OneDriveLicenseAssignDate")]
         public string? OneDriveLicenseAssignDate { get; set; }
 
         /// <summary>
         /// The date when the SharePoint license was assigned.
         /// </summary>
-        [DataMember(Name = "SharePoint License Assign Date")]
+        [DataMember(Name = "SharePointLicenseAssignDate")]
         public string? SharePointLicenseAssignDate { get; set; }
 
         /// <summary>
         /// The date when the Skype for Business license was assigned.
         /// </summary>
-        [DataMember(Name = "Skype For Business License Assign Date")]
+        [DataMember(Name = "SkypeForBusinessLicenseAssignDate")]
         public string? SkypeForBusinessLicenseAssignDate { get; set; }
 
         /// <summary>
         /// The date when the Yammer license was assigned.
         /// </summary>
-        [DataMember(Name = "Yammer License Assign Date")]
+        [DataMember(Name = "YammerLicenseAssignDate")]
         public string? YammerLicenseAssignDate { get; set; }
 
         /// <summary>
         /// The date when the Teams license was assigned.
         /// </summary>
-        [DataMember(Name = "Teams License Assign Date")]
+        [DataMember(Name = "TeamsLicenseAssignDate")]
         public string? TeamsLicenseAssignDate { get; set; }
 
         /// <summary>
         /// The list of assigned products for the user.
         /// </summary>
-        [DataMember(Name = "Assigned Products")]
+        [DataMember(Name = "AssignedProducts")]
         public string[]? AssignedProducts { get; set; }
     }
 }

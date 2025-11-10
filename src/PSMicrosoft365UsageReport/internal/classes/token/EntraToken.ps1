@@ -24,6 +24,9 @@
 	[string]$IdentityID
 	[string]$IdentityType
 
+	# Workflow: Browser
+	[string]$RedirectUri
+
 	# Workflow: Client Secret
 	[System.Security.SecureString]$ClientSecret
 
@@ -40,6 +43,9 @@
 	# Workflow: Az.Accounts
 	[string]$ShowDialog
 
+	# Workflow: Federated
+	[PSMicrosoft365UsageReport.FederationProvider]$FederationProvider
+
 	# Workflow: Custom Token
 	[scriptblock]$HeaderCode
 	[hashtable]$Data = @{}
@@ -55,6 +61,16 @@
 		$this.ServiceUrl = $ServiceUrl
 		$this.AuthenticationUrl = $AuthenticationUrl
 		$this.Type = 'ClientSecret'
+	}
+
+	EntraToken([string]$Service, [string]$ClientID, [string]$TenantID, [PSMicrosoft365UsageReport.FederationProvider]$Provider, [string]$ServiceUrl, [string]$AuthenticationUrl) {
+		$this.Service = $Service
+		$this.ClientID = $ClientID
+		$this.TenantID = $TenantID
+		$this.ServiceUrl = $ServiceUrl
+		$this.AuthenticationUrl = $AuthenticationUrl
+		$this.FederationProvider = $Provider
+		$this.Type = 'Federated'
 	}
 
 	EntraToken([string]$Service, [string]$ClientID, [string]$TenantID, [System.Security.Cryptography.X509Certificates.X509Certificate2]$Certificate, [string]$ServiceUrl, [string]$AuthenticationUrl) {
@@ -212,7 +228,7 @@
 					return
 				}
 
-				$result = Connect-ServiceBrowser @defaultParam -SelectAccount
+				$result = Connect-ServiceBrowser @defaultParam -SelectAccount -RedirectUri $this.RedirectUri
 				$this.SetTokenMetadata($result)
 			}
 			Refresh {
@@ -236,6 +252,10 @@
 			}
 			AzToken {
 				$result = Connect-ServiceAzToken -AzToken $this.AccessToken
+				$this.SetTokenMetadata($result)
+			}
+			Federated {
+				$result, $provider = Connect-ServiceFederated @defaultParam -Provider $this.FederationProvider.Name -Assertion $this.FederationProvider.Assertion
 				$this.SetTokenMetadata($result)
 			}
 		}

@@ -4,6 +4,215 @@
         <name>PSMicrosoft365UsageReport</name>
     </assembly>
     <members>
+        <member name="T:PSMicrosoft365UsageReport.Batch.BatchRequestPayload">
+            <summary>
+            Represents the final JSON payload for a Microsoft Graph batch request.
+            Has a property named "requests" which is a list of Request objects.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.BatchRequestPayload.Requests">
+            <summary>
+            The "requests" array that Graph expects, each element having an Id, Method, Url, etc.
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Batch.BatchRequestPayload.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PSMicrosoft365UsageReport.Batch.BatchRequestPayload"/> class.
+            </summary>
+        </member>
+        <member name="T:PSMicrosoft365UsageReport.Batch.BatchResponsePayload">
+            <summary>
+            Represents the entire payload returned by a Microsoft Graph batch operation.
+            Contains both the original requests and the corresponding responses as returned by the API.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.BatchResponsePayload.Requests">
+            <summary>
+            Gets or sets the list of requests sent in the batch operation.
+            This property typically mirrors the original batch input for traceability.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.BatchResponsePayload.Responses">
+            <summary>
+            Gets or sets the list of responses returned from Microsoft Graph for each request in the batch.
+            The order and number of responses may not always match the requests, so matching by Id is recommended.
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Batch.BatchResponsePayload.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PSMicrosoft365UsageReport.Batch.BatchResponsePayload"/> class.
+            </summary>
+        </member>
+        <member name="T:PSMicrosoft365UsageReport.Batch.Request">
+            <summary>
+            Represents a single request to Microsoft Entra ID (Azure AD) in a batch scenario.
+            Compatible with .NET 4.7 or .NET Standard 2.0.
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Batch.Request.AllowedMethods">
+            <summary>
+            A set of allowed HTTP methods for this request (GET, PUT, PATCH, POST, DELETE).
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Batch.Request._method">
+            <summary>
+            Backing field for the HTTP method.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Request.Id">
+            <summary>
+            Gets or sets the unique identifier of this request (e.g. "1", "2", "3").
+            Typically used to distinguish multiple requests in a single batch.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Request.Method">
+            <summary>
+            Gets or sets the HTTP method (GET, PUT, PATCH, POST, DELETE).
+            The setter validates that the method is allowed, otherwise throws an ArgumentException.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Request.Url">
+            <summary>
+            Gets or sets the URL (endpoint) that this request will call (e.g. "/users", "/groups/{id}", etc.).
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Request.Body">
+            <summary>
+            Gets or sets the body of the request as a hashtable, useful for PowerShell scenarios.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Request.Headers">
+            <summary>
+            Gets or sets the headers of the request as a hashtable (key-value pairs).
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Batch.Request.ToString">
+            <summary>
+            Returns a string representation for debugging.
+            </summary>
+            <returns>String describing the request Id, Method, Url.</returns>
+        </member>
+        <member name="T:PSMicrosoft365UsageReport.Batch.Response">
+            <summary>
+            Represents a single response from Microsoft Graph API in a batch scenario.
+            Not all properties are guaranteed to be present; headers and body may be null if not returned by the API.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Response.Id">
+            <summary>
+            Gets or sets the unique integer identifier of this response (matches request Id).
+            Always present.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Response.Status">
+            <summary>
+            Gets or sets the HTTP status code returned by the API (e.g. 200, 404, 500).
+            Always present.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Response.Headers">
+            <summary>
+            Gets or sets the HTTP headers of the response as a hashtable (key-value pairs).
+            May be null if not present in the response.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.Response.Body">
+            <summary>
+            Gets or sets the body of the response as a hashtable (typically parsed JSON).
+            May be null if the response has no body or an error occurred.
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Batch.Response.ToString">
+            <summary>
+            Returns a string representation for debugging purposes.
+            Indicates whether body and headers are present.
+            </summary>
+            <returns>A string describing the response Id, Status, and presence of headers/body.</returns>
+        </member>
+        <member name="T:PSMicrosoft365UsageReport.Batch.UsageReport">
+            <summary>
+            Represents a usage report result from a batch request
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.Utility">
+            <summary>
+            Gets or sets the utility name
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.Service">
+            <summary>
+            Gets or sets the service name
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.Type">
+            <summary>
+            Gets or sets the report type
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.Name">
+            <summary>
+            Gets or sets the report name
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.ReportRefreshDate">
+            <summary>
+            Gets or sets the report refresh date
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.ReportPeriod">
+            <summary>
+            Gets or sets the report period
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Batch.UsageReport.Report">
+            <summary>
+            Gets or sets the report data
+            </summary>
+        </member>
+        <member name="T:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest">
+            <summary>
+            Cmdlet that receives Request objects from the pipeline and produces multiple 
+            <see cref="T:PSMicrosoft365UsageReport.Batch.BatchRequestPayload"/> objects, each containing up to 20 sub-requests. 
+            In each chunk, request Ids are reassigned to "1", "2", etc. to comply with the 
+            Microsoft Graph batch limit of 1..20 sub-requests per batch.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest.InputObject">
+            <summary>
+            An array of Request objects coming from the pipeline. 
+            Each item is a sub-request definition (method, url, body, etc.).
+            </summary>
+        </member>
+        <member name="F:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest._buffer">
+            <summary>
+            Internal buffer to accumulate up to 20 requests before emitting a batch payload.
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest.BeginProcessing">
+            <summary>
+            Called once before pipeline input is processed.
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest.ProcessRecord">
+            <summary>
+            Called once for each pipeline block of Request objects.
+            We accumulate them, and each time we hit 20, we emit a new BatchRequestPayload 
+            with Ids reindexed from "1" up to "n".
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest.EndProcessing">
+            <summary>
+            Called after all pipeline input has been processed. 
+            If there's any leftover (20) requests in _buffer, we emit one final payload.
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.Commands.NewPSMicrosoft365UsageReportBatchRequest.EmitOnePayload(System.Collections.Generic.List{PSMicrosoft365UsageReport.Batch.Request})">
+            <summary>
+            Helper method to create a single BatchRequestPayload from up to 20 Request objects, 
+            reindexing their Ids from "1" to the number of requests in this chunk.
+            </summary>
+            <param name="requests">A list of up to 20 Request objects.</param>
+        </member>
         <member name="T:PSMicrosoft365UsageReport.Environment">
             <summary>
             What environment this service should connect to.
@@ -28,6 +237,52 @@
             <summary>
             China Microsoft cloud https://login.chinacloudapi.cn
             </summary>
+        </member>
+        <member name="T:PSMicrosoft365UsageReport.FederationProvider">
+            <summary>
+            Represents a federation provider with scriptblock logic for use in PowerShell automation.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Name">
+            <summary>
+            Gets or sets the name of the federation provider.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Description">
+            <summary>
+            Gets or sets the description of the federation provider.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Priority">
+            <summary>
+            Gets or sets the priority of the federation provider.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Test">
+            <summary>
+            Gets or sets the test scriptblock.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Code">
+            <summary>
+            Gets or sets the main code scriptblock.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Assertion">
+            <summary>
+            Gets or sets the assertion string.
+            </summary>
+        </member>
+        <member name="P:PSMicrosoft365UsageReport.FederationProvider.Type">
+            <summary>
+            Gets or sets the type of the federation provider. Default is "Custom".
+            </summary>
+        </member>
+        <member name="M:PSMicrosoft365UsageReport.FederationProvider.ToString">
+            <summary>
+            Returns the name of the federation provider.
+            </summary>
+            <returns>The name of the provider.</returns>
         </member>
         <member name="T:PSMicrosoft365UsageReport.Helper.DurationToSecondsConverter">
             <summary>
@@ -790,22 +1045,22 @@
             The total item count in the mailbox, represented as a nullable integer.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.StorageUsedByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.StorageUsedInBytes">
             <summary>
             The total storage used by the mailbox in bytes, represented as a nullable long.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.IssueWarningQuotaByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.IssueWarningQuotaInBytes">
             <summary>
             The warning quota in bytes before issuing a warning, represented as a nullable long.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.ProhibitSendQuotaByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.ProhibitSendQuotaInBytes">
             <summary>
             The quota in bytes before sending is prohibited, represented as a nullable long.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.ProhibitSendReceiveQuotaByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.ProhibitSendReceiveQuotaInBytes">
             <summary>
             The quota in bytes before sending and receiving are prohibited, represented as a nullable long.
             </summary>
@@ -815,12 +1070,12 @@
             The count of deleted items in the mailbox, represented as a nullable integer.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.DeletedItemSizeByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.DeletedItemSizeInBytes">
             <summary>
             The total size of deleted items in bytes, represented as a nullable long.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.DeletedItemQuotaByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.Beta.MailboxUsageDetail.DeletedItemQuota">
             <summary>
             The quota in bytes for deleted items, represented as a nullable long.
             </summary>
@@ -4319,7 +4574,7 @@
             The storage limit at which sending is prohibited, in bytes.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.MailboxUsageDetail.ProhibitSendReceiveQuotaByte">
+        <member name="P:PSMicrosoft365UsageReport.Report.MailboxUsageDetail.ProhibitSendReceiveQuotaBytes">
             <summary>
             The storage limit at which both sending and receiving are prohibited, in bytes.
             </summary>
@@ -4756,7 +5011,7 @@
             Determines whether the user is using the Excel on Web.
             </summary>
         </member>
-        <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerPointWeb">
+        <member name="P:PSMicrosoft365UsageReport.Report.Microsoft365AppUserDetail.PowerpointWeb">
             <summary>
             Determines whether the user is using the PowerPoint on Web.
             </summary>
@@ -4845,7 +5100,7 @@
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Office365ActivationsUserCounts.ProductType">
             <summary>
-            The type of Microsoft 365 product.
+            The type of Microsoft365 product.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.Office365ActivationsUserCounts.Assigned">
@@ -6852,17 +7107,17 @@
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityCounts.AudioDuration">
             <summary>
-            The duration of audio usage in Microsoft Teams, in SO 8601 duration.
+            The duration of audio usage in Microsoft Teams, in SO8601 duration.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityCounts.VideoDuration">
             <summary>
-            The duration of video usage in Microsoft Teams, in SO 8601 duration.
+            The duration of video usage in Microsoft Teams, in SO8601 duration.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityCounts.ScreenShareDuration">
             <summary>
-            The duration of screen sharing in Microsoft Teams, in SO 8601 duration.
+            The duration of screen sharing in Microsoft Teams, in SO8601 duration.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityCounts.MeetingsOrganized">
@@ -7054,17 +7309,17 @@
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityUserDetail.AudioDuration">
             <summary>
-            The duration of audio usage in Microsoft Teams, in SO 8601 duration.
+            The duration of audio usage in Microsoft Teams, in SO8601 duration.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityUserDetail.VideoDuration">
             <summary>
-            The duration of video usage in Microsoft Teams, in SO 8601 duration
+            The duration of video usage in Microsoft Teams, in SO8601 duration
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityUserDetail.ScreenShareDuration">
             <summary>
-            The duration of screen sharing in Microsoft Teams, in SO 8601 duration.
+            The duration of screen sharing in Microsoft Teams, in SO8601 duration.
             </summary>
         </member>
         <member name="P:PSMicrosoft365UsageReport.Report.TeamsUserActivityUserDetail.AudioDurationInSeconds">

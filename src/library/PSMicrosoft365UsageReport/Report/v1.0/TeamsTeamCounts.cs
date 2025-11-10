@@ -19,43 +19,43 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The count of public teams in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Public Teams")]
+        [DataMember(Name = "PublicTeams")]
         public int? PublicTeams { get; set; }
 
         /// <summary>
         /// The count of active public teams in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Active Public Teams")]
+        [DataMember(Name = "ActivePublicTeams")]
         public int? ActivePublicTeams { get; set; }
 
         /// <summary>
         /// The count of private teams in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Private Teams")]
+        [DataMember(Name = "PrivateTeams")]
         public int? PrivateTeams { get; set; }
 
         /// <summary>
         /// The count of active private teams in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Active Private Teams")]
+        [DataMember(Name = "ActivePrivateTeams")]
         public int? ActivePrivateTeams { get; set; }
     }
 }

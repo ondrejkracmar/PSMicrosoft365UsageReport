@@ -25,7 +25,7 @@
                 "Expression": "Report Refresh Date"
             },
             {
-                "Name": "Report Period",
+                "Name": "ReportPeriod",
                 "Expression": "Report Period"
             },
             {
@@ -53,23 +53,23 @@
                 "Expression": "Last Activity Date"
             },
             {
-                "Name": "Item Count",
+                "Name": "ItemCount",
                 "Expression": "Item Count"
             },
             {
-                "Name": "StorageUsedByte",
+                "Name": "StorageUsedInBytes",
                 "Expression": "Storage Used (Byte)"
             },
             {
-                "Name": "IssueWarningQuotaByte",
+                "Name": "IssueWarningQuotaInBytes",
                 "Expression": "Issue Warning Quota (Byte)"
             },
             {
-                "Name": "ProhibitSendQuotaByte",
+                "Name": "ProhibitSendQuotaInBytes",
                 "Expression": "Prohibit Send Quota (Byte)"
             },
             {
-                "Name": "ProhibitSendReceiveQuotaByte",
+                "Name": "ProhibitSendReceiveQuotaInBytes",
                 "Expression": "Prohibit Send/Receive Quota (Byte)"
             },
             {
@@ -77,11 +77,11 @@
                 "Expression": "Deleted Item Count"
             },
             {
-                "Name": "DeletedItemSizeByte",
+                "Name": "DeletedItemSizeInBytes",
                 "Expression": "Deleted Item Size (Byte)"
             },
             {
-                "Name": "DeletedItemQuotaByte",
+                "Name": "DeletedItemQuotaInBytes",
                 "Expression": "Deleted Item Quota (Byte)"
             },
             {

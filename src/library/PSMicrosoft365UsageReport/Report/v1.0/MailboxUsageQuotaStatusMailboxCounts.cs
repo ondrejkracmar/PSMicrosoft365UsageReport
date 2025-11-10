@@ -20,43 +20,43 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The count of mailboxes under the storage limit.
         /// </summary>
-        [DataMember(Name = "Under Limit")]
+        [DataMember(Name = "UnderLimit")]
         public int? UnderLimit { get; set; }
 
         /// <summary>
         /// The count of mailboxes for which a warning has been issued due to nearing the storage limit.
         /// </summary>
-        [DataMember(Name = "Warning Issued")]
+        [DataMember(Name = "WarningIssued")]
         public int? WarningIssued { get; set; }
 
         /// <summary>
         /// The count of mailboxes where sending is prohibited due to reaching the storage limit.
         /// </summary>
-        [DataMember(Name = "Send Prohibited")]
+        [DataMember(Name = "SendProhibited")]
         public int? SendProhibited { get; set; }
 
         /// <summary>
         /// The count of mailboxes where both sending and receiving are prohibited due to reaching the storage limit.
         /// </summary>
-        [DataMember(Name = "Send/Receive Prohibited")]
+        [DataMember(Name = "SendReceiveProhibited")]
         public int? SendReceiveProhibited { get; set; }
 
         /// <summary>

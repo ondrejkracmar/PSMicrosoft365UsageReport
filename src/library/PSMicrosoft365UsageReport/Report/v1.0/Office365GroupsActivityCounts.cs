@@ -19,43 +19,43 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The count of emails received by groups in Exchange.
         /// </summary>
-        [DataMember(Name = "Exchange Emails Received")]
+        [DataMember(Name = "ExchangeEmailsReceived")]
         public int? ExchangeEmailsReceived { get; set; }
 
         /// <summary>
         /// The count of messages posted in Yammer groups.
         /// </summary>
-        [DataMember(Name = "Yammer Messages Posted")]
+        [DataMember(Name = "YammerMessagesPosted")]
         public int? YammerMessagesPosted { get; set; }
 
         /// <summary>
         /// The count of messages read in Yammer groups.
         /// </summary>
-        [DataMember(Name = "Yammer Messages Read")]
+        [DataMember(Name = "YammerMessagesRead")]
         public int? YammerMessagesRead { get; set; }
 
         /// <summary>
         /// The count of messages liked in Yammer groups.
         /// </summary>
-        [DataMember(Name = "Yammer Messages Liked")]
+        [DataMember(Name = "YammerMessagesLiked")]
         public int? YammerMessagesLiked { get; set; }
     }
 }

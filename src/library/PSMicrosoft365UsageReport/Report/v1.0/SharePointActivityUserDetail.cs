@@ -19,73 +19,73 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier (UPN) of the user within the organization.
         /// </summary>
-        [DataMember(Name = "User Principal Name")]
+        [DataMember(Name = "UserPrincipalName")]
         public string? UserPrincipalName { get; set; }
 
         /// <summary>
         /// Indicates if the user is deleted.
         /// </summary>
-        [DataMember(Name = "Is Deleted")]
+        [DataMember(Name = "IsDeleted")]
         public string? IsDeleted { get; set; }
 
         /// <summary>
         /// The date when the user was deleted, if applicable.
         /// </summary>
-        [DataMember(Name = "Deleted Date")]
+        [DataMember(Name = "DeletedDate")]
         public string? DeletedDate { get; set; }
 
         /// <summary>
         /// The last date on which the user performed an activity in SharePoint.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// The count of files viewed or edited by the user.
         /// </summary>
-        [DataMember(Name = "Viewed Or Edited File Count")]
+        [DataMember(Name = "ViewedOrEditedFileCount")]
         public int? ViewedOrEditedFileCount { get; set; }
 
         /// <summary>
         /// The count of files synced by the user.
         /// </summary>
-        [DataMember(Name = "Synced File Count")]
+        [DataMember(Name = "SyncedFileCount")]
         public int? SyncedFileCount { get; set; }
 
         /// <summary>
         /// The count of files shared internally by the user.
         /// </summary>
-        [DataMember(Name = "Shared Internally File Count")]
+        [DataMember(Name = "SharedInternallyFileCount")]
         public int? SharedInternallyFileCount { get; set; }
 
         /// <summary>
         /// The count of files shared externally by the user.
         /// </summary>
-        [DataMember(Name = "Shared Externally File Count")]
+        [DataMember(Name = "SharedExternallyFileCount")]
         public int? SharedExternallyFileCount { get; set; }
 
         /// <summary>
         /// The count of pages visited by the user.
         /// </summary>
-        [DataMember(Name = "Visited Page Count")]
+        [DataMember(Name = "VisitedPageCount")]
         public int? VisitedPageCount { get; set; }
 
         /// <summary>
         /// The list of products assigned to the user.
         /// </summary>
-        [DataMember(Name = "Assigned Products")]
+        [DataMember(Name = "AssignedProducts")]
         public string[]? AssignedProducts { get; set; }
     }
 }

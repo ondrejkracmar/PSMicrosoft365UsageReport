@@ -20,43 +20,43 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier (UPN) of the user within the organization.
         /// </summary>
-        [DataMember(Name = "User Principal Name")]
+        [DataMember(Name = "UserPrincipalName")]
         public string? UserPrincipalName { get; set; }
 
         /// <summary>
         /// The display name of the user.
         /// </summary>
-        [DataMember(Name = "Display Name")]
+        [DataMember(Name = "DisplayName")]
         public string? DisplayName { get; set; }
 
         /// <summary>
         /// The last date on which the user performed an activity.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// The count of emails sent by the user.
         /// </summary>
-        [DataMember(Name = "Send Count")]
+        [DataMember(Name = "SendCount")]
         public int? SendCount { get; set; }
 
         /// <summary>
         /// The count of emails received by the user.
         /// </summary>
-        [DataMember(Name = "Receive Count")]
+        [DataMember(Name = "ReceiveCount")]
         public int? ReceiveCount { get; set; }
     }
 }

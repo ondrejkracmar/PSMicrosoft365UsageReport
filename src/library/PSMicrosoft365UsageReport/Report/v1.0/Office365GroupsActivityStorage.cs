@@ -19,31 +19,31 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The date associated with the report.
         /// </summary>
-        [DataMember(Name = "Report Date")]
+        [DataMember(Name = "ReportDate")]
         public string? ReportDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The total storage used by group mailboxes in bytes.
         /// </summary>
-        [DataMember(Name = "Mailbox Storage Used (Byte)")]
+        [DataMember(Name = "MailboxStorageUsedByte")]
         public long MailboxStorageUsedByte { get; set; }
 
         /// <summary>
         /// The total storage used by group sites in bytes.
         /// </summary>
-        [DataMember(Name = "Site Storage Used (Byte)")]
+        [DataMember(Name = "SiteStorageUsedByte")]
         public long SiteStorageUsedByte { get; set; }
     }
 }

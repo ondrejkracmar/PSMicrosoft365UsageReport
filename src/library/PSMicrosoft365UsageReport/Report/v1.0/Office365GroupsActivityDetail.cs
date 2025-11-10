@@ -19,115 +19,115 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier of the group.
         /// </summary>
-        [DataMember(Name = "Group Id")]
+        [DataMember(Name = "GroupId")]
         public string? GroupId { get; set; }
 
         /// <summary>
         /// The display name of the group.
         /// </summary>
-        [DataMember(Name = "Group Display Name")]
+        [DataMember(Name = "GroupDisplayName")]
         public string? GroupDisplayName { get; set; }
 
         /// <summary>
         /// Indicates if the group is deleted.
         /// </summary>
-        [DataMember(Name = "Is Deleted")]
+        [DataMember(Name = "IsDeleted")]
         public string? IsDeleted { get; set; }
 
         /// <summary>
         /// The principal name of the group owner.
         /// </summary>
-        [DataMember(Name = "Owner Principal Name")]
+        [DataMember(Name = "OwnerPrincipalName")]
         public string? OwnerPrincipalName { get; set; }
 
         /// <summary>
         /// The date of the last activity in the group.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// The type of the group (e.g., Office 365, Security).
         /// </summary>
-        [DataMember(Name = "Group Type")]
+        [DataMember(Name = "GroupType")]
         public string? GroupType { get; set; }
 
         /// <summary>
         /// The count of members in the group.
         /// </summary>
-        [DataMember(Name = "Member Count")]
+        [DataMember(Name = "MemberCount")]
         public int? MemberCount { get; set; }
 
         /// <summary>
         /// The count of external members in the group.
         /// </summary>
-        [DataMember(Name = "External Member Count")]
+        [DataMember(Name = "ExternalMemberCount")]
         public int? ExternalMemberCount { get; set; }
 
         /// <summary>
         /// The count of emails received by the group in Exchange.
         /// </summary>
-        [DataMember(Name = "Exchange Received Email Count")]
+        [DataMember(Name = "ExchangeReceivedEmailCount")]
         public int? ExchangeReceivedEmailCount { get; set; }
 
         /// <summary>
         /// The count of active files in the group's SharePoint site.
         /// </summary>
-        [DataMember(Name = "SharePoint Active File Count")]
+        [DataMember(Name = "SharePointActiveFileCount")]
         public int? SharePointActiveFileCount { get; set; }
 
         /// <summary>
         /// The count of messages posted in the group's Yammer feed.
         /// </summary>
-        [DataMember(Name = "Yammer Posted Message Count")]
+        [DataMember(Name = "YammerPostedMessageCount")]
         public int? YammerPostedMessageCount { get; set; }
 
         /// <summary>
         /// The count of messages read in the group's Yammer feed.
         /// </summary>
-        [DataMember(Name = "Yammer Read Message Count")]
+        [DataMember(Name = "YammerReadMessageCount")]
         public int? YammerReadMessageCount { get; set; }
 
         /// <summary>
         /// The count of messages liked in the group's Yammer feed.
         /// </summary>
-        [DataMember(Name = "Yammer Liked Message Count")]
+        [DataMember(Name = "YammerLikedMessageCount")]
         public int? YammerLikedMessageCount { get; set; }
 
         /// <summary>
         /// The total item count in the group's Exchange mailbox.
         /// </summary>
-        [DataMember(Name = "Exchange Mailbox Total Item Count")]
+        [DataMember(Name = "ExchangeMailboxTotalItemCount")]
         public int? ExchangeMailboxTotalItemCount { get; set; }
 
         /// <summary>
         /// The storage used by the group's Exchange mailbox in bytes.
         /// </summary>
-        [DataMember(Name = "Exchange Mailbox Storage Used (Byte)")]
+        [DataMember(Name = "ExchangeMailboxStorageUsedByte")]
         public long ExchangeMailboxStorageUsedByte { get; set; }
 
         /// <summary>
         /// The total file count in the group's SharePoint site.
         /// </summary>
-        [DataMember(Name = "SharePoint Total File Count")]
+        [DataMember(Name = "SharePointTotalFileCount")]
         public int? SharePointTotalFileCount { get; set; }
 
         /// <summary>
         /// The storage used by the group's SharePoint site in bytes.
         /// </summary>
-        [DataMember(Name = "SharePoint Site Storage Used (Byte)")]
+        [DataMember(Name = "SharePointSiteStorageUsedByte")]
         public long SharePointSiteStorageUsedByte { get; set; }
     }
 }

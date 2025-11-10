@@ -16,6 +16,8 @@ $moduleRoot = Split-Path (Split-Path $PSScriptRoot)
 
 # Load all internal classes
 "$moduleRoot\internal\classes\token\EntraToken.ps1"
+"$moduleRoot\internal\classes\other\FilterBuilder.ps1"
+"$moduleRoot\internal\classes\other\ServiceSelector.ps1"
 
 # Load the strings used in messages
 "$moduleRoot\internal\scripts\strings.ps1"

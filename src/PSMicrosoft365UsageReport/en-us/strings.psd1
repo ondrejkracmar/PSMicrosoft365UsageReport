@@ -9,4 +9,5 @@
     'Report.Get.Failed'        = "The Microsoft 365 Usage Report file '{0}' was not loaded."
     'Report.DayFormat.Failed'  = "Invalid day format for value '{0}'. The value must be between {1}"
     'Report.DateFormat.Failed' = "Invalid day format for value '{0}'. The format must be 'yyyy-mm-dd'"
+    'Batch.Invoke'             = "Invoke batch request for request IDs '{0}'"
 }

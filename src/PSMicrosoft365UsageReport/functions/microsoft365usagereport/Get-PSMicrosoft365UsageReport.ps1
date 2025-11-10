@@ -1,33 +1,30 @@
 ﻿function Get-PSMicrosoft365UsageReport {
     <#
-        .SYNOPSIS
-            Get list of Microsoft 365 Usage Reports.
+	.SYNOPSIS
+		Get cached Microsoft 365 usage report definitions.
 
-        .DESCRIPTION
-            Get list of Microsoft 365 Usage Reports.
+	.DESCRIPTION
+		Retrieves the cached list of Microsoft 365 usage report definitions from the module's internal cache.
+		This function is used internally to improve performance by avoiding repeated calls to load report definitions.
 
-        .PARAMETER Utility
-            Get list of Microsoft365 Usage Report with seledcted utility name.
+		If the cache is not initialized, it will return an empty result.
 
-        .PARAMETER Service
-            Get list of Microsoft365 Usage Report with selected service name.
+    .PARAMETER EnableException
+        This parameters disables user-friendly warnings and enables the throwing of exceptions. This is less user friendly,
+        but allows catching exceptions in calling scripts.
 
-        .PARAMETER Type
-            Get list of Microsoft365 Usage Report with selected type name.
+	.EXAMPLE
+		PS C:\> Get-PSMicrosoft365UsageReport
 
-        .EXAMPLE
-            PS C:\> Get-PSMicrosoft365UsageReport
+		Retrieves all cached Microsoft 365 usage report definitions.
 
-            Get list of Microsoft 365 Usage Reports
+	.NOTES
+		This is an internal function used for performance optimization.
+		The cache is typically populated when Get-PSMicrosoft365UsageReport is first called.
 
-        .EXAMPLE
-            PS C:\> Get-PSMicrosoft365UsageReport -Service Teams -Type User
-
-            Get list of Microsoft 365 Usage Teams Reports with user's details
-
-    #>
-    [OutputType([PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport])]
-    [CmdletBinding(DefaultParameterSetName = 'FilterReport')]
+	#>
+    [OutputType('PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport')]
+    [CmdletBinding()]
     param(
         [Parameter(Mandatory = $false, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $false, ParameterSetName = 'FilterReport')]
         [ValidateNotNullOrEmpty()]
@@ -39,6 +36,7 @@
         [ValidateNotNullOrEmpty()]
         [string]$Type
     )
+
     begin {
         [string]$apiService = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
         $criteria = @{}
@@ -59,10 +57,10 @@
         elseif ($apiService -eq 'PSMicrosoft365UsageReport.GraphBeta') {
             [string]$mrTemplate = 'beta'
         }
-        $templateReportFileList = Join-Path -Path (Get-PSFConfigValue -FullName ('{0}.Template.Microsoft365UsageReport.Location' -f $Script:ModuleName)) -ChildPath $mrTemplate |
+        $templateReportFileList = Join-Path -Path (Get-PSFConfigValue -FullName ('{0}.Template.Microsoft365UsageReport.Location' -f 'PSMicrosoft365UsageReport')) -ChildPath $mrTemplate |
         Get-ChildItem -Filter *.json -Recurse
         foreach ($templateReportFile in $templateReportFileList) {
-            [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport] $usageReport = [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport]::new()
+            #[PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport] $usageReport = [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport]::new()
 
             # Load the configuration from the JSON file
             [string] $templateReportFilePath = $templateReportFile.FullName
@@ -74,22 +72,8 @@
                 [string] $message = (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Get.Failed -f $templateReportFilePath)
                 throw [System.IO.FileNotFoundException]::new($message, $templateReportFilePath)
             }
-
-            [System.Runtime.Serialization.Json.DataContractJsonSerializer] $serializer = [System.Runtime.Serialization.Json.DataContractJsonSerializer]::new([PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport])
-            [System.IO.FileStream] $stream = [System.IO.File]::Open($templateReportFilePath, [System.IO.FileMode]::Open)
-            try {
-                $usageReport = $serializer.ReadObject($stream)
-            }
-            catch {
-                # Do not continue if there is any issue reading the configuration file
-                throw
-            }
-            finally {
-                $stream.Close()
-            }
-            Get-FilterObject -InputObject $usageReport -Criteria $criteria
+            ConvertFrom-RestUsageReportService -InputObject (Get-Content -Path $templateReportFilePath | ConvertFrom-Json -Depth 5)
         }
     }
-
     end {}
 }

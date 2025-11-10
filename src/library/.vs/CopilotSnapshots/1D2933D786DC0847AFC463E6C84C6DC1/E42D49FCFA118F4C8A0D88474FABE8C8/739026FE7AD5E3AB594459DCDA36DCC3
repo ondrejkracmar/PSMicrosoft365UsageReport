@@ -1,0 +1,134 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents detailed information about Microsoft 365 active users within an organization.
+    /// This includes report refresh details, user-specific information, license statuses, last activity dates, and assigned product details for various services.
+    /// </summary>
+    [DataContract]
+    public class Office365ActiveUserDetail : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Office365ActiveUserDetail"/> class.
+        /// </summary>
+        public Office365ActiveUserDetail() { }
+
+        /// <summary>
+        /// The date when the report was last refreshed.
+        /// </summary>
+        public string? ReportRefreshDate { get; set; }
+
+        /// <summary>
+        /// The period covered by the report.
+        /// </summary>
+        public int? ReportPeriod { get; set; }
+
+        /// <summary>
+        /// The unique identifier (UPN) of the user within the organization.
+        /// </summary>
+        public string? UserPrincipalName { get; set; }
+
+        /// <summary>
+        /// The display name of the user.
+        /// </summary>
+        public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has an Exchange license.
+        /// </summary>
+        public string? HasExchangeLicense { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has a OneDrive license.
+        /// </summary>
+        public string? HasOneDriveLicense { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has a SharePoint license.
+        /// </summary>
+        public string? HasSharePointLicense { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has a Skype for Business license.
+        /// </summary>
+        public string? HasSkypeForBusinessLicense { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has a Yammer license.
+        /// </summary>
+        public string? HasYammerLicense { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has a Teams license.
+        /// </summary>
+        public string? HasTeamsLicense { get; set; }
+
+        /// <summary>
+        /// The last date of activity in Exchange.
+        /// </summary>
+        public string? ExchangeLastActivityDate { get; set; }
+
+        /// <summary>
+        /// The last date of activity in OneDrive.
+        /// </summary>
+        public string? OneDriveLastActivityDate { get; set; }
+
+        /// <summary>
+        /// The last date of activity in SharePoint.
+        /// </summary>
+        public string? SharePointLastActivityDate { get; set; }
+
+        /// <summary>
+        /// The last date of activity in Skype for Business.
+        /// </summary>
+        public string? SkypeForBusinessLastActivityDate { get; set; }
+
+        /// <summary>
+        /// The last date of activity in Yammer.
+        /// </summary>
+        public string? YammerLastActivityDate { get; set; }
+
+        /// <summary>
+        /// The last date of activity in Teams.
+        /// </summary>
+        public string? TeamsLastActivityDate { get; set; }
+
+        /// <summary>
+        /// The date when the Exchange license was assigned.
+        /// </summary>
+        public string? ExchangeLicenseAssignDate { get; set; }
+
+        /// <summary>
+        /// The date when the OneDrive license was assigned.
+        /// </summary>
+        public string? OneDriveLicenseAssignDate { get; set; }
+
+        /// <summary>
+        /// The date when the SharePoint license was assigned.
+        /// </summary>
+        public string? SharePointLicenseAssignDate { get; set; }
+
+        /// <summary>
+        /// The date when the Skype for Business license was assigned.
+        /// </summary>
+        public string? SkypeForBusinessLicenseAssignDate { get; set; }
+
+        /// <summary>
+        /// The date when the Yammer license was assigned.
+        /// </summary>
+        public string? YammerLicenseAssignDate { get; set; }
+
+        /// <summary>
+        /// The date when the Teams license was assigned.
+        /// </summary>
+        public string? TeamsLicenseAssignDate { get; set; }
+
+        /// <summary>
+        /// The list of assigned products for the user.
+        /// </summary>
+        public string[]? AssignedProducts { get; set; }
+    }
+}

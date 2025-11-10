@@ -19,19 +19,19 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The type of Microsoft 365 product.
         /// </summary>
-        [DataMember(Name = "Product Type")]
+        [DataMember(Name = "ProductType")]
         public string? ProductType { get; set; }
 
         /// <summary>
@@ -55,13 +55,13 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The count of activations on iOS devices.
         /// </summary>
-        [DataMember(Name = "iOS")]
+        [DataMember(Name = "AppleiOS")]
         public int? AppleiOS { get; set; }
 
         /// <summary>
         /// The count of activations on Windows 10 Mobile devices.
         /// </summary>
-        [DataMember(Name = "Windows 10 Mobile")]
+        [DataMember(Name = "Windows10Mobile")]
         public int? Windows10Mobile { get; set; }
     }
 }

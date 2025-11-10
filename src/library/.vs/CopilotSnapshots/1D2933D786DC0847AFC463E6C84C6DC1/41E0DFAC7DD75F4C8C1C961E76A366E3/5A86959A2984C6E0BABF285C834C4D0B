@@ -1,0 +1,59 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents the trend in the number of active users on SharePoint. 
+    /// A user is considered active if they executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.
+    /// This includes details on the Report Refresh Date, reporting period, and counts of various user activities.
+    /// </summary>
+    public class SharePointActivityUserCounts : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharePointActivityUserCounts"/> class.
+        /// </summary>
+        public SharePointActivityUserCounts() { }
+
+        /// <summary>
+        /// The date when the report was last refreshed.
+        /// </summary>
+        public string? ReportRefreshDate { get; set; }
+
+        /// <summary>
+        /// The date associated with the report.
+        /// </summary>
+        public string? ReportDate { get; set; }
+
+        /// <summary>
+        /// The period covered by the report.
+        /// </summary>
+        public int? ReportPeriod { get; set; }
+
+        /// <summary>
+        /// The count of users who visited a page.
+        /// </summary>
+        public int? VisitedPage { get; set; }
+
+        /// <summary>
+        /// The count of users who viewed or edited files.
+        /// </summary>
+        public int? ViewedOrEdited { get; set; }
+
+        /// <summary>
+        /// The count of users who synced files.
+        /// </summary>
+        public int? Synced { get; set; }
+
+        /// <summary>
+        /// The count of users who shared files internally.
+        /// </summary>
+        public int? SharedInternally { get; set; }
+
+        /// <summary>
+        /// The count of users who shared files externally.
+        /// </summary>
+        public int? SharedExternally { get; set; }
+    }
+}

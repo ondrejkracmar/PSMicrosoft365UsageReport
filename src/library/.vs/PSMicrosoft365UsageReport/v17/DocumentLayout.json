@@ -1,12 +1,58 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD6D364D-825B-4AC7-A5C9-9977977E39A9}|PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj|c:\\projects\\psmodules\\psmicrosoft365usagereport\\src\\library\\psmicrosoft365usagereport\\usagereport\\microsoft365usagereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD6D364D-825B-4AC7-A5C9-9977977E39A9}|PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj|solutionrelative:psmicrosoft365usagereport\\usagereport\\microsoft365usagereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD6D364D-825B-4AC7-A5C9-9977977E39A9}|PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj|c:\\projects\\psmodules\\psmicrosoft365usagereport\\src\\library\\psmicrosoft365usagereport\\usagereport\\definition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD6D364D-825B-4AC7-A5C9-9977977E39A9}|PSMicrosoft365UsageReport\\PSMicrosoft365UsageReport.csproj|solutionrelative:psmicrosoft365usagereport\\usagereport\\definition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Microsoft365UsageReport.cs",
+              "DocumentMoniker": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\UsageReport\\Microsoft365UsageReport.cs",
+              "RelativeDocumentMoniker": "PSMicrosoft365UsageReport\\UsageReport\\Microsoft365UsageReport.cs",
+              "ToolTip": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\UsageReport\\Microsoft365UsageReport.cs",
+              "RelativeToolTip": "PSMicrosoft365UsageReport\\UsageReport\\Microsoft365UsageReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T19:38:54.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Definition.cs",
+              "DocumentMoniker": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\UsageReport\\Definition.cs",
+              "RelativeDocumentMoniker": "PSMicrosoft365UsageReport\\UsageReport\\Definition.cs",
+              "ToolTip": "C:\\Projects\\PSModules\\PSMicrosoft365UsageReport\\src\\library\\PSMicrosoft365UsageReport\\UsageReport\\Definition.cs",
+              "RelativeToolTip": "PSMicrosoft365UsageReport\\UsageReport\\Definition.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T19:32:42.725Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

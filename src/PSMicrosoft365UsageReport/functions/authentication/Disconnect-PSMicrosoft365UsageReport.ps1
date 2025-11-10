@@ -1,10 +1,10 @@
 ﻿function Disconnect-PSMicrosoft365UsageReport {
 	<#
 	.SYNOPSIS
-		Disconnect from an Microsoft EntraID Service.
+		Disconnect from an Microsoft365 Usage Service.
 
 	.DESCRIPTION
-		Disconnect from an Microsoft EntraID Service.
+		Disconnect from an Microsoft365 Usage Service.
 
 	.PARAMETER Service
 		The service for which to retrieve the token.
@@ -31,6 +31,7 @@
 	}
 	process {
 		if ($cmdLetVerbose) {
+			Clear-PSFResultCache
 			Write-Verbose  ((Get-PSFLocalizedString -Module $script:ModuleName -Name Identity.Disconnect) -f $Service)
 		}
 		$script:_EntraTokens[$Service] = $null

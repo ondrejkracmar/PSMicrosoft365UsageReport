@@ -19,97 +19,97 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The count of active users in Exchange.
         /// </summary>
-        [DataMember(Name = "Exchange Active")]
+        [DataMember(Name = "ExchangeActive")]
         public int? ExchangeActive { get; set; }
 
         /// <summary>
         /// The count of inactive users in Exchange.
         /// </summary>
-        [DataMember(Name = "Exchange Inactive")]
+        [DataMember(Name = "ExchangeInactive")]
         public int? ExchangeInactive { get; set; }
 
         /// <summary>
         /// The count of active users in OneDrive.
         /// </summary>
-        [DataMember(Name = "OneDrive Active")]
+        [DataMember(Name = "OneDriveActive")]
         public int? OneDriveActive { get; set; }
 
         /// <summary>
         /// The count of inactive users in OneDrive.
         /// </summary>
-        [DataMember(Name = "OneDrive Inactive")]
+        [DataMember(Name = "OneDriveInactive")]
         public int? OneDriveInactive { get; set; }
 
         /// <summary>
         /// The count of active users in SharePoint.
         /// </summary>
-        [DataMember(Name = "SharePoint Active")]
+        [DataMember(Name = "SharePointActive")]
         public int? SharePointActive { get; set; }
 
         /// <summary>
         /// The count of inactive users in SharePoint.
         /// </summary>
-        [DataMember(Name = "SharePoint Inactive")]
+        [DataMember(Name = "SharePointInactive")]
         public int? SharePointInactive { get; set; }
 
         /// <summary>
         /// The count of active users in Skype for Business.
         /// </summary>
-        [DataMember(Name = "Skype For Business Active")]
+        [DataMember(Name = "SkypeForBusinessActive")]
         public int? SkypeForBusinessActive { get; set; }
 
         /// <summary>
         /// The count of inactive users in Skype for Business.
         /// </summary>
-        [DataMember(Name = "Skype For Business Inactive")]
+        [DataMember(Name = "SkypeForBusinessInactive")]
         public int? SkypeForBusinessInactive { get; set; }
 
         /// <summary>
         /// The count of active users in Yammer.
         /// </summary>
-        [DataMember(Name = "Yammer Active")]
+        [DataMember(Name = "YammerActive")]
         public int? YammerActive { get; set; }
 
         /// <summary>
         /// The count of inactive users in Yammer.
         /// </summary>
-        [DataMember(Name = "Yammer Inactive")]
+        [DataMember(Name = "YammerInactive")]
         public int? YammerInactive { get; set; }
 
         /// <summary>
         /// The count of active users in Teams.
         /// </summary>
-        [DataMember(Name = "Teams Active")]
+        [DataMember(Name = "TeamsActive")]
         public int? TeamsActive { get; set; }
 
         /// <summary>
         /// The count of inactive users in Teams.
         /// </summary>
-        [DataMember(Name = "Teams Inactive")]
+        [DataMember(Name = "TeamsInactive")]
         public int? TeamsInactive { get; set; }
 
         /// <summary>
         /// The count of active users in Office 365.
         /// </summary>
-        [DataMember(Name = "Office 365 Active")]
+        [DataMember(Name = "Office365Active")]
         public int? Office365Active { get; set; }
 
         /// <summary>
         /// The count of inactive users in Office 365.
         /// </summary>
-        [DataMember(Name = "Office 365 Inactive")]
+        [DataMember(Name = "Office365Inactive")]
         public int? Office365Inactive { get; set; }
     }
 }

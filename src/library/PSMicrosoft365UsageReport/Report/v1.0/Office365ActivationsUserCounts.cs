@@ -19,19 +19,19 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
-        /// The type of Microsoft 365 product.
+        /// The type of Microsoft365 product.
         /// </summary>
-        [DataMember(Name = "Product Type")]
+        [DataMember(Name = "ProductType")]
         public string? ProductType { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The count of shared computer activations.
         /// </summary>
-        [DataMember(Name = "Shared Computer Activation")]
+        [DataMember(Name = "SharedComputerActivation")]
         public int? SharedComputerActivation { get; set; }
     }
 }

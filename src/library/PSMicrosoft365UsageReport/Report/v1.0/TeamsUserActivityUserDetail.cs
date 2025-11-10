@@ -19,187 +19,187 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier of the user.
         /// </summary>
-        [DataMember(Name = "User Id")]
+        [DataMember(Name = "UserId")]
         public string? UserId { get; set; }
 
         /// <summary>
         /// The principal name of the user.
         /// </summary>
-        [DataMember(Name = "User Principal Name")]
+        [DataMember(Name = "UserPrincipalName")]
         public string? UserPrincipalName { get; set; }
 
         /// <summary>
         /// Indicates if the user is deleted.
         /// </summary>
-        [DataMember(Name = "Is Deleted")]
+        [DataMember(Name = "IsDeleted")]
         public string? IsDeleted { get; set; }
 
         /// <summary>
         /// The date when the user was deleted, if applicable.
         /// </summary>
-        [DataMember(Name = "Deleted Date")]
+        [DataMember(Name = "DeletedDate")]
         public string? DeletedDate { get; set; }
 
         /// <summary>
         /// The last date of activity for the user in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// Names of tenants with which the shared channel is associated.
         /// </summary>
-        [DataMember(Name = "Shared Channel Tenant Display Names")]
+        [DataMember(Name = "SharedChannelTenantDisplayNames")]
         public string? SharedChannelTenantDisplayNames { get; set; }
 
         /// <summary>
         /// The count of team chat messages sent by the user.
         /// </summary>
-        [DataMember(Name = "Team Chat Message Count")]
+        [DataMember(Name = "TeamChatMessageCount")]
         public int? TeamChatMessageCount { get; set; }
 
         /// <summary>
         /// The count of private chat messages sent by the user.
         /// </summary>
-        [DataMember(Name = "Private Chat Message Count")]
+        [DataMember(Name = "PrivateChatMessageCount")]
         public int? PrivateChatMessageCount { get; set; }
 
         /// <summary>
         /// The count of calls made by the user.
         /// </summary>
-        [DataMember(Name = "Call Count")]
+        [DataMember(Name = "CallCount")]
         public int? CallCount { get; set; }
 
         /// <summary>
         /// The count of meetings attended by the user.
         /// </summary>
-        [DataMember(Name = "Meeting Count")]
+        [DataMember(Name = "MeetingCount")]
         public int? MeetingCount { get; set; }
 
         /// <summary>
         /// The count of post messages sent by the user.
         /// </summary>
-        [DataMember(Name = "Post Messages")]
+        [DataMember(Name = "PostMessages")]
         public int? PostMessages { get; set; }
 
         /// <summary>
         /// The count of reply messages sent by the user.
         /// </summary>
-        [DataMember(Name = "Reply Messages")]
+        [DataMember(Name = "ReplyMessages")]
         public int? ReplyMessages { get; set; }
 
         /// <summary>
         /// The count of urgent messages sent by the user.
         /// </summary>
-        [DataMember(Name = "Urgent Messages")]
+        [DataMember(Name = "UrgentMessages")]
         public int? UrgentMessages { get; set; }
 
         /// <summary>
         /// The count of meetings organized by the user.
         /// </summary>
-        [DataMember(Name = "Meetings Organized Count")]
+        [DataMember(Name = "MeetingsOrganizedCount")]
         public int? MeetingsOrganizedCount { get; set; }
 
         /// <summary>
         /// The count of meetings attended by the user.
         /// </summary>
-        [DataMember(Name = "Meetings Attended Count")]
+        [DataMember(Name = "MeetingsAttendedCount")]
         public int? MeetingsAttendedCount { get; set; }
 
         /// <summary>
         /// The count of ad hoc meetings organized by the user.
         /// </summary>
-        [DataMember(Name = "Ad Hoc Meetings Organized Count")]
+        [DataMember(Name = "AdHocMeetingsOrganizedCount")]
         public int? AdHocMeetingsOrganizedCount { get; set; }
 
         /// <summary>
         /// The count of ad hoc meetings attended by the user.
         /// </summary>
-        [DataMember(Name = "Ad Hoc Meetings Attended Count")]
+        [DataMember(Name = "AdHocMeetingsAttendedCount")]
         public int? AdHocMeetingsAttendedCount { get; set; }
 
         /// <summary>
         /// The count of scheduled one-time meetings organized by the user.
         /// </summary>
-        [DataMember(Name = "Scheduled One-time Meetings Organized Count")]
+        [DataMember(Name = "ScheduledOneTimeMeetingsOrganizedCount")]
         public int? ScheduledOneTimeMeetingsOrganizedCount { get; set; }
 
         /// <summary>
         /// The count of scheduled one-time meetings attended by the user.
         /// </summary>
-        [DataMember(Name = "Scheduled One-time Meetings Attended Count")]
+        [DataMember(Name = "ScheduledOneTimeMeetingsAttendedCount")]
         public int? ScheduledOneTimeMeetingsAttendedCount { get; set; }
 
         /// <summary>
         /// The count of scheduled recurring meetings organized by the user.
         /// </summary>
-        [DataMember(Name = "Scheduled Recurring Meetings Organized Count")]
+        [DataMember(Name = "ScheduledRecurringMeetingsOrganizedCount")]
         public int? ScheduledRecurringMeetingsOrganizedCount { get; set; }
 
         /// <summary>
         /// The count of scheduled recurring meetings attended by the user.
         /// </summary>
-        [DataMember(Name = "Scheduled Recurring Meetings Attended Count")]
+        [DataMember(Name = "ScheduledRecurringMeetingsAttendedCount")]
         public int? ScheduledRecurringMeetingsAttendedCount { get; set; }
 
         /// <summary>
-        /// The duration of audio usage in Microsoft Teams, in SO 8601 duration.
+        /// The duration of audio usage in Microsoft Teams, in SO8601 duration.
         /// </summary>
-        [DataMember(Name = "Audio Duration")]
+        [DataMember(Name = "AudioDuration")]
         public string? AudioDuration { get; set; }
 
         /// <summary>
-        /// The duration of video usage in Microsoft Teams, in SO 8601 duration
+        /// The duration of video usage in Microsoft Teams, in SO8601 duration
         /// </summary>
-        [DataMember(Name = "Video Duration")]        
+        [DataMember(Name = "VideoDuration")]
         public string? VideoDuration { get; set; }
 
         /// <summary>
-        /// The duration of screen sharing in Microsoft Teams, in SO 8601 duration.
+        /// The duration of screen sharing in Microsoft Teams, in SO8601 duration.
         /// </summary>
-        [DataMember(Name = "Screen Share Duration")]
+        [DataMember(Name = "ScreenShareDuration")]
         public string? ScreenShareDuration { get; set; }
 
         /// <summary>
         /// The duration of audio usage in seconds.
         /// </summary>
-        [DataMember(Name = "Audio Duration In Seconds")]
+        [DataMember(Name = "AudioDurationInSeconds")]
         public int? AudioDurationInSeconds { get; set; }
 
         /// <summary>
         /// The duration of video usage in seconds.
         /// </summary>
-        [DataMember(Name = "Video Duration In Seconds")]
+        [DataMember(Name = "VideoDurationInSeconds")]
         public int? VideoDurationInSeconds { get; set; }
 
         /// <summary>
         /// The duration of screen sharing in seconds.
         /// </summary>
-        [DataMember(Name = "Screen Share Duration In Seconds")]
+        [DataMember(Name = "ScreenShareDurationInSeconds")]
         public int? ScreenShareDurationInSeconds { get; set; }
 
         /// <summary>
         /// Indicates if the user has other actions recorded in Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Has Other Action")]
+        [DataMember(Name = "HasOtherAction")]
         public string? HasOtherAction { get; set; }
 
         /// <summary>
         /// Indicates if the user is licensed for Microsoft Teams.
         /// </summary>
-        [DataMember(Name = "Is Licensed")]
+        [DataMember(Name = "IsLicensed")]
         public string? IsLicensed { get; set; }
     }
 }

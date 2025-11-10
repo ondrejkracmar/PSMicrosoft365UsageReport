@@ -19,49 +19,49 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The date when the report was last refreshed.
         /// </summary>
-        [DataMember(Name = "Report Refresh Date")]
+        [DataMember(Name = "ReportRefreshDate")]
         public string? ReportRefreshDate { get; set; }
 
         /// <summary>
         /// The period covered by the report.
         /// </summary>
-        [DataMember(Name = "Report Period")]
+        [DataMember(Name = "ReportPeriod")]
         public int? ReportPeriod { get; set; }
 
         /// <summary>
         /// The unique identifier for the team.
         /// </summary>
-        [DataMember(Name = "Team Id")]
+        [DataMember(Name = "TeamId")]
         public string? TeamId { get; set; }
 
         /// <summary>
         /// The name of the team.
         /// </summary>
-        [DataMember(Name = "Team Name")]
+        [DataMember(Name = "TeamName")]
         public string? TeamName { get; set; }
 
         /// <summary>
         /// The type of the team.
         /// </summary>
-        [DataMember(Name = "Team Type")]
+        [DataMember(Name = "TeamType")]
         public string? TeamType { get; set; }
 
         /// <summary>
         /// The last date on which there was activity in the team.
         /// </summary>
-        [DataMember(Name = "Last Activity Date")]
+        [DataMember(Name = "LastActivityDate")]
         public string? LastActivityDate { get; set; }
 
         /// <summary>
         /// The number of active users in the team.
         /// </summary>
-        [DataMember(Name = "Active Users")]
+        [DataMember(Name = "ActiveUsers")]
         public int? ActiveUsers { get; set; }
 
         /// <summary>
         /// The number of active channels in the team.
         /// </summary>
-        [DataMember(Name = "Active Channels")]
+        [DataMember(Name = "ActiveChannels")]
         public int? ActiveChannels { get; set; }
 
         /// <summary>
@@ -79,31 +79,31 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The number of meetings organized in the team.
         /// </summary>
-        [DataMember(Name = "Meetings Organized")]
+        [DataMember(Name = "MeetingsOrganized")]
         public int? MeetingsOrganized { get; set; }
 
         /// <summary>
         /// The number of post messages in the team.
         /// </summary>
-        [DataMember(Name = "Post Messages")]
+        [DataMember(Name = "PostMessages")]
         public int? PostMessages { get; set; }
 
         /// <summary>
         /// The number of reply messages in the team.
         /// </summary>
-        [DataMember(Name = "Reply Messages")]
+        [DataMember(Name = "ReplyMessages")]
         public int? ReplyMessages { get; set; }
 
         /// <summary>
         /// The number of channel messages in the team.
         /// </summary>
-        [DataMember(Name = "Channel Messages")]
+        [DataMember(Name = "ChannelMessages")]
         public int? ChannelMessages { get; set; }
 
         /// <summary>
         /// The number of urgent messages in the team.
         /// </summary>
-        [DataMember(Name = "Urgent Messages")]
+        [DataMember(Name = "UrgentMessages")]
         public int? UrgentMessages { get; set; }
 
         /// <summary>
@@ -115,13 +115,13 @@ namespace PSMicrosoft365UsageReport.Report
         /// <summary>
         /// The number of active shared channels in the team.
         /// </summary>
-        [DataMember(Name = "Active Shared Channels")]
+        [DataMember(Name = "ActiveSharedChannels")]
         public int? ActiveSharedChannels { get; set; }
 
         /// <summary>
         /// The number of active external users in the team.
         /// </summary>
-        [DataMember(Name = "Active External Users")]
+        [DataMember(Name = "ActiveExternalUsers")]
         public int? ActiveExternalUsers { get; set; }
     }
 }
