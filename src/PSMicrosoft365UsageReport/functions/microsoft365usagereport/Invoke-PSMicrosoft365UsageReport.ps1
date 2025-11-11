@@ -60,8 +60,17 @@
         [ValidateNotNullOrEmpty()]
         [PsfArgumentCompleter('psmicrosoft365usagereport.name')]
         [string]$Name,
-        [Parameter()]
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'SingleDate')]
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'NumberDays')]
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'NoParameter')]
+        [PsfArgumentCompleter('psmicrosoft365usagereport.format')]
         [string]$Format,
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'NumberDays')]
+        [PsfArgumentCompleter('psmicrosoft365usagereport.name.days')]
+        [string]$Days,
+        [Parameter(Mandatory = $True, ValueFromPipeline = $false, ValueFromPipelineByPropertyName = $true, ParameterSetName = 'SingleDate')]
+        [PsfArgumentCompleter('psmicrosoft365usagereport.name.date')]
+        [string]$Date,
         [Parameter()]
         [switch]$EnableException,
         [Parameter()]
@@ -110,6 +119,7 @@
     }#>
 
     begin {
+        Update-PSFTeppCompletion 
         [string]$service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
         Assert-EntraConnection -Service $service -Cmdlet $PSCmdlet
         [hashtable]$query = @{

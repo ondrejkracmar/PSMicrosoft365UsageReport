@@ -15,6 +15,7 @@
 			"modules": [
 				"PSFramework",
 				"Profiler",
+				"PSReadLine",
 				"Pester",
 				"PlatyPS",
 				"PSModuleDevelopment",
