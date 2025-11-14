@@ -98,7 +98,7 @@
             }
 
             Invoke-PSFProtectedCommand -ActionString 'Batch.Invoke' -ActionStringValues ($payload.Requests.Id -join ",") `
-                -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Identity.Platform) `
+                -Target (Get-PSFLocalizedString -Module $script:ModuleName -Name Report.Platform) `
                 -ScriptBlock {
                 $batchResponseList = [System.Collections.Generic.List[psobject]]::New()
                 [psobject] $batchResponse = Invoke-EntraRequest -Service $service -Header $header -Path $path -Body $body -Method Post -ErrorAction Stop
@@ -156,7 +156,8 @@
                                     if ($nextLink) {
                                         $nextLink = $nextLink.Trim()
                                         Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Next link found: $nextLink"
-                                    } else {
+                                    }
+                                    else {
                                         Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - No more pages"
                                     }
                                 }
@@ -196,7 +197,7 @@
 
                                     try {
                                         $nextPage = Invoke-EntraRequest -Service $service -Path $nextLink -Method Get -ErrorAction Stop
-                                        
+
                                         Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Page $pageCount response type: $($nextPage.GetType().Name)"
 
                                         # Check if nextPage is already an array (Invoke-EntraRequest auto-paginated)
@@ -217,10 +218,11 @@
                                                 Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Page $pageCount first item has properties: $($firstItemProps -join ', ')"
                                                 Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Page $pageCount first item userPrincipalName: '$($nextPage.value[0].userPrincipalName)'"
                                             }
-                                            
+
                                             $allData.AddRange([array]$nextPage.value)
                                             Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Retrieved page $pageCount with $($nextPage.value.Count) items (total: $($allData.Count))"
-                                        } else {
+                                        }
+                                        else {
                                             Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Page $pageCount has no 'value' property and is not an array"
                                         }
 
@@ -228,7 +230,8 @@
                                         if ($nextLink) {
                                             $nextLink = $nextLink.Trim()
                                             Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - Next link found: $nextLink"
-                                        } else {
+                                        }
+                                        else {
                                             Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - No more pages"
                                         }
                                     }
@@ -247,7 +250,7 @@
 
                                 # Replace with all collected data
                                 $PSItem.body = $allData.ToArray()
-                                
+
                                 # Verify after assignment
                                 if ($PSItem.body.Count -gt 200) {
                                     Write-PSFMessage -Level Warning -Message "Response ID: $($PSItem.Id) - After assignment: body.Count=$($PSItem.body.Count), body[0].userPrincipalName='$($PSItem.body[0].userPrincipalName)', body[200].userPrincipalName='$($PSItem.body[200].userPrincipalName)'"

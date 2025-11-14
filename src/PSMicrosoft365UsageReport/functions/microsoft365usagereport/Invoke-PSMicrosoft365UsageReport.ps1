@@ -119,7 +119,7 @@
     }#>
 
     begin {
-        Update-PSFTeppCompletion 
+        Update-PSFTeppCompletion
         [string]$service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
         Assert-EntraConnection -Service $service -Cmdlet $PSCmdlet
         [hashtable]$query = @{
@@ -197,7 +197,7 @@
                             [string] $csvString = (Invoke-EntraRequest -Service $service -Path $url -Query $query -Method Get -ErrorAction Stop)
                             switch ($apiVersion) {
                                 'v1.0' {
-                                    [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" ) 
+                                    [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" )
                                     [pscustomobject[]] $mappedData = $updateCsvString | ConvertFrom-Csv | Select-Object -Property $selectProperties
                                     ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject $mappedData
                                 }

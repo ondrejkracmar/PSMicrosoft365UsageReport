@@ -4,7 +4,7 @@ Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.name' -ScriptBlock 
     foreach ($usageReport in $usageReportList) {
         @{ Text = $usageReport.Name; ToolTip = $usageReport.Description }
     }
-} -AutoTraining 
+} -AutoTraining
 Register-PSFTeppScriptblock -Name 'psmicrosoft365usagereport.name.date' -ScriptBlock {
     # Generate available report dates (2 to 27 days ago)
     for ($i = 2; $i -le 27; $i++) {
