@@ -10,6 +10,9 @@ After building the module, this file will be completely ignored, adding anything
 
 $moduleRoot = Split-Path (Split-Path $PSScriptRoot)
 
+# Load the cmdlets
+"$($moduleRoot)\internal\scripts\cmdlets.ps1"
+
 # Load variables
 "$moduleRoot\internal\scripts\variables.ps1"
 
@@ -27,10 +30,6 @@ $moduleRoot = Split-Path (Split-Path $PSScriptRoot)
 
 # Load License
 "$moduleRoot\internal\scripts\license.ps1"
-
-# Load all internal classes
-"$moduleRoot\internal\classes\token\EntraToken.ps1"
-"$moduleRoot\internal\classes\report\UsageReport.ps1"
 
 # Load services
 "$moduleRoot\internal\scripts\services.ps1"

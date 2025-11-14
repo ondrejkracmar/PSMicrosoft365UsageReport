@@ -24,7 +24,7 @@
                 "Expression": "Report Refresh Date"
             },
             {
-                "Name": "Report Period",
+                "Name": "ReportPeriod",
                 "Expression": "Report Period"
             },
             {
@@ -52,7 +52,7 @@
                 "Expression": "Last Activity Date"
             },
             {
-                "Name": "Item Count",
+                "Name": "ItemCount",
                 "Expression": "Item Count"
             },
             {

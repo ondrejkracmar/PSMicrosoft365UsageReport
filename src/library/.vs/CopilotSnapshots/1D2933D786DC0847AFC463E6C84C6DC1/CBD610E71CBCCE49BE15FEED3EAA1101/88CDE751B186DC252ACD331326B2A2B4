@@ -1,0 +1,19 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents detailed information about users who have activated Microsoft 365 within an organization.
+    /// This includes details on the Report Refresh Date, user information, product type, last activation date, and device/platform activations.
+    /// </summary>
+    [DataContract]
+    public class Office365ActivationsUserDetail : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Office365ActivationsUserDetail"/> class.
+        /// </summary>
+        public Office365ActivationsUserDetail() { }
+    }
+}

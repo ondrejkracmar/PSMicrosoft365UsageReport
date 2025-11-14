@@ -1,0 +1,19 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents the count of Microsoft 365 activations on various platforms and devices within an organization.
+    /// This includes details on the Report Refresh Date, product type, and activation counts by platform (Windows, Mac, Android, iOS, and Windows 10 Mobile).
+    /// </summary>
+    [DataContract]
+    public class Office365ActivationCounts : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Office365ActivationCounts"/> class.
+        /// </summary>
+        public Office365ActivationCounts() { }
+    }
+}

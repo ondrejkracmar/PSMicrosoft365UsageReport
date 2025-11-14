@@ -1,4 +1,8 @@
 ﻿name: Publish Powershell Module To Private Repository
+
+pool:
+  vmImage: 'ubuntu-22.04'
+
 trigger:
   branches:
     include:
@@ -17,6 +21,7 @@ trigger:
 variables:
   - group: "AzArtifactsPSModules"
   - group: "BuildEnvironment"
+  - group: "GitHubSync"
 
 steps:
    - checkout: self
@@ -27,7 +32,7 @@ steps:
      inputs:
        targetType: inline
        script: |
-         dotnet tool install --global GitVersion.Tool
+         dotnet tool install --global GitVersion.Tool --version 6.3.0
               dotnet-gitversion /config $(sourceDirectory)/GitVersion.yml
               $gitVersionObject = dotnet-gitversion /config $(sourceDirectory)/GitVersion.yml | ConvertFrom-Json
               $gitVersionObject.PSObject.Properties.ForEach{
@@ -41,6 +46,14 @@ steps:
      inputs:
        targetType: filePath
        filePath: "$(sourceDirectory)/build/vsts-prerequisites.ps1"
+
+   - task: PowerShell@2
+     displayName: Build Powershell Module library
+     inputs:
+       filePath: '$(sourceDirectory)/build/vsts-build-library.ps1'
+       arguments: >
+          -WorkingDirectory '$(sourceDirectory)'
+       pwsh: true
 
    - task: PowerShell@2
      displayName: Validation/Test Powershell Module
@@ -84,6 +97,17 @@ steps:
           -PreRelease '$(PreReleaseLabel)'
           -CommitsSinceVersion '$(CommitsSinceVersionSource)'
 
-
-
-    
+   - task: PowerShell@2
+     displayName: 'Synchronize Azure DevOps Repository With GitHub'
+     inputs:
+       targetType: 'filePath'
+       filePath: '$(sourceDirectory)/build/vsts-syncRepository.ps1'
+       arguments: > # Use this to avoid newline characters in multiline string
+          -AzureDevOpsOrganizationName '$(organizationName)'
+          -AzureDevOpsProjectName '$(projectName)'
+          -AzureDevOpsRepositoryName "PSMicrosoft365UsageReport"
+          -AzureDevOpsUsername '$(azureDevOpsUsername)'
+          -AzureDevOpsToken '$(azureDevOpsPAT)'
+          -GitHubRepositoryName "PSMicrosoft365UsageReport"
+          -GitHubUsername '$(gitHubUsername)'
+          -GitHubToken '$(gitHubPAT)'

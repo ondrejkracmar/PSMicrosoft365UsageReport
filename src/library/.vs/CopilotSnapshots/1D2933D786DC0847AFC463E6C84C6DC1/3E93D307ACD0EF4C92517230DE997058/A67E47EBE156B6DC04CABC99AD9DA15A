@@ -1,0 +1,109 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents detailed information about Microsoft Teams activity by individual teams.
+    /// This includes details on the Report Refresh Date, reporting period, team activity statistics, and user engagement metrics.
+    /// </summary>
+    [DataContract]
+    public class TeamsTeamActivityDetail : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsTeamActivityDetail"/> class.
+        /// </summary>
+        public TeamsTeamActivityDetail() { }
+
+        /// <summary>
+        /// The date when the report was last refreshed.
+        /// </summary>
+        public string? ReportRefreshDate { get; set; }
+
+        /// <summary>
+        /// The period covered by the report.
+        /// </summary>
+        public int? ReportPeriod { get; set; }
+
+        /// <summary>
+        /// The unique identifier for the team.
+        /// </summary>
+        public string? TeamId { get; set; }
+
+        /// <summary>
+        /// The name of the team.
+        /// </summary>
+        public string? TeamName { get; set; }
+
+        /// <summary>
+        /// The type of the team.
+        /// </summary>
+        public string? TeamType { get; set; }
+
+        /// <summary>
+        /// The last date on which there was activity in the team.
+        /// </summary>
+        public string? LastActivityDate { get; set; }
+
+        /// <summary>
+        /// The number of active users in the team.
+        /// </summary>
+        public int? ActiveUsers { get; set; }
+
+        /// <summary>
+        /// The number of active channels in the team.
+        /// </summary>
+        public int? ActiveChannels { get; set; }
+
+        /// <summary>
+        /// The number of guest users in the team.
+        /// </summary>
+        public int? Guests { get; set; }
+
+        /// <summary>
+        /// The number of reactions in the team.
+        /// </summary>
+        public int? Reactions { get; set; }
+
+        /// <summary>
+        /// The number of meetings organized in the team.
+        /// </summary>
+        public int? MeetingsOrganized { get; set; }
+
+        /// <summary>
+        /// The number of post messages in the team.
+        /// </summary>
+        public int? PostMessages { get; set; }
+
+        /// <summary>
+        /// The number of reply messages in the team.
+        /// </summary>
+        public int? ReplyMessages { get; set; }
+
+        /// <summary>
+        /// The number of channel messages in the team.
+        /// </summary>
+        public int? ChannelMessages { get; set; }
+
+        /// <summary>
+        /// The number of urgent messages in the team.
+        /// </summary>
+        public int? UrgentMessages { get; set; }
+
+        /// <summary>
+        /// The number of mentions in the team.
+        /// </summary>
+        public int? Mentions { get; set; }
+
+        /// <summary>
+        /// The number of active shared channels in the team.
+        /// </summary>
+        public int? ActiveSharedChannels { get; set; }
+
+        /// <summary>
+        /// The number of active external users in the team.
+        /// </summary>
+        public int? ActiveExternalUsers { get; set; }
+    }
+}

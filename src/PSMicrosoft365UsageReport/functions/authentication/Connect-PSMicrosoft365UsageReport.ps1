@@ -10,6 +10,10 @@
 	.PARAMETER ClientID
 		ID of the registered/enterprise application used for authentication.
 
+		Supports providing special labels as "ID":
+		+ Azure: Resolves to the actual ID of the first party app used by Connect-AzAccount
+		+ Graph: Resolves to the actual ID of the first party app used by Connect-MgGraph
+
 	.PARAMETER TenantID
 		The ID of the tenant/directory to connect to.
 
@@ -30,6 +34,14 @@
 	.PARAMETER DeviceCode
 		Use the Device Code delegate authentication flow.
 		This will prompt the user to complete login via browser.
+
+	.PARAMETER RefreshToken
+		Use an already existing RefreshToken to authenticate.
+		Can be used to connect to multiple services using a single interactive delegate auth flow.
+
+	.PARAMETER RefreshTokenObject
+		Use the full token object of a delegate session with a refresh token, to authenticate to another service with this object.
+		Can be used to connect to multiple services using a single interactive delegate auth flow.
 
 	.PARAMETER Certificate
 		The Certificate object used to authenticate with.
@@ -80,6 +92,7 @@
 		Name of the secret to use from the Azure Key Vault specified through the '-VaultName' parameter.
 		In order for this flow to work, please ensure that you either have an active AzureKeyVault service connection,
 		or are connected via Connect-AzAccount.
+		Supports specifying _multiple_ secret names, in which case the first one that works will be used.
 
 	.PARAMETER Identity
 		Log on as the Managed Identity of the current system.
@@ -91,6 +104,42 @@
 
 	.PARAMETER IdentityType
 		Type of the User-Managed Identity.
+
+	.PARAMETER FallBackAzAccount
+		When logon as Managed Identity fails, try logging in as current AzAccount.
+		This is intended to allow easier local testing of code intended for an MSI environment, such as an Azure Function App.
+
+	.PARAMETER AsAzAccount
+		Reuse the existing Az.Accounts session to authenticate.
+		This is convenient as no further interaction is needed, but also limited in what scopes are available.
+		This authentication flow requires the 'Az.Accounts' module to be present, loaded and connected.
+		Use 'Connect-AzAccount' to connect first.
+
+	.PARAMETER ShowDialog
+		Whether to show an interactive dialog when connecting using the existing Az.Accounts session.
+		Defaults to: "auto"
+
+		Options:
+		- auto: Shows dialog only if needed.
+		- always: Will always show the dialog, forcing interaction.
+		- never: Will never show the dialog. Authentication will fail if interaction is required.
+
+	.PARAMETER Federated
+		Use federated credentials to authenticate.
+		This authentication flow is specific to a given environment and can for example enable a Github Action in a specific repository on a specific branch to authenticate, without needing to provide (and manage) a credential.
+		Some setup is required.
+
+		By default, this command is going to check all provided configurations ("Federation Providers") registered to PSMicrosoft365UsageReport and use the first that applies.
+		Use "PSMicrosoft365UsageReport" to pick a specific one to use.
+		Use "-Assertion" to handle the federated identity provider outside of PSMicrosoft365UsageReport and simply provide the result for logon.
+
+	.PARAMETER FederationProvider
+		The name of the Federation Provider to use. Overrides the automatic selection.
+		Federation Providers are an PSMicrosoft365UsageReport concept and used to automatically do what is needed to access and use a Federated Credential, based on its environment.
+		See the documentation on Register-EntraFederationProvider for more details.
+
+	.PARAMETER Assertion
+		The credentials from the federated identity provider to use in an Federated Credentials authentication flow.
 
 	.PARAMETER Service
 		The service to connect to.
@@ -108,16 +157,36 @@
 		This token is not registered as a service and cannot be implicitly  used by Invoke-EntraRequest.
 		Also provide the "-ServiceUrl" parameter, if you later want to use this token explicitly in Invoke-EntraRequest.
 
+	.PARAMETER UseRefreshToken
+		Use a refresh token if available.
+		Only applicable when connecting using a delegate authentication flow.
+		If specified, it will look to reuse an existing refresh token for that same client ID & tenant ID, if present,
+		making the authentication process non-interactive.
+		By default, it would always do the fully interactive authentication flow via Browser.
+
 	.PARAMETER MakeDefault
 		Makes this service the new default service for all subsequent Connect-EntraService & Invoke-EntraRequest calls.
 
 	.PARAMETER PassThru
 		Return the token received for the current connection.
 
+	.PARAMETER Environment
+		What environment this service should connect to.
+		Defaults to: 'Global'
+
+	.PARAMETER AuthenticationUrl
+		The url used for the authentication requests to retrieve tokens.
+		Usually determined by service connected to or the "Environment" parameter, but may be overridden in case of need.
+
 	.EXAMPLE
 		PS C:\> Connect-PSMicrosoft365UsageReport -ClientID $clientID -TenantID $tenantID
 
 		Establish a connection to the graph API, prompting the user for login on their default browser.
+
+	.EXAMPLE
+		PS C:\> Connect-PSMicrosoft365UsageReport -AsAzAccount
+
+		Establish a connection to the graph API, using the current Az.Accounts session.
 
 	.EXAMPLE
 		PS C:\> Connect-PSMicrosoft365UsageReport -ClientID $clientID -TenantID $tenantID -Certificate $cert
@@ -141,28 +210,37 @@
 		Establish a connection to the graph API, after retrieving the necessary certificate from the specified Azure Key Vault.
 #>
 	[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseDeclaredVarsMoreThanAssignments", "")]
+	[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidDefaultValueForMandatoryParameter", "")]
+	[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSReviewUnusedParameter", "")]
 	[CmdletBinding(DefaultParameterSetName = 'Browser')]
 	param (
 		[Parameter(Mandatory = $true, ParameterSetName = 'Browser')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'DeviceCode')]
+		[Parameter(Mandatory = $true, ParameterSetName = 'Refresh')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'AppCertificate')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'AppSecret')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'UsernamePassword')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'KeyVault')]
+		[Parameter(Mandatory = $true, ParameterSetName = 'Federated')]
+		[ArgumentCompleter({ 'Graph', 'Azure' })]
 		[string]
 		$ClientID,
 
-		[Parameter(Mandatory = $true, ParameterSetName = 'Browser')]
+		[Parameter(ParameterSetName = 'Browser')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'DeviceCode')]
+		[Parameter(Mandatory = $true, ParameterSetName = 'Refresh')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'AppCertificate')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'AppSecret')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'UsernamePassword')]
 		[Parameter(Mandatory = $true, ParameterSetName = 'KeyVault')]
+		[Parameter(Mandatory = $true, ParameterSetName = 'Federated')]
 		[string]
-		$TenantID,
+		$TenantID = 'organizations',
 
 		[Parameter(ParameterSetName = 'Browser')]
 		[Parameter(ParameterSetName = 'DeviceCode')]
+		[Parameter(ParameterSetName = 'Refresh')]
+		[Parameter(ParameterSetName = 'RefreshObject')]
 		[string[]]
 		$Scopes,
 
@@ -178,6 +256,14 @@
 		[Parameter(Mandatory = $true, ParameterSetName = 'DeviceCode')]
 		[switch]
 		$DeviceCode,
+
+		[Parameter(Mandatory = $true, ParameterSetName = 'Refresh')]
+		[string]
+		$RefreshToken,
+
+		[Parameter(Mandatory = $true, ParameterSetName = 'RefreshObject')]
+		[EntraToken]
+		$RefreshTokenObject,
 
 		[Parameter(ParameterSetName = 'AppCertificate')]
 		[System.Security.Cryptography.X509Certificates.X509Certificate2]
@@ -212,7 +298,7 @@
 		$VaultName,
 
 		[Parameter(Mandatory = $true, ParameterSetName = 'KeyVault')]
-		[string]
+		[string[]]
 		$SecretName,
 
 		[Parameter(Mandatory = $true, ParameterSetName = 'Identity')]
@@ -228,6 +314,54 @@
 		[string]
 		$IdentityType = 'ClientID',
 
+		[Parameter(ParameterSetName = 'Identity')]
+		[Parameter(ParameterSetName = 'Federated')]
+		[switch]
+		$FallBackAzAccount,
+
+		[Parameter(Mandatory = $true, ParameterSetName = 'AzAccount')]
+		[switch]
+		$AsAzAccount,
+
+		[Parameter(ParameterSetName = 'AzAccount')]
+		[ValidateSet('Auto', 'Always', 'Never')]
+		[string]
+		$ShowDialog = 'Auto',
+
+		[Parameter(ParameterSetName = 'AzToken')]
+		[PSCustomObject]
+		$AzToken,
+
+		[Parameter(ParameterSetName = 'Federated')]
+		[switch]
+		$Federated,
+
+		[Parameter(ParameterSetName = 'Federated')]
+		[ArgumentCompleter({
+				param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+				foreach ($provider in Get-EntraFederationProvider) {
+					if ($provider.Name -notlike "$wordToComplete*") { continue }
+					$text = $provider.Name
+					if ($text -match '\s') { $text = "'$($provider.Name -replace "'", "''")'" }
+
+					[System.Management.Automation.CompletionResult]::new($text, $text, 'ParameterValue', $provider.Description)
+				}
+			})]
+		[ValidateScript({
+				$providers = (Get-EntraFederationProvider).Name
+				if ($_ -in $providers) { return $true }
+
+				$message = "Unknown Federation Provider! '$_' - known providers: $($providers -join ', ')"
+				Write-Warning $message
+				throw $message
+			})]
+		[string]
+		$FederationProvider,
+
+		[Parameter(ParameterSetName = 'Federated')]
+		[string]
+		$Assertion,
+
 		[ArgumentCompleter({ Get-ServiceCompletion $args })]
 		[ValidateScript({ Assert-ServiceName -Name $_ })]
 		[string[]]
@@ -239,18 +373,41 @@
 		[string]
 		$Resource,
 
+		[Parameter(ParameterSetName = 'Browser')]
+		[Parameter(ParameterSetName = 'DeviceCode')]
+		[switch]
+		$UseRefreshToken,
+
 		[switch]
 		$MakeDefault,
 
 		[switch]
-		$PassThru
+		$PassThru,
+
+		[PSMicrosoft365UsageReport.Environment]
+		$Environment,
+
+		[string]
+		$AuthenticationUrl
 	)
 	begin {
-		$service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
+		if (-not ([object]::Equals($Service, $null))) {
+			#Set-PSFConfig -Module $script:ModuleName -Name 'Settings.DefaultService' -Value $Service
+			[string] $service = Get-PSFConfigValue -FullName ('{0}.Settings.DefaultService' -f $script:ModuleName)
+		}
 		$param = $PSBoundParameters | ConvertTo-PSFHashtable -ReferenceCommand Connect-EntraService
 	}
 
 	process {
-		Connect-EntraService @param -Service $service
-	}end { }
+		try {
+			Connect-EntraService @param -Service $service
+			Clear-PSFResultCache
+			[PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport[]] $usageReportList = Get-PSMicrosoft365UsageReport
+			$usageReportList | Set-PSFResultCache
+		}
+		catch {
+			Invoke-TerminatingException -Cmdlet $PSCmdlet -Message ((Get-PSFLocalizedString -Module $script:ModuleName -Name Identity.Connect.Failed) -f $service)
+		}
+	}
+	end { }
 }

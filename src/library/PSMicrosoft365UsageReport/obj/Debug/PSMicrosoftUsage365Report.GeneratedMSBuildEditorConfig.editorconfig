@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = PSMicrosoft365UsageReport
+build_property.ProjectDir = C:\Projects\PSModules\PSMicrosoft365UsageReport\src\library\PSMicrosoft365UsageReport\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

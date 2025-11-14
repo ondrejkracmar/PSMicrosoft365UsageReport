@@ -1,0 +1,28 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers within an organization.
+    /// </summary>
+    [DataContract]
+    public class Office365ActivationsUserCounts : IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Office365ActivationsUserCounts"/> class.
+        /// </summary>
+        public Office365ActivationsUserCounts() { }
+
+        /// <summary>
+        /// Gets or sets the report refresh date.
+        /// </summary>
+        public string? ReportRefreshDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the report period.
+        /// </summary>
+        public int? ReportPeriod { get; set; }
+    }
+}

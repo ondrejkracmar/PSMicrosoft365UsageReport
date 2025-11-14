@@ -15,7 +15,7 @@
 	CompanyName = 'Ondrej Kracmar'
 
 	# Copyright statement for this module
-	Copyright = 'Copyright (c) 2023 Ondrej Kracmar'
+	Copyright = 'Copyright (c) 2024 Ondrej Kracmar'
 
 	# Description of the functionality provided by this module
 	Description = 'Microsoft 365 Reports via Graph API'
@@ -31,22 +31,29 @@
 	# RequiredAssemblies = @('bin\PSMicrosoft365UsageReport.dll')
 
 	# Type files (.ps1xml) to be loaded when importing this module
-	TypesToProcess = @('types\PSMicrosoft365UsageReportTypes.ps1xml')
+	TypesToProcess = @('types/PSMicrosoft365UsageReport.Types.ps1xml')
 
 	# Format files (.ps1xml) to be loaded when importing this module
-	FormatsToProcess = @('views\PSMicrosoft365UsageReportT.Format.ps1xml')
+	FormatsToProcess = @('views/PSMicrosoft365UsageReport.Format.ps1xml')
 
 	# Functions to export from this module
 	FunctionsToExport = @(
 		'Connect-PSMicrosoft365UsageReport'
+		'ConvertFrom-PSMicrosoft365UsageReportBatchRequest'
+		'Disconnect-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReport'
 		'Get-PSMicrosoft365UsageReportService'
 		'Invoke-PSMicrosoft365UsageReport'
 		'Set-PSMicrosoft365UsageReportService'
+		'Invoke-PSMicrosoft365UsageReportBatchRequest'
+		'Get-PSMicrosoft365UsageReportCommandRetry'
+		'Set-PSMicrosoft365UsageReportCommandRetry'
 	)
 
-	# Cmdlets to export from this module
-	CmdletsToExport = ''
+# Cmdlets to export from this module
+	CmdletsToExport    = @(
+		'New-PSMicrosoft365UsageReportBatchRequest'
+	)
 
 	# Variables to export from this module
 	VariablesToExport = ''

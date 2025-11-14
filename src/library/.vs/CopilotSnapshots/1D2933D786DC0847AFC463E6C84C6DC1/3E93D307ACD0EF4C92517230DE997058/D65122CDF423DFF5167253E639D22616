@@ -1,0 +1,174 @@
+﻿#nullable enable
+using System.Runtime.Serialization;
+using PSMicrosoft365UsageReport.Interface;
+
+namespace PSMicrosoft365UsageReport.Report
+{
+    /// <summary>
+    /// Represents detailed information about Microsoft Teams user activity by individual users.
+    /// This includes details on the Report Refresh Date, reporting period, activity counts, and duration for various activity types.
+    /// </summary>
+    [DataContract]
+    public class TeamsUserActivityUserDetail :IReport
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsUserActivityUserDetail"/> class.
+        /// </summary>
+        public TeamsUserActivityUserDetail() { }
+
+        /// <summary>
+        /// The date when the report was last refreshed.
+        /// </summary>
+        public string? ReportRefreshDate { get; set; }
+
+        /// <summary>
+        /// The period covered by the report.
+        /// </summary>
+        public int? ReportPeriod { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the user.
+        /// </summary>
+        public string? UserId { get; set; }
+
+        /// <summary>
+        /// The principal name of the user.
+        /// </summary>
+        public string? UserPrincipalName { get; set; }
+
+        /// <summary>
+        /// Indicates if the user is deleted.
+        /// </summary>
+        public string? IsDeleted { get; set; }
+
+        /// <summary>
+        /// The date when the user was deleted, if applicable.
+        /// </summary>
+        public string? DeletedDate { get; set; }
+
+        /// <summary>
+        /// The last date of activity for the user in Microsoft Teams.
+        /// </summary>
+        public string? LastActivityDate { get; set; }
+
+        /// <summary>
+        /// Names of tenants with which the shared channel is associated.
+        /// </summary>
+        public string? SharedChannelTenantDisplayNames { get; set; }
+
+        /// <summary>
+        /// The count of team chat messages sent by the user.
+        /// </summary>
+        public int? TeamChatMessageCount { get; set; }
+
+        /// <summary>
+        /// The count of private chat messages sent by the user.
+        /// </summary>
+        public int? PrivateChatMessageCount { get; set; }
+
+        /// <summary>
+        /// The count of calls made by the user.
+        /// </summary>
+        public int? CallCount { get; set; }
+
+        /// <summary>
+        /// The count of meetings attended by the user.
+        /// </summary>
+        public int? MeetingCount { get; set; }
+
+        /// <summary>
+        /// The count of post messages sent by the user.
+        /// </summary>
+        public int? PostMessages { get; set; }
+
+        /// <summary>
+        /// The count of reply messages sent by the user.
+        /// </summary>
+        public int? ReplyMessages { get; set; }
+
+        /// <summary>
+        /// The count of urgent messages sent by the user.
+        /// </summary>
+        public int? UrgentMessages { get; set; }
+
+        /// <summary>
+        /// The count of meetings organized by the user.
+        /// </summary>
+        public int? MeetingsOrganizedCount { get; set; }
+
+        /// <summary>
+        /// The count of meetings attended by the user.
+        /// </summary>
+        public int? MeetingsAttendedCount { get; set; }
+
+        /// <summary>
+        /// The count of ad hoc meetings organized by the user.
+        /// </summary>
+        public int? AdHocMeetingsOrganizedCount { get; set; }
+
+        /// <summary>
+        /// The count of ad hoc meetings attended by the user.
+        /// </summary>
+        public int? AdHocMeetingsAttendedCount { get; set; }
+
+        /// <summary>
+        /// The count of scheduled one-time meetings organized by the user.
+        /// </summary>
+        public int? ScheduledOneTimeMeetingsOrganizedCount { get; set; }
+
+        /// <summary>
+        /// The count of scheduled one-time meetings attended by the user.
+        /// </summary>
+        public int? ScheduledOneTimeMeetingsAttendedCount { get; set; }
+
+        /// <summary>
+        /// The count of scheduled recurring meetings organized by the user.
+        /// </summary>
+        public int? ScheduledRecurringMeetingsOrganizedCount { get; set; }
+
+        /// <summary>
+        /// The count of scheduled recurring meetings attended by the user.
+        /// </summary>
+        public int? ScheduledRecurringMeetingsAttendedCount { get; set; }
+
+        /// <summary>
+        /// The duration of audio usage in Microsoft Teams, in SO8601 duration.
+        /// </summary>
+        public string? AudioDuration { get; set; }
+
+        /// <summary>
+        /// The duration of video usage in Microsoft Teams, in SO8601 duration
+        /// </summary>
+        public string? VideoDuration { get; set; }
+
+        /// <summary>
+        /// The duration of screen sharing in Microsoft Teams, in SO8601 duration.
+        /// </summary>
+        public string? ScreenShareDuration { get; set; }
+
+        /// <summary>
+        /// The duration of audio usage in seconds.
+        /// </summary>
+        public int? AudioDurationInSeconds { get; set; }
+
+        /// <summary>
+        /// The duration of video usage in seconds.
+        /// </summary>
+        public int? VideoDurationInSeconds { get; set; }
+
+        /// <summary>
+        /// The duration of screen sharing in seconds.
+        /// </summary>
+        public int? ScreenShareDurationInSeconds { get; set; }
+
+        /// <summary>
+        /// Indicates if the user has other actions recorded in Microsoft Teams.
+        /// </summary>
+        public string? HasOtherAction { get; set; }
+
+        /// <summary>
+        /// Indicates if the user is licensed for Microsoft Teams.
+        /// </summary>
+        public string? IsLicensed { get; set; }
+    }
+}
