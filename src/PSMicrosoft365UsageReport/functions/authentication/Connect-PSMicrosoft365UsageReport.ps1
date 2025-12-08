@@ -1,10 +1,10 @@
 ﻿function Connect-PSMicrosoft365UsageReport {
 	<#
 	.SYNOPSIS
-		Establish a connection to an Entra Service.
+		Establish a connection to an Microsoft 365 Usage Report Service.
 
 	.DESCRIPTION
-		Establish a connection to an Entra Service.
+		Establish a connection to an Microsoft 365 Usage Report service.
 		Prerequisite before executing any requests / commands.
 
 	.PARAMETER ClientID

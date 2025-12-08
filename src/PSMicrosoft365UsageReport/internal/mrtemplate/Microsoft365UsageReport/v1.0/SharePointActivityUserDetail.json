@@ -53,10 +53,6 @@
                 "Expression": "Synced File Count"
             },
             {
-                "Name": "SyncedFileCount",
-                "Expression": "Synced File Count"
-            },
-            {
                 "Name": "SharedInternallyFileCount",
                 "Expression": "Shared Internally File Count"
             },

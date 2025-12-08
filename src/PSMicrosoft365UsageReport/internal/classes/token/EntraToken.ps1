@@ -44,7 +44,7 @@
 	[string]$ShowDialog
 
 	# Workflow: Federated
-	[PSMicrosoft365UsageReport.FederationProvider]$FederationProvider
+	[PSMicrosoftEntraID.FederationProvider]$FederationProvider
 
 	# Workflow: Custom Token
 	[scriptblock]$HeaderCode
@@ -63,7 +63,7 @@
 		$this.Type = 'ClientSecret'
 	}
 
-	EntraToken([string]$Service, [string]$ClientID, [string]$TenantID, [PSMicrosoft365UsageReport.FederationProvider]$Provider, [string]$ServiceUrl, [string]$AuthenticationUrl) {
+	EntraToken([string]$Service, [string]$ClientID, [string]$TenantID, [PSMicrosoftEntraID.FederationProvider]$Provider, [string]$ServiceUrl, [string]$AuthenticationUrl) {
 		$this.Service = $Service
 		$this.ClientID = $ClientID
 		$this.TenantID = $TenantID

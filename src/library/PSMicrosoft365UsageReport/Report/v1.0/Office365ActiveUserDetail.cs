@@ -152,6 +152,6 @@ namespace PSMicrosoft365UsageReport.Report
         /// The list of assigned products for the user.
         /// </summary>
         [DataMember(Name = "AssignedProducts")]
-        public string[]? AssignedProducts { get; set; }
+        public string? AssignedProducts { get; set; }
     }
 }

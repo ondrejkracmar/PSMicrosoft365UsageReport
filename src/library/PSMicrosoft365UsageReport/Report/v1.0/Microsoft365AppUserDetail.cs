@@ -118,138 +118,138 @@ namespace PSMicrosoft365UsageReport.Report
         /// Determines whether the user is using the Word on Windows.
         /// </summary>
         [DataMember(Name = "WordWindows")]
-        public int? WordWindows { get; set; }
+        public string? WordWindows { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Excel on Windows.
         /// </summary>
         [DataMember(Name = "ExcelWindows")]
-        public int? ExcelWindows { get; set; }
+        public string? ExcelWindows { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the PowerPoint on Windows.
         /// </summary>
         [DataMember(Name = "PowerPointWindows")]
-        public int? PowerPointWindows { get; set; }
+        public string? PowerPointWindows { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the OneNote on Windows.
         /// </summary>
         [DataMember(Name = "OneNoteWindows")]
-        public int? OneNoteWindows { get; set; }
+        public string? OneNoteWindows { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Teams on Windows.
         /// </summary>
         [DataMember(Name = "TeamsWindows")]
-        public int? TeamsWindows { get; set; }
+        public string? TeamsWindows { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Outlook on Mac.
         /// </summary>
         [DataMember(Name = "OutlookMac")]
-        public int? OutlookMac { get; set; }
+        public string? OutlookMac { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Word on Mac.
         /// </summary>
         [DataMember(Name = "WordMac")]
-        public int? WordMac { get; set; }
+        public string? WordMac { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Excel on Mac.
         /// </summary>
         [DataMember(Name = "ExcelMac")]
-        public int? ExcelMac { get; set; }
+        public string? ExcelMac { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the PowerPoint on Mac.
         /// </summary>
         [DataMember(Name = "PowerPointMac")]
-        public int? PowerPointMac { get; set; }
+        public string? PowerPointMac { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the OneNote on Mac.
         /// </summary>
         [DataMember(Name = "OneNoteMac")]
-        public int? OneNoteMac { get; set; }
+        public string? OneNoteMac { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Teams on Mac.
         /// </summary>
         [DataMember(Name = "TeamsMac")]
-        public int? TeamsMac { get; set; }
+        public string? TeamsMac { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Outlook on Mobile.
         /// </summary>
         [DataMember(Name = "OutlookMobile")]
-        public int? OutlookMobile { get; set; }
+        public string? OutlookMobile { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Word on Mobile.
         /// </summary>
         [DataMember(Name = "WordMobile")]
-        public int? WordMobile { get; set; }
+        public string? WordMobile { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Excel on Mobile.
         /// </summary>
         [DataMember(Name = "ExcelMobile")]
-        public int? ExcelMobile { get; set; }
+        public string? ExcelMobile { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the PowerPoint on Mobile.
         /// </summary>
         [DataMember(Name = "PowerPointMobile")]
-        public int? PowerPointMobile { get; set; }
+        public string? PowerPointMobile { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the OneNote on Mobile.
         /// </summary>
         [DataMember(Name = "OneNoteMobile")]
-        public int? OneNoteMobile { get; set; }
+        public string? OneNoteMobile { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Teams on Mobile.
         /// </summary>
         [DataMember(Name = "TeamsMobile")]
-        public int? TeamsMobile { get; set; }
+        public string? TeamsMobile { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Outlook on Web.
         /// </summary>
         [DataMember(Name = "OutlookWeb")]
-        public int? OutlookWeb { get; set; }
+        public string? OutlookWeb { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Word on Web.
         /// </summary>
         [DataMember(Name = "WordWeb")]
-        public int? WordWeb { get; set; }
+        public string? WordWeb { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Excel on Web.
         /// </summary>
         [DataMember(Name = "ExcelWeb")]
-        public int? ExcelWeb { get; set; }
+        public string? ExcelWeb { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the PowerPoint on Web.
         /// </summary>
         [DataMember(Name = "PowerpointWeb")]
-        public int? PowerpointWeb { get; set; }
+        public string? PowerpointWeb { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the OneNote on Web.
         /// </summary>
         [DataMember(Name = "OneNoteWeb")]
-        public int? OneNoteWeb { get; set; }
+        public string? OneNoteWeb { get; set; }
 
         /// <summary>
         /// Determines whether the user is using the Teams on Web.
         /// </summary>
         [DataMember(Name = "TeamsWeb")]
-        public int? TeamsWeb { get; set; }
+        public string? TeamsWeb { get; set; }
     }
 }

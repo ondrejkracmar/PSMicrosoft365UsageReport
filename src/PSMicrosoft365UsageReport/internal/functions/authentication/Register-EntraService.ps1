@@ -118,7 +118,7 @@
 		[switch]
 		$RawOnly,
 
-		[PSMicrosoft365UsageReport.Environment]
+		[PSMicrosoftEntraID.Environment]
 		$Environment = 'Global',
 
 		[string]

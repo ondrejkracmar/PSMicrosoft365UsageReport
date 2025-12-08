@@ -57,10 +57,6 @@
                 "Expression": "Storage Used (Byte)"
             },
             {
-                "Name": "StorageUsedByte",
-                "Expression": "Storage Used (Byte)"
-            },
-            {
                 "Name": "StorageAllocatedByte",
                 "Expression": "Storage Allocated (Byte)"
             }

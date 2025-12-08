@@ -1,4 +1,11 @@
 ﻿try {
+     $alreadyLoaded = [AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
+        $_.GetName().Name -eq 'PSMicrosoftEntraID'
+    }
+    if (-not $alreadyLoaded) {
+        Add-Type -Path "$script:ModuleRoot\bin\PSMicrosoftEntraID.dll" -ErrorAction Stop
+    }
+
     if ($PSVersionTable.PSVersion.Major -ge 5) {
         Add-Type -Path "$script:ModuleRoot\bin\PSMicrosoft365UsageReport.dll" -ErrorAction Stop
     }

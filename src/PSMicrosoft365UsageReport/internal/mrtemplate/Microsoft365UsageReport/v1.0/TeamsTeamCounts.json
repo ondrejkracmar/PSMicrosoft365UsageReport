@@ -29,19 +29,19 @@
             },
             {
                 "Name": "PublicTeams",
-                "Expression": "Public Teams"
+                "Expression": "PublicTeams"
             },
             {
                 "Name": "ActivePublicTeams",
-                "Expression": "Active Public Teams"
+                "Expression": "ActivePublicTeams"
             },
             {
                 "Name": "PrivateTeams",
-                "Expression": "Private Teams"
+                "Expression": "PrivateTeams"
             },
             {
                 "Name": "ActivePrivateTeams",
-                "Expression": "Active Private Teams"
+                "Expression": "ActivePrivateTeams"
             }
         ]
     }

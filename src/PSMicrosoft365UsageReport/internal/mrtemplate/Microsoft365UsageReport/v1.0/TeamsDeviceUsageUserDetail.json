@@ -41,7 +41,7 @@
                 "Expression": "Is Deleted"
             },
             {
-                "Name": "Deleted Date",
+                "Name": "DeletedDate",
                 "Expression": "Deleted Date"
             },
             {

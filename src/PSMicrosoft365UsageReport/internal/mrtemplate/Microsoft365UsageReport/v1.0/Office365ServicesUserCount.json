@@ -36,11 +36,11 @@
                 "Expression": "Exchange Inactive"
             },
             {
-                "Name": "OneDrive Active",
+                "Name": "OneDriveActive",
                 "Expression": "OneDrive Active"
             },
             {
-                "Name": "OneDriveInactivet",
+                "Name": "OneDriveInactive",
                 "Expression": "OneDrive Inactive"
             },
             {

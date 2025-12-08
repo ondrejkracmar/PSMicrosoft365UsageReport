@@ -78,45 +78,6 @@
         [Parameter()]
         [switch]$PassThru
     )
-    <#DynamicParam {
-        [PSMicrosoft365UsageReport.UsageReport.Microsoft365UsageReport]$usageReport = Get-PSMicrosoft365UsageReportCache | Where-Object -Property Name -EQ -Value $Name
-        If (-not($null -eq $usageReport)) {
-            [System.Management.Automation.RuntimeDefinedParameterDictionary]$paramDictionary = New-Object System.Management.Automation.RuntimeDefinedParameterDictionary
-            If (-not($null -eq $usageReport.Definition.Parameters.Days)) {
-                if (-not($null -eq $usageReport.Definition.Parameters.Days)) {
-                    [System.Management.Automation.ParameterAttribute]$daysAttribute = New-Object System.Management.Automation.ParameterAttribute -Property @{
-                        Mandatory         = $true
-                        ParameterSetName  = 'NumberDays'
-                        ValueFromPipeline = $true
-                    }
-                    # create a validation set
-                    [System.Management.Automation.ValidateSetAttribute]$daysParameterValidateSet = New-Object System.Management.Automation.ValidateSetAttribute -ArgumentList @('7', '30', '90', '180')
-                    [System.Collections.ObjectModel.Collection[System.Attribute]]$attributeCollection = New-Object System.Collections.ObjectModel.Collection[System.Attribute]
-                    [void]$attributeCollection.Add($daysAttribute)
-                    [void]$attributeCollection.Add($daysParameterValidateSet)
-                    [System.Management.Automation.RuntimeDefinedParameter]$daysParam = New-Object System.Management.Automation.RuntimeDefinedParameter('Days', [String], $attributeCollection)
-                    [void]$paramDictionary.Add('Days', $daysParam)
-                }
-                if (-not($null -eq $usageReport.Definition.Parameters.Date)) {
-                    [System.Management.Automation.ParameterAttribute]$dateAttribute = New-Object System.Management.Automation.ParameterAttribute -Property @{
-                        Mandatory         = $true
-                        ParameterSetName  = 'SingleDate'
-                        ValueFromPipeline = $true
-                    }
-                    # create a validation set
-                    [scriptblock]$dateListScriptBlock = { For ($i = 2; $i -le 27; $i++) { ((Get-Date).AddDays(-$i) | Get-Date -Format 'yyyy-MM-dd').ToString() } }
-                    [object[]]$dateList = Invoke-Command -ScriptBlock $dateListScriptBlock
-                    [System.Management.Automation.ValidateSetAttribute]$dateParameterValidateSet = New-Object System.Management.Automation.ValidateSetAttribute -ArgumentList $dateList
-                    [System.Collections.ObjectModel.Collection[System.Attribute]]$attributeCollection = New-Object System.Collections.ObjectModel.Collection[System.Attribute]
-                    [void]$attributeCollection.Add($dateAttribute)
-                    [void]$attributeCollection.Add($dateParameterValidateSet)
-                    [System.Management.Automation.RuntimeDefinedParameter]$dateParam = New-Object System.Management.Automation.RuntimeDefinedParameter('Date', [String], $attributeCollection)
-                    [void]$paramDictionary.Add('Date', $dateParam)
-                }
-            }
-            return $paramDictionary
-        }
-    }#>
 
     begin {
         Update-PSFTeppCompletion
@@ -198,12 +159,10 @@
                             switch ($apiVersion) {
                                 'v1.0' {
                                     [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" )
-                                    [pscustomobject[]] $mappedData = $updateCsvString | ConvertFrom-Csv | Select-Object -Property $selectProperties
-                                    ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject $mappedData
+                                    ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject ($updateCsvString | ConvertFrom-Csv | Select-Object -Property $selectProperties)
                                 }
                                 'beta' {
-                                    [pscustomobject[]] $mappedData = $csvString | ConvertFrom-Csv | Select-Object -Property $selectProperties
-                                    ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.Beta.{0}' -f $usageReport.Name) -InputObject $mappedData
+                                    ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.Beta.{0}' -f $usageReport.Name) -InputObject ($csvString | ConvertFrom-Csv | Select-Object -Property $selectProperties)
                                 }
                             }
                         } -EnableException $EnableException -Confirm:$($cmdLetConfirm) -PSCmdlet $PSCmdlet -Continue -RetryCount $commandRetryCount -RetryWait $commandRetryWait

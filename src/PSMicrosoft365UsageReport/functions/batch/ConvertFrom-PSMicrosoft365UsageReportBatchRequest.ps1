@@ -111,16 +111,11 @@
 
                             switch ($apiVersion) {
                                 'v1.0' {
-                                    [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" )
-                                    [pscustomobject[]] $mappedData = $updateCsvString | ConvertFrom-Csv | Select-Object -Property $selectProperties
-                                    [PSMicrosoft365UsageReport.Interface.IReport[]] $reportData = ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject $mappedData
+                                    [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" )                                    
+                                    [PSMicrosoft365UsageReport.Interface.IReport[]] $reportData = ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject ($updateCsvString | ConvertFrom-Csv | Select-Object -Property $selectProperties)
                                 }
                                 'beta' {
-                                    #[string[]] $lineCsvString = $csvString -split "`n"
-                                    #[string] $lineCsvString[0] = ($lineCsvString[0] -replace "ï»¿", "") -replace '\s*,\s*', ',' -replace '\s+', ''
-                                    #[string] $updateCsvString = ($lineCsvString -join "`n")
-                                    [pscustomobject[]] $mappedData = $csvString | ConvertFrom-Csv | Select-Object -Property $selectProperties
-                                    [PSMicrosoft365UsageReport.Interface.IReport[]] $reportData = ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.Beta.{0}' -f $usageReport.Name) -InputObject $mappedData
+                                    [PSMicrosoft365UsageReport.Interface.IReport[]] $reportData = ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.Beta.{0}' -f $usageReport.Name) -InputObject ($csvString | ConvertFrom-Csv | Select-Object -Property $selectProperties)
                                 }
                             }
 

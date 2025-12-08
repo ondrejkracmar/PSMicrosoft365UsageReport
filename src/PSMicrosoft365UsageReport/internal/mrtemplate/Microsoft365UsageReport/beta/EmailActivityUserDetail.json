@@ -10,7 +10,7 @@
         "application/json"
     ],
     "Definition": {
-        "Function": "GetEmailActivityUserDetail",
+        "Function": "getEmailActivityUserDetail",
         "Parameters": {
             "Days": [
                 "7",

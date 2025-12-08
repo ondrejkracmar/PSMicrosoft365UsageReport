@@ -80,6 +80,6 @@ namespace PSMicrosoft365UsageReport.Report
         /// The list of products assigned to the user.
         /// </summary>
         [DataMember(Name = "AssignedProducts")]
-        public string[]? AssignedProducts { get; set; }
+        public string? AssignedProducts { get; set; }
     }
 }

@@ -18,7 +18,7 @@
 		$InputObject
 	)
 	if (-not $InputObject) { return }
-	$jsonString = ($InputObject | ConvertTo-Json -Depth 3) -replace '""', 'null'
+	$jsonString = ($InputObject | ConvertTo-Json -Depth 5) -replace '""', 'null'
 	if ($InputObject -is [array]) {
 		[byte[]] $byteArray = [System.Text.Encoding]::UTF8.GetBytes($jsonString)
 		[System.IO.MemoryStream] $stream = [System.IO.MemoryStream]::new($byteArray)

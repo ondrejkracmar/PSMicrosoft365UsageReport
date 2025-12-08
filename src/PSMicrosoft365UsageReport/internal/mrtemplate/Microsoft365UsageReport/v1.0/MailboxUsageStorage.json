@@ -28,7 +28,7 @@
                 "Expression": "Report Date"
             },
             {
-                "Name": "Report Period",
+                "Name": "ReportPeriod",
                 "Expression": "Report Period"
             },
             {

@@ -63,6 +63,6 @@ namespace PSMicrosoft365UsageReport.Report.Beta
         /// <summary>
         /// The products assigned to the user, represented as a nullable string.
         /// </summary>
-        public string[]? AssignedProducts { get; set; }
+        public string? AssignedProducts { get; set; }
     }
 }

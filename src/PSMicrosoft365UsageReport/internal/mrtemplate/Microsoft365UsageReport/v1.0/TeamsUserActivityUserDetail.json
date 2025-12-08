@@ -97,10 +97,6 @@
                 "Expression": "Ad Hoc Meetings Attended Count"
             },
             {
-                "Name": "AdHocMeetingsAttendedCount",
-                "Expression": "Ad Hoc Meetings Attended Count"
-            },
-            {
                 "Name": "ScheduledOneTimeMeetingsOrganizedCount",
                 "Expression": "Scheduled One-time Meetings Organized Count"
             },
