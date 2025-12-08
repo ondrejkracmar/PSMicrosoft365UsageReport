@@ -111,7 +111,7 @@
 
                             switch ($apiVersion) {
                                 'v1.0' {
-                                    [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" )                                    
+                                    [string] $updateCsvString = ($csvString -replace "^[ï»¿]+", "" )
                                     [PSMicrosoft365UsageReport.Interface.IReport[]] $reportData = ConvertFrom-RestUsageReport -ReportName ('PSMicrosoft365UsageReport.Report.{0}' -f $usageReport.Name) -InputObject ($updateCsvString | ConvertFrom-Csv | Select-Object -Property $selectProperties)
                                 }
                                 'beta' {
